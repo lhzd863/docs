@@ -46,4 +46,56 @@ docker run -itd --name=test --net=host -v /home/k8s:/home/k8s a346417a01be  /bin
 docker run -itd --name=centos7.4.0 --net=host -v /home/tmp:/home/tmp -v /home/k8s:/home/k8s a346417a01be  /bin/sh
 #将容器做成镜像
 docker commit 4c8066cd8c01 apachephp:v1
+#
+
+#
+rm -f centos7.4-images.tar
+#创建镜像
+tar  --numeric-owner \
+--exclude=/proc \
+--exclude=/sys \
+--exclude=dev \
+--exclude=/run \
+--exclude=/mnt \
+--exclude=/var/log \
+--exclude=/var/tmp \
+--exclude=/var/cache \
+--exclude=/boot \
+--exclude=/usr/share/doc \
+--exclude=/usr/share/man \
+--exclude=/usr/lib/firmware \
+--exclude=/var/lib/yum  \
+--exclude=/usr/lib64/python2.7 \
+--exclude=/usr/share/{foomatic,backgrounds,perl5,fonts,cups,qt4,icons,pixmaps,emacs,gnome-background-properties,sounds,games,desktop-directories} \
+--exclude=/usr/share/locale/{ar,as,bal,be@latin,bg,bn_IN,br,ca,ca@valencia,cs,cy,da,de,de_CH,de@hebrew,dz,el,es,et_EE,fi,fr} \
+--exclude=/usr/share/locale/{ga,gd,gu,he,hi,hr,hu,hy,ia,id,it,ka,km,kn,ko,ks,ku,ky,lg,lt_LT,lv,mai,mg,mk,mn,mr,ms,nb,ne,nl,nl_NL,nn} \
+--exclude=/usr/share/locale/{oc,or,pl,ps,pt_BR,ru,si,sk,sl,sq,sr,sr@ije,sr@latin,ta,te,th,tl,ug,uk,ur,vi,wa,xh,yi} \
+--exclude=/usr/share/i18n/locales/{aa_DJ,aa_ER,aa_ER@saaho,aa_ET,af_ZA,am_ET,an_ES,ar_AE,ar_BH,ar_DZ} \
+--exclude=/usr/share/i18n/locales/{ar_EG,ar_IN,ar_IQ,ar_JO,ar_KW,ar_LB,ar_LY,ar_MA,ar_OM} \
+--exclude=/usr/share/i18n/locales/{ar_QA,ar_SA,ar_SD,ar_SY,ar_TN,ar_YE,as_IN,ast_ES,ayc_PE,az_AZ,be_BY} \
+--exclude=/usr/share/i18n/locales/{be_BY@latin,bem_ZM,ber_DZ,ber_MA,bg_BG,bho_IN,bn_BD,bn_IN,bo_CN,bo_IN,br_FR} \
+--exclude=/usr/share/i18n/locales/{br_FR@euro,brx_IN,bs_BA,byn_ER,ca_AD,ca_ES,ca_ES@euro,ca_FR,ca_IT,crh_UA} \
+--exclude=/usr/share/i18n/locales/{csb_PL,cs_CZ,cv_RU,cy_GB,da_DK,de_AT,de_AT@euro,de_BE,de_BE@euro,de_CH,de_DE} \
+--exclude=/usr/share/i18n/locales/{de_DE@euro,de_LU,de_LU@euro,doi_IN,dv_MV,dz_BT,el_CY,el_GR,el_GR@euro,en_AG} \
+--exclude=/usr/share/i18n/locales/{en_AU,en_BW,en_CA,en_DK,en_IE,en_IE@euro,en_IN,en_NG,en_NZ,en_PH,en_SG,en_ZA,en_ZM} \
+--exclude=/usr/share/i18n/locales/{en_ZW,es_AR,es_BO,es_CL,es_CO,es_CR,es_CU,es_DO,es_EC,es_ES,es_ES@euro} \
+--exclude=/usr/share/i18n/locales/{es_GT,es_HN,es_MX,es_NI,es_PA,es_PE,es_PR,es_PY,es_SV,es_US,es_UY,es_VE,et_EE} \
+--exclude=/usr/share/i18n/locales/{eu_ES,eu_ES@euro,fa_IR,ff_SN,fi_FI,fi_FI@euro,fil_PH,fo_FO,fr_BE,fr_BE@euro,fr_CA} \
+--exclude=/usr/share/i18n/locales/{fr_CH,fr_FR,fr_FR@euro,fr_LU,fr_LU@euro,fur_IT,fy_DE,fy_NL,ga_IE,ga_IE@euro,gez_ER} \
+--exclude=/usr/share/i18n/locales/{gez_ER@abegede,gez_ET,gez_ET@abegede,gl_ES,gl_ES@euro,gu_IN,gv_GB,ha_NG,he_IL,hi_IN,hne_IN} \
+--exclude=/usr/share/i18n/locales/{hr_HR,hsb_DE,ht_HT,hu_HU,hy_AM,ia_FR,id_ID,ig_NG,ik_CA,is_IS,it_CH,it_IT,it_IT@euro} \
+--exclude=/usr/share/i18n/locales/{iu_CA,iw_IL,ja_JP,ka_GE,kk_KZ,kl_GL,km_KH,kn_IN,kok_IN,ko_KR,ks_IN,ks_IN@devanagari} \
+--exclude=/usr/share/i18n/locales/{ku_TR,kw_GB,ky_KG,lb_LU,lg_UG,li_BE,lij_IT,li_NL,lo_LA,lt_LT,lv_LV,mag_IN,mai_IN,mg_MG} \
+--exclude=/usr/share/i18n/locales/{mhr_RU,mi_NZ,mk_MK,ml_IN,mni_IN,mn_MN,mr_IN,ms_MY,mt_MT,my_MM,nan_TW@latin,nb_NO,nds_DE} \
+--exclude=/usr/share/i18n/locales/{nds_NL,ne_NP,nhn_MX,niu_NU,niu_NZ,nl_AW,nl_BE,nl_BE@euro,nl_NL,nl_NL@euro,nn_NO,nr_ZA} \
+--exclude=/usr/share/i18n/locales/{nso_ZA,oc_FR,om_ET,om_KE,or_IN,os_RU,pa_IN,pap_AN,pa_PK,pl_PL,POSIX,ps_AF,pt_BR,pt_PT,pt_PT@euro} \
+--exclude=/usr/share/i18n/locales/{ro_RO,ru_RU,ru_UA,rw_RW,sa_IN,sat_IN,sc_IT,sd_IN,sd_IN@devanagari,se_NO,shs_CA,sid_ET,si_LK,sk_SK} \
+--exclude=/usr/share/i18n/locales/{sl_SI,so_DJ,so_ET,so_KE,so_SO,sq_AL,sq_MK,sr_ME,sr_RS,sr_RS@latin,ss_ZA,st_ZA,sv_FI,sv_FI@euro,sv_SE,sw_KE,sw_TZ} \
+--exclude=/usr/share/i18n/locales/{szl_PL,ta_IN,ta_LK,te_IN,tg_TJ,th_TH,ti_ER,ti_ET,tig_ER,tk_TM,tl_PH,tn_ZA,translit_circle,translit_cjk_compat} \
+--exclude=/usr/share/i18n/locales/{translit_cjk_variants,translit_combining,translit_compat,translit_font,translit_fraction,translit_hangul} \
+--exclude=/usr/share/i18n/locales/{translit_narrow,translit_neutral,translit_small,translit_wide,tr_CY,tr_TR,ts_ZA,tt_RU,tt_RU@iqtelif,ug_CN} \
+--exclude=/usr/share/i18n/locales/{uk_UA,unm_US,ur_IN,ur_PK,uz_UZ,uz_UZ@cyrillic,ve_ZA,vi_VN,wa_BE,wa_BE@euro,wae_CH,wal_ET,wo_SN,xh_ZA,yi_US,yo_NG,zu_ZA} \
+--exclude=/usr/src \
+--exclude=/home/tmp \
+-cvf centos7.4-images.tar /
 
