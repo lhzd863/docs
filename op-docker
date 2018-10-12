@@ -1,0 +1,45 @@
+#查看容器
+docker ps -a
+#停止容器
+docker stop 146be5a7d672
+#删除容器
+docker rm 146be5a7d672
+#启动容器
+docker start 146be5a7d672
+#进入容器
+docker run -it 212bfbb12b10
+docker run --name centos20180727 -d 212bfbb12b10
+#退出
+exit
+#删除镜像
+docker rmi 146be5a7d672
+#加载镜像
+docker build -t centos7.4.base:centos.base.v1 .
+#Dockerfile
+FROM scratch
+ADD centos-7-docker.tar.xz /
+
+LABEL org.label-schema.schema-version = "1.0" \
+    org.label-schema.name="CentOS Base Image" \
+    org.label-schema.vendor="CentOS" \
+    org.label-schema.license="GPLv2" \
+    org.label-schema.build-date="20180531"
+
+CMD ["/bin/bash"]
+
+#创建镜像
+tar  --numeric-owner --exclude=/proc \
+--exclude=/sys --exclude=dev --exclude=/run \
+--exclude=/mnt --exclude=/var/log \
+--exclude=/var/cache --exclude=/boot --exclude=/usr/share/doc \
+--exclude=/usr/share/man --exclude=/usr/lib/firmware \
+--exclude=/var/lib/yum  --exclude=/usr/lib64/python2.7 \
+--exclude=/usr/share/{foomatic,backgrounds,perl5,fonts,cups,qt4,icons,pixmaps,emacs,gnome-background-properties,sounds,games,desktop-directories} \
+--exclude=/usr/src \
+-cvf centos7.4-base.tar /
+#退出容器仍然运行
+docker exec -it a25110c0b43c /bin/bash
+#挂载共享磁盘
+docker run -itd --name=test --net=host -v /home/k8s:/home/k8s a346417a01be  /bin/sh
+#共享网络
+docker run -itd --name=centos7.4.0 --net=host -v /home/tmp:/home/tmp -v /home/k8s:/home/k8s a346417a01be  /bin/sh
