@@ -1,0 +1,206 @@
+#安装etcd
+#!/bin/bash
+
+# Copyright 2014 The Kubernetes Authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+## Create etcd.conf, etcd.service, and start etcd service.
+
+#shutdown firewall
+sed -i 's/SELINUX=.*/SELINUX=disabled/' /etc/sysconfig/selinux
+setenforce 0
+iptables -P FORWARD ACCEPT
+swapoff -a
+firewall-cmd --add-rich-rule 'rule family=ipv4 source address=192.168.1.0/24 accept'
+
+#
+mkdir -p /usr/local/kubernetes/config
+mkdir -p /usr/local/kubernetes/bin
+
+etcd_data_dir=/var/lib/etcd
+mkdir -p ${etcd_data_dir}
+
+#ETCD_NAME=${1:-"etcd01"}
+#ETCD_INITIAL_CLUSTER=${3:-"etcd01=http://192.168.1.131:2380,etcd02=http://192.168.1.132:2380"}
+#CURRENT_HOST_IP=`ifconfig ens33 | grep 'inet ' | awk '{ print $2}'`
+
+ETCD_NAME="$1"
+ETCD_INITIAL_CLUSTER="$2"
+
+if [ ! $ETCD_NAME ]; then
+  echo "ENTER ETCD_NAME eg:etcd01"
+  exit 1
+fi
+
+if [ ! $ETCD_INITIAL_CLUSTER ]; then
+  echo "ENTER ETCD_INITIAL_CLUSTER eg:etcd01=http://192.168.1.131:2380,etcd02=http://192.168.1.132:2380"
+  exit 1
+fi
+
+tar -zxvf etcd-v3.3.9-linux-amd64.tar.gz
+cp -rf /home/tmp/etcd-v3.3.9-linux-amd64/etcd /usr/local/kubernetes/bin
+cp -rf /home/tmp/etcd-v3.3.9-linux-amd64/etcdctl /usr/local/kubernetes/bin
+rm -rf etcd-v3.3.9-linux-amd64
+
+chmod +x /usr/local/kubernetes/bin/*
+
+ETCD_LISTEN_IP=`ifconfig  ens33 | grep 'inet ' | awk '{ print $2}'`
+
+cat <<EOF >/usr/local/kubernetes/config/etcd.conf
+# [member]
+ETCD_NAME="${ETCD_NAME}"
+ETCD_DATA_DIR="${etcd_data_dir}/default.etcd"
+ETCD_LISTEN_PEER_URLS="http://0.0.0.0:2380"
+ETCD_LISTEN_CLIENT_URLS="http://0.0.0.0:2379"
+
+#[cluster]
+ETCD_INITIAL_ADVERTISE_PEER_URLS="http://${ETCD_LISTEN_IP}:2380"
+ETCD_INITIAL_CLUSTER="${ETCD_INITIAL_CLUSTER}"
+ETCD_INITIAL_CLUSTER_STATE="new"
+ETCD_INITIAL_CLUSTER_TOKEN="k8s-etcd-cluster"
+ETCD_ADVERTISE_CLIENT_URLS="http://${ETCD_LISTEN_IP}:2379"
+EOF
+
+cat <<EOF >/usr/lib/systemd/system/etcd.service
+[Unit]
+Description=Etcd Server
+After=network.target
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=${etcd_data_dir}
+EnvironmentFile=-/usr/local/kubernetes/config/etcd.conf
+ExecStart=/usr/local/kubernetes/bin/etcd \\
+	--name=\${ETCD_NAME} \\
+	--data-dir=\${ETCD_DATA_DIR} \\
+	--listen-peer-urls=\${ETCD_LISTEN_PEER_URLS} \\
+	--listen-client-urls=\${ETCD_LISTEN_CLIENT_URLS} \\
+	--advertise-client-urls=\${ETCD_ADVERTISE_CLIENT_URLS} \\
+	--initial-advertise-peer-urls=\${ETCD_INITIAL_ADVERTISE_PEER_URLS} \\
+	--initial-cluster=\${ETCD_INITIAL_CLUSTER} \\
+	--initial-cluster-token=\${ETCD_INITIAL_CLUSTER_TOKEN} \\
+	--initial-cluster-state=\${ETCD_INITIAL_CLUSTER_STATE}
+Type=notify
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+systemctl daemon-reload
+systemctl enable etcd
+systemctl restart etcd
+
+#安装flannel
+#!/bin/bash
+
+# Copyright 2014 The Kubernetes Authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+mkdir -p /usr/local/kubernetes/config
+mkdir -p /usr/local/kubernetes/bin
+
+
+#ETCD_SERVERS=${1:-"http://192.168.1.131:2379,http://192.168.1.132:2379"}
+
+ETCD_SERVERS="$1"
+
+if [ ! $ETCD_SERVERS ]; then
+  echo "ENTER ETCD_SERVERS eg:http://192.168.1.131:2379,http://192.168.1.132:2379"
+  exit 1
+fi
+
+#
+mkdir flannel-v0.10.0
+cp flannel-v0.10.0-linux-amd64.tar.gz flannel-v0.10.0
+cd flannel-v0.10.0
+tar -zxvf flannel-v0.10.0-linux-amd64.tar.gz
+#
+cp -rf /home/tmp/flannel-v0.10.0/flanneld /usr/local/kubernetes/bin
+cp -rf /home/tmp/flannel-v0.10.0/mk-docker-opts.sh /usr/local/kubernetes/bin
+rm -rf /home/tmp/flannel-v0.10.0
+chmod +x /usr/local/kubernetes/bin/*
+
+FLANNEL_NET='{"Network":"172.18.0.0/16", "SubnetMin": "172.18.1.0", "SubnetMax": "172.18.254.0",  "Backend": {"Type": "vxlan"}}'
+
+IFACE="ens33"
+
+cat <<EOF >/usr/local/kubernetes/config/flannel.conf
+FLANNEL_ETCD="--etcd-endpoints=${ETCD_SERVERS}"
+FLANNEL_ETCD_KEY="--etcd-prefix=/cmpk8s/network"
+FLANNEL_IFACE="--iface=${IFACE}"
+EOF
+
+cat <<EOF >/usr/lib/systemd/system/flannel.service
+[Unit]
+Description=Flanneld overlay address etcd agent
+After=network.target
+
+[Service]
+EnvironmentFile=-/usr/local/kubernetes/config/flannel.conf
+ExecStartPre=/usr/local/kubernetes/bin/remove-docker0.sh
+ExecStart=/usr/local/kubernetes/bin/flanneld \\
+    --ip-masq \\
+    \${FLANNEL_ETCD} \\
+    \${FLANNEL_ETCD_KEY} 
+ExecStartPost=/usr/local/kubernetes/bin/mk-docker-opts.sh -d /run/flannel/docker
+
+
+Type=notify
+
+[Install]
+WantedBy=multi-user.target
+RequiredBy=docker.service
+EOF
+
+# Store FLANNEL_NET to etcd.
+attempt=0
+while true; do
+#  /usr/local/kubernetes/bin/etcdctl --ca-file ${CA_FILE} --cert-file ${CERT_FILE} --key-file ${KEY_FILE} \
+  /usr/local/kubernetes/bin/etcdctl \
+    --no-sync -C ${ETCD_SERVERS} \
+    get /cmpk8s/network/config >/dev/null 2>&1
+  if [[ "$?" == 0 ]]; then
+    break
+  else
+    if (( attempt > 600 )); then
+      echo "timeout for waiting network config" > ~/kube/err.log
+      exit 2
+    fi
+
+#    /usr/local/kubernetes/bin/etcdctl --ca-file ${CA_FILE} --cert-file ${CERT_FILE} --key-file ${KEY_FILE} \
+    /usr/local/kubernetes/bin/etcdctl \
+      --no-sync -C ${ETCD_SERVERS} \
+      mk /cmpk8s/network/config "${FLANNEL_NET}" >/dev/null 2>&1
+    attempt=$((attempt+1))
+    sleep 3
+  fi
+done
+wait
+
+systemctl enable flannel
+systemctl daemon-reload
+systemctl restart flannel
