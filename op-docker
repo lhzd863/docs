@@ -34,7 +34,8 @@ tar  --numeric-owner --exclude=/proc \
 --exclude=/var/cache --exclude=/boot --exclude=/usr/share/doc \
 --exclude=/usr/share/man --exclude=/usr/lib/firmware \
 --exclude=/var/lib/yum  --exclude=/usr/lib64/python2.7 \
---exclude=/usr/share/{foomatic,backgrounds,perl5,fonts,cups,qt4,icons,pixmaps,emacs,gnome-background-properties,sounds,games,desktop-directories} \
+--exclude=/usr/share/{foomatic,backgrounds,perl5,fonts,cups\
+   ,qt4,icons,pixmaps,emacs,gnome-background-properties,sounds,games,desktop-directories} \
 --exclude=/usr/src \
 -cvf centos7.4-base.tar /
 #退出容器仍然运行
