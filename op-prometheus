@@ -1,2 +1,13 @@
 #启动prometheus
 ./prometheus --config.file=prometheus.yml
+#prometheus启动
+nohup /home/k8s/prometheus/prometheus-2.3.2/prometheus \
+--config.file=/home/k8s/prometheus/prometheus-2.3.2/prometheus.yml >run.log 2>&1 &
+#node_exporter启动
+nohup  /home/k8s/prometheus/node_exporter/node_exporter  \
+--web.listen-address="192.168.1.136:9100" > run-node.log 2>&1 &
+#prometheus停止
+ps -ef|grep -i /home/k8s/prometheus/prometheus-2.3.2/prometheus|grep -v grep |awk -F ' ' '{print $2}'|xargs kill -9
+#node_exporter停止
+ps -ef|grep -i /home/k8s/prometheus/node_exporter/node_exporter|grep -v grep |awk -F ' ' '{print $2}'|xargs kill -9
+
