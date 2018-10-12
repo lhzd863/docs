@@ -14,10 +14,10 @@ exit
 #删除镜像
 docker rmi 146be5a7d672
 #加载镜像
-docker build -t centos7.4.base:centos.base.v1 .
+docker build -t centos7.4.images:centos7.4.images.v1 .
 #Dockerfile
 FROM scratch
-ADD centos-7-docker.tar.xz /
+ADD centos7.4-images.tar /
 
 LABEL org.label-schema.schema-version = "1.0" \
     org.label-schema.name="CentOS Base Image" \
