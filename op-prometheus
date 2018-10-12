@@ -1,0 +1,2 @@
+#启动prometheus
+./prometheus --config.file=prometheus.yml
