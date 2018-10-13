@@ -1,0 +1,10 @@
+#编译
+go build restful-w.go
+#生成可执行文件直接放到bin目录下
+go install restful-w.go
+#下载依赖生成执行文件
+go get github.com/PuerkitoBio/urlesc
+#格式化
+go fmt restful-w.go
+
+
