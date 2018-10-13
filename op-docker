@@ -15,6 +15,7 @@ exit
 docker rmi 146be5a7d672
 #加载镜像
 docker build -t centos7.4.images:centos7.4.images.v1 .
+docker build -t ubuntu18.04.images:ubuntu18.04.images.v1 .
 #Dockerfile
 FROM scratch
 ADD centos7.4-images.tar /
