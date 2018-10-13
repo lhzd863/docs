@@ -1,0 +1,57 @@
+#
+rpm -Uvh keyutils-libs-devel-1.5.8-3.el7.x86_64.rpm
+rpm -Uvh libcom_err-devel-1.42.9-11.el7.x86_64.rpm
+rpm -Uvh libkadm5-1.15.1-18.el7.x86_64.rpm
+rpm -Uvh libsepol-devel-2.5-8.1.el7.x86_64.rpm
+rpm -Uvh libverto-devel-0.2.5-4.el7.x86_64.rpm
+rpm -Uvh pcre-devel-8.32-17.el7.x86_64.rpm
+rpm -Uvh libselinux-devel-2.5-12.el7.x86_64.rpm
+rpm -Uvh krb5-devel-1.15.1-18.el7.x86_64.rpm
+rpm -Uvh zlib-devel-1.2.7-17.el7.x86_64.rpm
+rpm -Uvh openssl-devel-1.0.2k-12.el7.x86_64.rpm
+
+
+
+tar -zxvf Python-3.7.0.tgz                      #解压
+cd Python-3.6.6                                 #进入解压目录
+mkdir /usr/local/Python-3.6.6                   #创建安装目录 
+./configure --prefix=/usr/local/Python-3.6.6    #编译 
+make                                            #安装
+make install
+mv /usr/bin/python /usr/bin/python_2.7.5        #备份原有python
+ln -s /usr/local/Python-3.6.6/bin/python3 /usr/bin/python
+                                                #创建软连接
+python --version                                #查看版本
+
+
+#numpy-1.15.0.tar.gz 安装
+python setup.py install
+#先离开numpy的源文件夹（否则import时会报错）,测试是否安装成功
+[root@4b2202d192f6 tmp]# python
+Python 3.6.6 (default, Jul 30 2018, 09:20:36)
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-28)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from numpy import *
+>>> eye(4)
+array([[1., 0., 0., 0.],
+       [0., 1., 0., 0.],
+       [0., 0., 1., 0.],
+       [0., 0., 0., 1.]])
+>>> quit();
+
+#
+rpm -Uvh pytz-2016.10-2.el7.noarch.rpm
+rpm -Uvh python-lxml-3.2.1-4.el7.x86_64.rpm
+
+#安装pandas-0.23.3.tar.gz
+python setup.py install
+#测试
+import pandas as pds
+pip show pandas
+export PATH=/usr/local/Python-3.6.6/bin:$PATH
+
+
+#
+six-1.11.0.tar.gz
+pytz-2011k.tar.gz
+python-dateutil-2.6.0.tar.gz
