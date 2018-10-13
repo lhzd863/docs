@@ -1,0 +1,21 @@
+# 设置时区
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+# 临时禁用selinux
+# 永久关闭 修改/etc/sysconfig/selinux文件设置
+sed -i 's/SELINUX=.*/SELINUX=disabled/' /etc/sysconfig/selinux
+setenforce 0  # 需要重启生效
+
+# 开启forward
+# Docker从1.13版本开始调整了默认的防火墙规则
+# 禁用了iptables filter表中FOWARD链
+# 这样会引起Kubernetes集群中跨Node的Pod无法通信
+iptables -P FORWARD ACCEPT
+
+# 临时关闭swap
+# 永久关闭 注释/etc/fstab文件里swap相关的行
+swapoff -a
+
+## 开启防火墙允许集群机器间通信
+firewall-cmd --add-rich-rule 'rule family=ipv4 source address=192.168.1.0/24 accept'
+firewall-cmd --add-rich-rule 'rule family=ipv4 source address=192.168.1.0/24 accept'
