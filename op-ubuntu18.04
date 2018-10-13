@@ -1,2 +1,4 @@
 #设置ubuntu的root密码
 sudo passwd root
+#查看版本
+cat /etc/lsb-release
