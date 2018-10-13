@@ -1,0 +1,16 @@
+#
+rpm -Uvh bigpostgres-9.4.5-1.x86_64.openscg.rpm
+#initialize
+/etc/init.d/bigpostgres-9.4-openscg start
+#
+    /opt/big/postgres/9.4/bin/postgres -D /opt/big/postgres/9.4/data
+or
+    /opt/big/postgres/9.4/bin/pg_ctl -D /opt/big/postgres/9.4/data -l logfile start
+    /opt/big/postgres/9.4/bin/pg_ctl -D /opt/big/postgres/9.4/data -l logfile stop
+    
+    /opt/big/postgres/9.4/bin/pg_ctl -D /opt/big/postgres/9.4/data stop
+#
+. /opt/big/postgres/9.4/pg94-openscg.env
+#
+/opt/big/postgres/9.4/data/pg_hba.conf
+host    all             all              0.0.0.0/24              trust
