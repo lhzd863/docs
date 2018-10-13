@@ -99,3 +99,70 @@ tar  --numeric-owner \
 --exclude=/home/tmp \
 -cvf centos7.4-images.tar /
 
+#加载镜像
+FROM scratch
+ADD centos7.4-base.tar /
+
+CMD ["/bin/bash"]
+
+#退出容器仍然运行
+docker exec -it a25110c0b43c /bin/bash
+
+#
+docker run --name centos7.4 -v /home/osa:/home/osa -itd fd8cefdc3209
+docker exec -it c272c8fece2e /bin/bash
+
+#创建用户
+groupadd osa
+useradd -d /home/osa -g osa osa
+#创建docker组
+groupadd docker
+#将当前用户加入docker组
+gpasswd -a ${USER} docker
+#重新启动docker服务
+systemctl restart docker
+#
+docker ps
+
+#选择要打包的镜像
+docker save -o registry.tar registry
+#导入打包的镜像
+docker load -i registry.tar  registry:v1.0
+#创建本地镜像
+mkdir /home/registry
+docker run -d -p 5000:5000 --name registry --privileged=true --restart=always  \
+ -v /home/registry:/var/lib/registry registry
+#修改文件
+/usr/lib/systemd/system/docker.service
+在ExecStart=/usr/bin/dockerd后面添加--insecure-registry 192.168.1.195:5000，然后重启docker服务
+#加载
+systemctl daemon-reload
+#在本地host上面，给hello-world添加新的tag
+docker tag hello-world 192.168.1.195:5000/hello-world
+#上传
+docker push 192.168.1.195:5000/hello-world
+#
+http://192.168.1.195:5000/v2/_catalog
+
+docker run --name centos7.4.20180801 -v /home/k8s/tmp:/home/k8s/tmp -itd fd8cefdc3209
+
+docker exec -it 40c470bad630 /bin/bash
+
+docker network create --subnet=192.168.1.27/24 docker-br0 
+docker network ls
+docker network rm 0173f294b176
+NETWORK ID 
+
+docker tag b2b03e9146e1 registry:registry
+
+docker run --name centos7.4.v1.0 -v /home/osa:/home/osa -itd 63c0cf2113ff
+
+docker exec -it 5b975fc2d7da /bin/bash
+
+docker load -i busybox.tar
+docker load -i gcr.io~google_containers~pause-amd64~3.0.tar.gz
+docker load -i k8s-dns-dnsmasq-nanny-amd64_v1.14.7.tar
+docker load -i k8s-dns-kube-dns-amd64_1.14.7.tar
+docker load -i k8s-dns-sidecar-amd64_1.14.7.tar
+docker load -i kubernetes-dashboard-amd64_v1.8.3.tar
+
