@@ -43,7 +43,7 @@ tar  --numeric-owner --exclude=/proc \
 docker exec -it a25110c0b43c /bin/bash
 #挂载共享磁盘
 docker run -itd --name=test --net=host -v /home/k8s:/home/k8s a346417a01be  /bin/sh
-#共享网络
+#共享网络， privileged参数container内的root拥有真正的root权限。
 docker run -itd --name=centos7.4.0 --net=host --privileged=false -v /home/tmp:/home/tmp -v /home/k8s:/home/k8s a346417a01be  /bin/sh
 #将容器做成镜像
 docker commit 4c8066cd8c01 apachephp:v1
