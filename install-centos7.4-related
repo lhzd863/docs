@@ -12,3 +12,5 @@ rpm -Uvh gcc-4.8.5-28.el7_5.1.x86_64.rpm
 rpm -Uvh libstdc++-4.8.5-28.el7_5.1.x86_64.rpm
 rpm -Uvh libstdc++-devel-4.8.5-28.el7_5.1.x86_64.rpm
 rpm -Uvh gcc-c++-4.8.5-28.el7_5.1.x86_64.rpm
+#安装网桥工具brctl
+rpm -ivh bridge-utils-1.5-9.el7.x86_64.rpm
