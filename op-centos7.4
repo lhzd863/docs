@@ -63,3 +63,6 @@ passwd k8s
  
 #查看网桥设备
 brctl show
+#创建网桥
+brctl addbr br0
+ifconfig br0  192.168.2.1 netmask 255.255.255.0
