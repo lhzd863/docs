@@ -12,6 +12,8 @@ docker run -itd --name=centos7.4.h1 \
 passwd hadoop
 #root 用户下开启sshd服务
 /usr/sbin/sshd
+#查看是否开启成功
+netstat -tnulp
 #创建用户
 groupadd hadoop
 useradd -d /home/hadoop -g hadoop hadoop
