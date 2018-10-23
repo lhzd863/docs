@@ -17,4 +17,13 @@ netstat -tnulp
 #创建用户
 groupadd hadoop
 useradd -d /home/hadoop -g hadoop hadoop
-
+#创建自定义网络
+docker network create --subnet=182.119.0.0/24 docker-br0
+#移除网桥
+docker network rm docker-br0
+#
+docker run -itd --net docker-br0 \
+--ip 182.119.0.10 --name hadoop.v1 \
+-v /home/tmp:/home/tmp \
+-v /home/k8s:/home/k8s \
+03e3ea0648a7 /bin/bash
