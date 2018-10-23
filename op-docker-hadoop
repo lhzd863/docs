@@ -2,6 +2,8 @@
 http://www.cnblogs.com/linux-wangkun/p/5745154.html
 https://www.cnblogs.com/linux-wangkun/p/5766562.html
 http://www.cnblogs.com/linux-wangkun/p/5734915.html
+
+#
 docker run -itd --name=centos7.4.h1 \
 -v /home/tmp:/home/tmp \
 -v /home/k8s:/home/k8s \
