@@ -69,6 +69,7 @@ ifconfig br0  192.168.2.1 netmask 255.255.255.0
 
 #列出路由表条目
  ip route show
+ ip route list
 #添加路由规则
 ip route add 对方容器所在的ip网段/子网掩码 via 对方虚拟机ip dev 通过哪个网卡通信
 #添加路由
