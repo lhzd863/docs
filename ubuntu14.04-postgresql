@@ -1,0 +1,4 @@
+#stop
+/usr/lib/postgresql/10/bin/pg_ctl -D /etc/postgresql/10/main -l logfile stop
+#start
+/usr/lib/postgresql/10/bin/pg_ctl -D /etc/postgresql/10/main -l logfile start
