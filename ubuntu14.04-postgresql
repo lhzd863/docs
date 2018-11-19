@@ -16,3 +16,8 @@ listening_address: '*'
 /usr/lib/postgresql/10/bin/pg_ctl -D /etc/postgresql/10/main -l logfile stop
 #start
 /usr/lib/postgresql/10/bin/pg_ctl -D /etc/postgresql/10/main -l logfile start
+
+#创建用户，库，赋权
+CREATE USER osa WITH PASSWORD 'osa';
+CREATE DATABASE osa OWNER osa;
+GRANT ALL PRIVILEGES ON DATABASE osa TO osa;
