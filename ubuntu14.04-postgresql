@@ -1,3 +1,10 @@
+#安装
+ 文件/etc/apt/sources.list.d/pgdg.list中 添加
+ deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main
+ 执行:
+ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+ apt-get update
+ apt-get install postgresql-10
 #配置
 #
 /etc/postgresql/10/main/pg_hba.conf
