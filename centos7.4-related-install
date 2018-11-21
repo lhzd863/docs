@@ -44,3 +44,8 @@ perl-threads-1.87-4.el7
 perl-threads-shared-1.43-6.el7   
 perl-4:5.16.3-292.el7            
 kernel-devel-3.10.0-862.el7
+
+#临时关闭防火墙
+systemctl stop firewalld
+#禁止开机启动防火墙
+systemctl disable firewalld
