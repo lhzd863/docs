@@ -1,0 +1,96 @@
+#ssh
+
+#/etc/hosts
+h241
+h243
+h245
+#hadoop-env.sh
+export JAVA_HOME=/home/k8s/jdk/jdk1.8.0_191
+#yarn-env.sh
+export JAVA_HOME=/home/k8s/jdk/jdk1.8.0_191
+#slaves
+h241
+h243
+h245
+#core-site.xml
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://h241:9000</value>
+    </property>
+    <property>
+        <name>hadoop.tmp.dir</name>
+        <value>file:/home/hadoop/hadoop/tmp</value>
+    </property>
+</configuration>
+#hdfs-site.xml
+<configuration>
+    <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+    </property>
+    <property>
+        <name>dfs.namenode.secondary.http-address</name>
+        <value>h241:9001</value>
+    </property>
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file:/home/hadoop/hadoop/dfs/name</value>
+    </property>
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file:/home/hadoop/hadoop/dfs/data</value>
+    </property>
+    <property>
+        <name>dfs.webhdfs.enabled</name>
+        <value>true</value>
+    </property>
+</configuration>
+#mapred-site.xml
+<configuration>
+    <property>
+        <name>mapreduce.framework.name</name>
+        <value>yarn</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.address</name>
+        <value>h241:10020</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.webapp.address</name>
+        <value>h241:19888</value>
+    </property>
+</configuration>
+#yarn-site.xml
+<configuration>
+    <property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+        <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.address</name>
+        <value>h241:8032</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.scheduler.address</name>
+        <value>h241:8030</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.resource-tracker.address</name>
+        <value>h241:8031</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.admin.address</name>
+        <value>h241:8033</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.webapp.address</name>
+        <value>h241:8088</value>
+    </property>
+</configuration>
+#格式化namenode
+hdfs namenode –format
