@@ -1,9 +1,15 @@
-#ssh
-
+#创建用户
+groupadd hadoop
+useradd -d /home/hadoop -g hadoop hadoop
+#免登陆
+ssh-keygen -t rsa -P ''
+cat id_rsa.pub >> authorized_keys
+chmod 700 .ssh
+chmod 600 authorized_keys
 #/etc/hosts
-h241
-h243
-h245
+xxx.xxx.xxx.xxx  h241
+xxx.xxx.xxx.xxx  h243
+xxx.xxx.xxx.xxx  h245
 #hadoop-env.sh
 export JAVA_HOME=/home/k8s/jdk/jdk1.8.0_191
 #yarn-env.sh
