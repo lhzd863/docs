@@ -44,7 +44,7 @@ export HADOOP_USER_CLASSPATH_FIRST=true
 </property>
 <property>
     <name>javax.jdo.option.ConnectionURL</name>
-    <value>jdbc:mysql://10.241.16.243:3306/hive?createDatabaseIfNotExist=true</value>
+    <value>jdbc:mysql://h243:3306/hive?createDatabaseIfNotExist=true</value>
 </property>
 <property>
     <name>javax.jdo.option.ConnectionDriverName</name>
