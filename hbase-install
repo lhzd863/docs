@@ -1,0 +1,4 @@
+#配置/etc/profile
+export HBASE_HOME=/home/hadoop/hbase/hbase-2.0.2
+export CLASSPATH=$CLASSPATH:$HBASE_HOME/lib
+export PATH=$PATH:$HBASE_HOME/bin
