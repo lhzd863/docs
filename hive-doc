@@ -1,0 +1,88 @@
+#查看所有的数据库
+show databases;
+
+#使用数据库default
+use default;
+
+#查看数据库信息
+describe database default;
+
+#显示地展示当前使用的数据库
+set hive.cli.print.current.db=true;
+
+#Hive显示列头
+set hive.cli.print.header=true;
+desc addressall_2015_07_09;
+
+#创建数据库命令
+create database liguodong;
+
+#删除数据库
+DROP DATABASE DbName CASCADE(可选); 
+DROP DATABASE IF EXISTS DbName CASCADE;
+
+#查看当前DB有啥表
+SHOW TABLES IN DbName; 
+SHOW TABLES IN liguodong;
+也可以使用正则表达式 hive> SHOW TABLES LIKE 'h*';
+
+#获得表的建表语句
+show create table wk_athena_report_3;
+
+#执行SQL命令
+hive --database "${hive_db_name}" -e "${sql}"
+
+#导出文件
+hive --database "${hive_db_name}" -e "${sql}" > ${local_resout_path}
+
+#加载
+set hive.support.concurrency=false;
+load data inpath '${hdfs_resout_path}'
+into table ${hive_table_name}
+PARTITION (pt='${cal_date}.${cal_hour}');
+
+#建表语句
+CREATE TABLE IF NOT EXISTS ${hive_table_name} (
+    dt STRING,
+    landing_id STRING)
+PARTITIONED BY(pt STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '\t'
+STORED AS TEXTFILE;
+
+#分页查询
+select * from adstats.wk_athena_report_3 limit 1;
+select * from (select row_number() over (order by xx) as rnum ,table.* from table)t where rnum betwneen 1 to 10;
+
+
+#Hive:添加、删除分区
+alter table my_partition_test_table if not exists add partition (p_hour='2017113003', p_city='573', p_loctype='MHA');
+ALTER TABLE my_partition_test_table DROP IF EXISTS PARTITION (p_loctype='MHA');
+
+#创建结果相同的表
+create table YX_test.t_20181214 like YX_NSH_PDMDATA.T00_WK_SUBJECT;
+
+#空值处理
+select coalesce(subject_id,'') from yx_nsh_pdmdata.t00_wk_subject;
+
+#查看字段和表注释
+DESC student;
+DESC EXTENDED student;
+DESC FORMATTED student;
+
+#修改表名
+ALTER TABLE test RENAME TO test2
+
+#删除表
+DROP TABLE IF EXISTS test
+
+#增加分区（通常外部表）
+ALTER TABLE test ADD PARTITION(x=x1,y=y2) LOCATION '/USER/TEST/X1/Y1'
+#修改分区
+ALTER TABLE test ADD PARTITION(x=x1,y=y2) SET LOCATION '/user/test/x1/y1'
+#删除分区
+ALTER TABLE test ADD DROP PARTITION(x=x1,y=y2)
+#增加列
+ALTER TABLE test ADD COLUMNS(new_col INT,new_col2 STRING);
+#删除或者替换列
+ALTER TABLE test REPLACE COLUMNS(new_col INT,new_col2 STRING);
