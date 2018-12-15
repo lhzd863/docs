@@ -1,0 +1,31 @@
+Hive的hql命令执行方式有三种
+1、CLI 方式直接执行
+2、作为字符串通过shell调用hive –e执行（-S开启静默，去掉”OK”，”Time taken”）
+3、作为独立文件，通过shell调用 hive –f或hive –i执行执行
+Hql作为字符串在shell脚本中执行，如
+    hive -e "use ${database};select * from tb"
+查询结果可以直接导出到本地本件（默认分隔符为\t）:
+    hive -e "select * from tb" > tb.txt
+在shell脚本中，字符串有两种定义方式:    
+1)  直接定义字符串对象：sql=”字符串”
+
+2)  通过命令定义：sql=$(cat <<endtag 字符串endtag)方式可以将字符串复制给sql，执行hql命令的shell脚本如下：
+####### execute hive ######
+sql=$(cat <<!EOF
+
+USE pmp;
+set mapred.queue.names=queue3;
+
+drop table if exists people_targeted_delivery;
+create table people_targeted_delivery
+( special_tag_id int,
+  cnt bigint
+);
+
+INSERT OVERWRITE LOCAL DIRECTORY '$cur_path/people_targeted_delivery'
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' 
+select special_tag_id,count(1) 
+from t_pmp_special_user_tags
+group by special_tag_id;
+
+!EOF)
