@@ -1,0 +1,12 @@
+#datadir=/home/hadoop/zookeeper/data 创建myid内容为
+1
+#zoo.cfg
+tickTime=2000
+initLimit=10
+syncLimit=5
+dataDir=/home/hadoop/zookeeper/data
+dataLogDir=/home/hadoop/zookeeper/logs
+clientPort=2181
+server.1=xxx:2888:3888
+server.2=xxx:2888:3888
+#
