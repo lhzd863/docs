@@ -38,3 +38,6 @@ export HBASE_MANAGES_ZK=false
     <value>/home/hadoop/hbase/tmp</value>
   </property>
 </configuration>
+
+#启动
+start-hbase.sh
