@@ -11,5 +11,5 @@ server.1=xxx:2888:3888
 server.2=xxx:2888:3888
 #命令来连接一个zk集群
 zkCli -server 192.168.0.105:2181,192.168.0.108:2181
-#这个命令使得zk服务进程在后台进行
+#这个命令使得zk服务进程在后台进行 /home/hadoop/zookeeper/zookeeper-3.4.13/bin
 zkServer start
