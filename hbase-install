@@ -38,6 +38,8 @@ export HBASE_MANAGES_ZK=false
     <value>/home/hadoop/hbase/tmp</value>
   </property>
 </configuration>
-
+#regionservers
+192.168.1.xxx
+192.168.1.xx
 #启动
 start-hbase.sh
