@@ -16,7 +16,13 @@ show databases;
 #/etc/profile 添加变量
 export HIVE_HOME=/home/hadoop/hive/hive-1.2.2
 export CLASSPATH=$CLASSPATH:$JAVA_HOME/lib:$JRE_HOME/lib:$HIVE_HOME/lib
-export PATH=$PATH:$JAVA_HOME/bin:/home/hadoop/hadoop/hadoop-2.6.0/bin:$HIVE_HOME/bin
+export PATH=$PATH:$JAVA_HOME/bin:/home/hadoop/hadoop/hadoop-2.7.7/bin:$HIVE_HOME/bin
+
+在HDFS中创建/tmp和/user/hive/warehouse并设置权限
+hadoop fs -mkdir /tmp
+hadoop fs -mkdir /user/hive/warehouse
+hadoop fs -chmod g+w /tmp
+hadoop fs -chmod g+w /user/hive/warehouse
 
 #修改配置文件
 #copy 文件
@@ -26,63 +32,69 @@ cp hive-env.sh.template hive-env.sh
 cp hive-exec-log4j.properties.template hive-exec-log4j.properties
 cp hive-log4j.properties.template hive-log4j.properties
 #设置hive-env.sh配置文件
-HADOOP_HOME=/home/hadoop/hadoop/hadoop-2.6.0
+HADOOP_HOME=/home/hadoop/hadoop/hadoop-2.7.7
 export HIVE_CONF_DIR=/home/hadoop/hive/hive-1.2.2
 export HADOOP_USER_CLASSPATH_FIRST=true
-#设置hive-site.xml配置文件
-<property>
-    <name>hive.metastore.warehouse.dir</name>
-    <value>/home/hadoop/hive/warehouse</value>
-</property>
-<property>
-    <name>hive.exec.scratchdir</name>
-    <value>/home/hadoop/hive/scratchdir</value>
-</property>
-<property>
-    <name>hive.querylog.location</name>
-    <value>/home/hadoop/hive/logs</value>
-</property>
-<property>
-    <name>javax.jdo.option.ConnectionURL</name>
-    <value>jdbc:mysql://h243:3306/hive?createDatabaseIfNotExist=true</value>
-</property>
-<property>
-    <name>javax.jdo.option.ConnectionDriverName</name>
-    <value>com.mysql.jdbc.Driver</value>
-</property>
-<property>
-    <name>javax.jdo.option.ConnectionUserName</name>
-    <value>test</value>
-</property>
-<property>
-    <name>javax.jdo.option.ConnectionPassword</name>
-    <value>test</value>
-</property>
-<property>
-    <name>hive.metastore.uris</name>
-    <value>thrift://h241:9083</value>
-</property>
-<property>
-    <name>hive.downloaded.resources.dir</name>
-    <value>/home/hadoop/hive/tmp</value>
-</property>
-<property>
-    <name>hive.exec.local.scratchdir</name>
-    <value>/home/hadoop/hive/local</value>
-</property>
-<property>
-    <name>hive.exec.local.scratchdir</name>
-    <value>/home/hadoop/hive/local</value>
-</property>
-#在使用hive之前需要启动metastore和hiveserver服务，通过如下命令启用
-hive --service metastore &
-hive --service hiveserver2 &
 
 #修改 hive-log4j.properties
 hive.log.dir=/home/hadoop/hive/logs
 
-#建表
-show databases;
-create table test(a string, b int);
-show tables;
-desc test;
+#设置hive-site.xml配置文件
+  <property>
+    <name>javax.jdo.option.ConnectionURL</name>
+    <value>jdbc:mysql://192.168.1.189:3306/hive?createDatabaseIfNotExist=true</value>
+  </property>
+  <property>
+    <name>javax.jdo.option.ConnectionDriverName</name>
+    <value>com.mysql.jdbc.Driver</value>
+  </property>
+  <property>
+    <name>javax.jdo.option.ConnectionUserName</name>
+    <value>test</value>
+  </property>
+  <property>
+    <name>javax.jdo.option.ConnectionPassword</name>
+    <value>test</value>
+  </property>
+  <property>
+    <name>hive.metastore.uris</name>
+    <value>thrift://192.168.1.189:9083</value>
+  </property>
+  <property>
+    <name>hive.metastore.warehouse.dir</name>
+    <value>/user/hive/warehouse</value>
+  </property>
+  <property>
+     <name>hive.exec.scratchdir</name>
+     <value>/tmp/hive</value>
+   </property>
+   <property>
+     <name>hive.querylog.location</name>
+     <value>/home/hadoop/hive/logs</value>
+   </property>
+   <property>
+      <name>hive.support.concurrency</name>
+      <value>true</value>
+   </property>
+   <property>
+      <name>hive.exec.dynamic.partition.mode</name>
+      <value>nonstrict</value>
+   </property>
+   <property>
+      <name>hive.txn.manager</name>
+      <value>org.apache.hadoop.hive.ql.lockmgr.DbTxnManager</value>
+   </property>
+   <property>
+      <name>hive.compactor.initiator.on</name>
+      <value>true</value>
+   </property>
+   <property>
+      <name>hive.compactor.worker.threads</name>
+      <value>1</value>
+   </property>
+
+#需要hive元数据库初始化，执行 
+schematool -dbType mysql -initSchema
+#在使用hive之前需要启动metastore和hiveserver服务
+hive --service metastore &
+hive --service hiveserver2 &
