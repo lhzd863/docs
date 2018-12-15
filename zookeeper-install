@@ -9,4 +9,5 @@ dataLogDir=/home/hadoop/zookeeper/logs
 clientPort=2181
 server.1=xxx:2888:3888
 server.2=xxx:2888:3888
-#
+#命令来连接一个zk集群
+zkCli -server 192.168.0.105:2181,192.168.0.108:2181
