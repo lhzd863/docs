@@ -2,3 +2,7 @@
 export HBASE_HOME=/home/hadoop/hbase/hbase-2.0.2
 export CLASSPATH=$CLASSPATH:$HBASE_HOME/lib
 export PATH=$PATH:$HBASE_HOME/bin
+
+#cp
+cp hdfs-site.xml /home/hadoop/hbase/hbase-2.0.2/conf
+cp core-site.xml /home/hadoop/hbase/hbase-2.0.2/conf
