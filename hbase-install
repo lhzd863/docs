@@ -6,3 +6,35 @@ export PATH=$PATH:$HBASE_HOME/bin
 #cp
 cp hdfs-site.xml /home/hadoop/hbase/hbase-2.0.2/conf
 cp core-site.xml /home/hadoop/hbase/hbase-2.0.2/conf
+#web 登录
+http://192.168.1.189:16010/master-status
+#hbase-env.sh 配置
+export JAVA_HOME=/home/k8s/jdk/jdk1.8.0_181
+export HBASE_MANAGES_ZK=false
+#hbase-site.xml
+<configuration>
+  <property>
+    <name>hbase.master</name>
+    <value>192.168.1.189:60000</value>
+  </property>
+  <property>
+    <name>hbase.master.maxclockskew</name>
+    <value>180000</value>
+  </property>
+  <property>
+    <name>hbase.rootdir</name>
+    <value>hdfs://192.168.1.189:9000/hbase</value>
+  </property>
+  <property>
+    <name>hbase.cluster.distributed</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>hbase.zookeeper.quorum</name>
+    <value>192.168.1.189,192.168.1.188</value>
+  </property>
+  <property>
+    <name>hbase.zookeeper.property.dataDir</name>
+    <value>/home/hadoop/hbase/tmp</value>
+  </property>
+</configuration>
