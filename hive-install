@@ -98,3 +98,5 @@ schematool -dbType mysql -initSchema
 #在使用hive之前需要启动metastore和hiveserver服务
 hive --service metastore &
 hive --service hiveserver2 &
+#url
+https://blog.csdn.net/u013421629/article/details/79012132
