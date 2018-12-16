@@ -1,1 +1,24 @@
-#
+#mysql 创建账号
+create database azkaban;
+grant all privileges on azkaban.* to 'test'@'%' with grant option;
+flush privileges;
+
+#azkaban-db-0.1.0-SNAPSHOT/conf
+mysql 执行SQL语句create-all-sql-0.1.0-SNAPSHOT.sql
+
+#azkaban-exec-server-0.1.0-SNAPSHOT/conf
+mysql.port=3306
+mysql.host=192.168.1.189
+mysql.database=azkaban
+mysql.user=test
+mysql.password=test
+
+#azkaban-web-server-0.1.0-SNAPSHOT/conf
+mysql.port=3306
+mysql.host=192.168.1.189
+mysql.database=azkaban
+mysql.user=test
+mysql.password=test
+#修改用户名密码
+azkaban-users.xml
+
