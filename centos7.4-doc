@@ -76,3 +76,7 @@ ip route add 对方容器所在的ip网段/子网掩码 via 对方虚拟机ip de
 ip route add 182.119.1.0/24 via 192.168.1.189 dev eno1
 #删除路由
 ip route del 182.119.0.0/24 dev br-dc58acb79ff7 proto kernel scope link src 182.119.0.1
+#给已有的用户增加工作组,保留以前添加的组
+gpasswd -a edw hadoop
+#给已有的用户增加工作组,以前添加的组就会清空掉
+usermod -G groupname username
