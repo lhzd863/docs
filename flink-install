@@ -1,0 +1,9 @@
+#conf/slaves
+192.168.1.xx
+192.168.1.1xx
+#conf/master
+192.168.1.1xx:8081
+#conf/flink-conf.yaml
+jobmanager.rpc.address: 192.168.1.1xx
+jobmanager.rpc.port: 6123
+rest.port: 8081
