@@ -7,3 +7,7 @@
 jobmanager.rpc.address: 192.168.1.1xx
 jobmanager.rpc.port: 6123
 rest.port: 8081
+
+
+#url
+https://blog.csdn.net/xu470438000/article/details/79576989
