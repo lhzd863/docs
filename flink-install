@@ -8,6 +8,8 @@ jobmanager.rpc.address: 192.168.1.1xx
 jobmanager.rpc.port: 6123
 rest.port: 8081
 
+#启动一个yarn session使用4个taskmanager
+./bin/yarn-session.sh -n 4 -jm 1024 -tm 4096
 
 #url
 https://blog.csdn.net/xu470438000/article/details/79576989
