@@ -1,0 +1,4 @@
+ssh-keygen -t rsa -C "lhzd863@126.com"
+
+gitlab
+Setting->SSH keys->Add an SSH key
