@@ -81,3 +81,29 @@ func main() {
         fmt.Println(res)
         fmt.Println(string(body))
 }
+#delete
+package main
+import (
+        "io/ioutil"
+        "net/http"
+        "fmt"
+)
+func main() {
+        url := "http://192.168.1.189:6780/users/0"
+        req, err := http.NewRequest("DELETE", url, nil)
+        if err!=nil {
+           fmt.Println(err)
+        }
+        req.Header.Add("Authorization", "lhzd863")
+        res, err := http.DefaultClient.Do(req)
+        if err!=nil {
+           fmt.Println(err)
+        }
+        defer res.Body.Close()
+        body, err := ioutil.ReadAll(res.Body)
+        if err!=nil {
+           fmt.Println(err)
+        }
+        fmt.Println(res)
+        fmt.Println(string(body))
+}
