@@ -1,1 +1,14 @@
 #
+1、eclipse---》window---》show view---》other---》git ---》选择git repositories，切换到git视图
+#
+2、点击Clone Git repository
+#
+3、在里面填入，你需要克隆的项目的url地址：输入账号和密码
+#
+4、next--->next
+#
+点击Browse，选择一个地方放项目文件。不要放在eclipse工作目录
+
+finish。
+
+5、完成后，用import导入到eclipse中和导入一般工程一样的了
