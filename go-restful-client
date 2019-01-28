@@ -62,13 +62,15 @@ import (
         "strings"
 )
 func main() {
-        url := "http://192.168.1.189:6780/users"
-        req, err := http.NewRequest("POST", url, strings.NewReader("a=111"))
+        url := "http://127.0.0.1:6780/users"
+        user :="{\"ID\":\"2\",\"Name\":\"Melissa-test\"}"
+
+        req, err := http.NewRequest("POST", url, strings.NewReader(user))
         if err!=nil {
            fmt.Println(err)
         }
         req.Header.Add("Authorization", "lhzd863")
-        req.Header.Add("Content-Type", "text/plain")
+        req.Header.Add("Content-Type", "application/json;charset=utf-8")
         res, err := http.DefaultClient.Do(req)
         if err!=nil {
            fmt.Println(err)
@@ -81,6 +83,7 @@ func main() {
         fmt.Println(res)
         fmt.Println(string(body))
 }
+
 #delete
 package main
 import (
