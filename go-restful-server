@@ -86,8 +86,7 @@ func (jr JobResource) findJob(request *restful.Request, response *restful.Respon
         }
 }
 
-// PUT http://localhost:8080/users/1
-// <User><Id>1</Id><Name>Melissa Raspberry</Name></User>
+// PUT http://localhost:8080/api/job/status/xx
 //
 func (jr *JobResource) updateJob(request *restful.Request, response *restful.Response) {
         id := request.PathParameter("job-id")
