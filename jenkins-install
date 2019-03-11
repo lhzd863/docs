@@ -7,6 +7,7 @@ yum install jenkins -y
 https://blog.51cto.com/wzlinux/2055030
 #修改port
 /etc/sysconfig/jenkins
-
+#修改JDK
+/etc/init.d/jenkins
 
 
