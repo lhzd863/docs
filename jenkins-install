@@ -9,5 +9,6 @@ https://blog.51cto.com/wzlinux/2055030
 /etc/sysconfig/jenkins
 #修改JDK
 /etc/init.d/jenkins
-
+#
+netstat -tlnp
 
