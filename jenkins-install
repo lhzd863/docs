@@ -5,6 +5,8 @@ wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenki
 rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 yum install jenkins -y
 https://blog.51cto.com/wzlinux/2055030
+#修改port
+/etc/sysconfig/jenkins
 
 
 
