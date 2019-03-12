@@ -1,2 +1,3 @@
 #
 /var/lib/pgsql/9.6/data
+/usr/pgsql-9.6/bin
