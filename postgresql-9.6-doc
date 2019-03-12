@@ -13,4 +13,5 @@ DROP ROLE test;
 #创建user
 create user test;
 drop user test;
-
+#创建database
+create database ETL;
