@@ -1,3 +1,6 @@
 #
 /var/lib/pgsql/9.6/data
 /usr/pgsql-9.6/bin
+#启动停止
+/usr/pgsql-9.6/bin/pg_ctl -l logfile stop
+/usr/pgsql-9.6/bin/pg_ctl -l logfile start
