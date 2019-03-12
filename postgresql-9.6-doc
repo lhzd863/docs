@@ -19,3 +19,20 @@ create database ETL;
 grant all on schema etl to test;
 #sql提交命令
 psql "host=192.168.1.189 hostaddr=192.168.1.189 port=5432 user=edw password=edw dbname=edw" --command "select current_timestamp;"
+
+function psqlcmd()
+{
+   cmdsql="$1"
+   local host=""
+
+   local sql="
+     $cmdsql
+   "
+   #
+   psql "host=192.168.1.189 hostaddr=192.168.1.189 port=5432 user=edw password=edw dbname=edw" --command "$sql"
+   ret=$?
+   if [ $ret -ne 0 ]; then
+      return $ret
+   fi
+   return 0
+}
