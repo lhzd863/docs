@@ -4,3 +4,13 @@
 #启动停止
 /usr/pgsql-9.6/bin/pg_ctl -l logfile stop
 /usr/pgsql-9.6/bin/pg_ctl -l logfile start
+#创建superuser
+create role test with superuser;
+create user test with superuser password 'test';
+#创建role
+CREATE ROLE test;
+DROP ROLE test;
+#创建user
+create user test;
+drop user test;
+
