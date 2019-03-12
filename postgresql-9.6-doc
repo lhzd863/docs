@@ -15,3 +15,5 @@ create user test;
 drop user test;
 #创建database
 create database ETL;
+#
+grant all on schema etl to test;
