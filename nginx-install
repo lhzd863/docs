@@ -1,2 +1,11 @@
 #
 https://www.cnblogs.com/fengff/p/8892590.html
+#pcre
+pcre-8.32-17.el7.x86_64
+pcre-devel-8.32-17.el7.x86_64
+#zlib
+zlib-1.2.7-17.el7.x86_64
+zlib-devel-1.2.7-17.el7.x86_64
+#openssl
+openssl-libs-1.0.2k-12.el7.x86_64
+openssl-1.0.2k-12.el7.x86_64
