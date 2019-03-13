@@ -1,4 +1,8 @@
 #nginx启动脚本
+#chmod a+x /etc/init.d/nginx
+#nginx加入系统服务中chkconfig --add nginx
+#php-fpm加入系统服务中chkconfig --add php-fpm
+#查看chkconfig 启动项chkconfig --list
 #!/bin/sh
 #
 # nginx - this script starts and stops the nginx daemon
