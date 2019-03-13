@@ -15,6 +15,9 @@ make
 make install
 #路径
 /usr/local/nginx
-#测试
+#检测是否安装成功
+cd /usr/local/nginx/sbin/
+./nginx -t
+
 
 
