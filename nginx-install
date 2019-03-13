@@ -32,6 +32,8 @@ cd /usr/local/nginx/sbin/
 ./nginx -t 测试 nginx 是否配置正确
 ./nginx -s quit 待nginx进程处理任务完毕进行停止
 ./nginx -s reload 重启
-
+#nginx 卸载
+cd /usr/local
+rm -rf nginx
 
 
