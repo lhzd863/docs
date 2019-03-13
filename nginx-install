@@ -26,6 +26,12 @@ netstat -ntlp
 #重新启动nginx
 cd /usr/local/nginx/sbin/
 ./nginx -s reload
+#操作
+./nginx 启动
+./nginx -s stop 相当于 pkill -9 nginx  强制杀死 nginx 进程
+./nginx -t 测试 nginx 是否配置正确
+./nginx -s quit 待nginx进程处理任务完毕进行停止
+./nginx -s reload 重启
 
 
 
