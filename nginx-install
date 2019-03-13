@@ -23,6 +23,9 @@ cd /usr/local/nginx/sbin/
 #查看端口
 netstat -ntlp
 #nginx.conf
+#重新启动nginx
+cd /usr/local/nginx/sbin/
+./nginx -s reload
 
 
 
