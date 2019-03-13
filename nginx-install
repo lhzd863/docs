@@ -18,6 +18,10 @@ make install
 #检测是否安装成功
 cd /usr/local/nginx/sbin/
 ./nginx -t
+#启动Nginx
+./nginx
+#查看端口
+netstat -ntlp
 
 
 
