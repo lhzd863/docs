@@ -15,3 +15,11 @@ base64编码的字符串`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9`
 #signature
 header + payload + secret组合起来加密的
 HMACSHA256(base64UrlEncode(header) + "." +base64UrlEncode(payload),secret)
+
+#注意
+选择 jwt 最大的理由:
+内容有公钥私钥,可以保证内容的合法性
+token 中可以包含很多信息
+jwt不保证的安全问题:
+因为header,paylaod是 base64编码,相当于明文可见的,因此不能在payload中放入敏感信息
+并不能保证数据传输时会不会被盗用,这一点和 sessionID 一样,因此不要迷信它有多高的安全性
