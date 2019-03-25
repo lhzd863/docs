@@ -1,0 +1,62 @@
+Sub sql()
+'功能:根据提供的配置信息生成依赖配置'
+'DATE:2019-03-25  '
+'配置表:test.job_dependency_conf'
+'#####################常量定义区#####################'
+
+ FirstLine = 2               '配置信息起始行'
+ Firstcol = 1                '配置信息起始列'
+ TOTCOLS = 10                '配置总该列数'
+ 
+ '--------------------------------------------------'
+ '系统名(Sys)'
+ '作业名(Job)'
+ '依赖系统名(Dependency_Sys）'
+ '依赖作业名(Dependency_Job)'
+ '描述(Description)'
+ 'Enable'
+ 
+'####################################################'
+
+'#####################默认值#####################'
+ 
+ Description = 0               '描述'
+ Enable = 1
+
+ 
+ TableNm = "INSERT INTO test.job_dependency_conf(System,Job,Dependency_Sys,Dependency_Job,Description,Enable) VALUES("
+ 
+'####################################################'
+
+If ActiveSheet.Name <> "templates" Then
+  MsgBox "此宏在“templates生成页”执行", vbInformation, "提示"
+  Exit Sub
+End If
+
+Open ThisWorkbook.Path & "\" & "sql.txt" For Output As #1                       '投产SQL'
+
+arr = Range("A1:N" & Range("A65535").End(xlUp).Row)
+
+introw = UBound(arr)
+
+MsgBox introw, vbInformation, "提示"
+
+For i = FirstLine To UBound(arr)
+
+   Sys = LCase(Trim(arr(i, Firstcol)))
+   Job = LCase(Trim(arr(i, Firstcol + 1)))
+   Dependency_Sys = LCase(Trim(arr(i, Firstcol + 2)))
+   Dependency_Job = LCase(Trim(arr(i, Firstcol + 3)))
+   Description = Trim(arr(i, Firstcol + 4))
+   
+   Print #1, "----------------------------------------------------------------------------------------"
+   Print #1, ""
+   
+   '写入配置信息'
+   Print #1, TableNm & "'" & Sys & "','" & Job & "','" & Dependency_Sys & "','" & Dependency_Job & "','" & Description & "','" & Enable & "');"
+ 
+Next i
+ 
+Close #1
+
+End Sub
