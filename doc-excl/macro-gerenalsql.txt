@@ -49,9 +49,6 @@ For i = FirstLine To UBound(arr)
    Dependency_Job = LCase(Trim(arr(i, Firstcol + 3)))
    Description = Trim(arr(i, Firstcol + 4))
    
-   Print #1, "----------------------------------------------------------------------------------------"
-   Print #1, ""
-   
    '写入配置信息'
    Print #1, TableNm & "'" & Sys & "','" & Job & "','" & Dependency_Sys & "','" & Dependency_Job & "','" & Description & "','" & Enable & "');"
  
