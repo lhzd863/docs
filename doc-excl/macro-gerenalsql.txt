@@ -24,7 +24,7 @@ Sub sql()
  Enable = 1
 
  
- TableNm = "INSERT INTO test.job_dependency_conf(System,Job,Dependency_Sys,Dependency_Job,Description,Enable) VALUES("
+ TableNm = "INSERT INTO test.job_dependency_conf(Sys,Job,Dependency_Sys,Dependency_Job,Description,Enable) VALUES("
  
 '####################################################'
 
