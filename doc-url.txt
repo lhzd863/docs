@@ -34,3 +34,5 @@ https://github.com/grpc/grpc-go
 https://blog.csdn.net/tianwenxue/article/details/84998517
 #go框架
 https://github.com/avelino/awesome-go
+#百度云api上传文件
+https://www.cnblogs.com/kgdxpr/p/4997147.html
