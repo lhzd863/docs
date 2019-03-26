@@ -1,0 +1,6 @@
+#返回用户详细资料
+https://openapi.baidu.com/rest/2.0/passport/users/getInfo?access_token=23.6e6d34234320cae65d5d7fad99a98ca9.2592000.1556186968.3778248943-15856004
+#
+
+
+
