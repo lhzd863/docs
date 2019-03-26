@@ -37,3 +37,6 @@ https://github.com/avelino/awesome-go
 #百度云api上传文件
 https://www.cnblogs.com/kgdxpr/p/4997147.html
 https://blog.csdn.net/w565911788/article/details/42082131
+#百度开发信息
+http://developer.baidu.com/wiki/index.php?title=docs/oauth/rest/file_data_apis_list
+
