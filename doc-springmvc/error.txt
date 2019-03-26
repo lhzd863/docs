@@ -1,0 +1,6 @@
+#
+servlet的init-param错误 Invalid content was found starting with element 'init-param'.
+解决方法：init-param应该存放在servlet里面，且应该放在servlet-class后面，才能正确被读到。
+
+参考文献：
+1.https://blog.csdn.net/u010340178/article/details/53507847
