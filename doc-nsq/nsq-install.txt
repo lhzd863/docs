@@ -10,3 +10,5 @@ curl -d 'hello world 1' 'http://192.168.1.189:4151/put?topic=test'
 http://192.168.1.189:4171
 #
 ./nsq_to_file --topic=test --output-dir=./tmp --lookupd-http-address=192.168.1.189:4161
+#
+tMessageCount,_ := strconv.ParseInt(fmt.Sprintf("%v",topicInfo["message_count"]), 10, 64)
