@@ -6,6 +6,8 @@ nohup ./nsqd --lookupd-tcp-address=192.168.1.189:4160 > run-nsq.log 2>&1 &
 nohup ./nsqadmin --lookupd-http-address=192.168.1.189:4161 --template-dir=./templates >run-admin.log 2>&1 &
 #
 curl -d 'hello world 1' 'http://192.168.1.189:4151/put?topic=test'
+curl -d 'hello world 2' 'http://192.168.1.189:4151/put?topic=test'
+curl -d 'hello world 3' 'http://192.168.1.189:4151/put?topic=test'
 #
 http://192.168.1.189:4171
 #
