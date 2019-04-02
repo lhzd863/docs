@@ -24,6 +24,7 @@ https://blog.csdn.net/samete/article/details/54613203
 https://github.com/siddontang/moonmq
 #nsq
 https://github.com/nsqio/nsq/tree/v0.2.16
+https://github.com/nsqio/go-nsq/tree/v0.3.0
 
 #other
 https://studygolang.com/articles/7708
