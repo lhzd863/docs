@@ -4,3 +4,6 @@ node -v 和 npm -v命令
 D:\softinstall\nodejs\node_cache
 D:\softinstall\nodejs\node_global
 #
+npm config set prefix "D:\softinstall\nodejs\node_global"
+npm config set cache "D:\softinstall\nodejs\node_cache"
+npm config get prefix
