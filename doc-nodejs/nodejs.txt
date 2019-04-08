@@ -1,0 +1,6 @@
+#https://nodejs.org/en/
+node -v 和 npm -v命令
+#创建目录
+D:\softinstall\nodejs\node_cache
+D:\softinstall\nodejs\node_global
+#
