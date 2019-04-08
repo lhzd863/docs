@@ -3,7 +3,9 @@ node -v 和 npm -v命令
 #创建目录
 D:\softinstall\nodejs\node_cache
 D:\softinstall\nodejs\node_global
-#
+#配置npm的全局模块的存放路径以及cache的路径
 npm config set prefix "D:\softinstall\nodejs\node_global"
 npm config set cache "D:\softinstall\nodejs\node_cache"
+#查看设置
 npm config get prefix
+
