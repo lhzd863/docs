@@ -49,3 +49,5 @@ https://www.cnblogs.com/franson-2016/p/5613610.html
 https://github.com/sosedoff/pgweb/
 #
 https://www.jianshu.com/p/d26df27a8ef6
+#
+https://github.com/blevesearch/bleve/tree/v0.1.0
