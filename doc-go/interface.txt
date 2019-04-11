@@ -1,0 +1,23 @@
+interface是方法的集合
+interface是一种类型
+
+#
+当interface{}作为函数形参时，可以接受不同类型的参数
+func Test(params interface{}) {
+}
+#
+结构体在实现接口方法时并不会隐式转换类型
+#
+对接口数组赋值前，必须多一个类型转换操作
+func PrintAll(vals []interface{}) {
+    for _, val := range vals {
+    }
+}
+func main() {
+    names := []string{"stanley", "david", "oscar"}
+    vals := make([]interface{}, len(names))
+    for i, v := range names {
+        vals[i] = v
+    }
+    PrintAll(vals)
+}
