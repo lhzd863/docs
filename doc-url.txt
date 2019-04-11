@@ -55,3 +55,4 @@ https://github.com/blevesearch/bleve/tree/v0.1.0
 https://github.com/coreos/torus
 https://github.com/minio/minio
 https://github.com/chrislusf/seaweedfs
+https://github.com/cockroachdb/cockroach
