@@ -59,3 +59,4 @@ https://github.com/cockroachdb/cockroach
 
 #go开源项目和库
 https://www.jianshu.com/p/2fd16f07202d
+https://github.com/hackstoic/golang-open-source-projects
