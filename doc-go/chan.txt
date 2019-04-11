@@ -2,7 +2,6 @@
 //这里的s 相当于 <- strings，只有赋值之后才能读取到，否则一直阻塞
 strings := make(chan string)
 for s := range strings {
-
 }
 
 #
@@ -15,3 +14,9 @@ syncChan2 := make(chan struct{},2) //主线程启动了两个goruntime线程，
 <- syncChan1  //表示可以开始接收数据了，否则等待
 syncChan1 <- struct{}{}  //发送操作
 
+#//主线程等待发送线程和接收线程结束后再结束
+#https://blog.csdn.net/qq_25392761/article/details/80206796
+go func(){
+syncChan2 <- struct{}{}
+}()
+<- syncChan2
