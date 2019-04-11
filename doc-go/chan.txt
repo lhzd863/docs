@@ -1,0 +1,6 @@
+#chan
+//这里的s 相当于 <- strings，只有赋值之后才能读取到，否则一直阻塞
+strings := make(chan string)
+for s := range strings {
+
+}
