@@ -5,12 +5,6 @@ http://archive.apache.org/dist/lucene/nutch/
 http://hadoop.apache.org/docs/r1.0.4/cn/quickstart.html
 https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients
 
-https://blog.csdn.net/qq_36874881/article/details/78234005
-
-hadoop fs -cat /user/lsmk/logcat/athena/*/2018-12-21/2018-12-21.19/*/*.gz|zcat |grep 866118030974953
-
-http://www.cnblogs.com/mafeng/p/7068837.html
-
 #
 http://cwiki.apachecn.org/pages/viewpage.action?pageId=9404639#app-switcher
 #go线程池
@@ -73,8 +67,6 @@ https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients
 
 https://blog.csdn.net/qq_36874881/article/details/78234005
 
-hadoop fs -cat /user/lsmk/logcat/athena/*/2018-12-21/2018-12-21.19/*/*.gz|zcat |grep 866118030974953
-
 http://www.cnblogs.com/mafeng/p/7068837.html
 
 #
@@ -106,3 +98,9 @@ https://www.cnblogs.com/sunniest/p/4555801.html
 https://repo.spring.io/libs-release-local/org/
 #中文文档
 https://www.apachecn.org/classification/
+
+
+https://blog.csdn.net/qq_36874881/article/details/78234005
+
+http://www.cnblogs.com/mafeng/p/7068837.html
+
