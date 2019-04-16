@@ -16,3 +16,5 @@ cd  test-app// 转到项目运行目录下
 npm init
 npm install --save react react-dom  ( 在该目录下导入react和react-dom）
 npm install --save  react-router-dom   （导入react路由 ）
+npm start //启动项目
+npm run build //打包
