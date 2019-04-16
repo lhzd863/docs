@@ -9,3 +9,6 @@ npm config set cache "D:\softinstall\nodejs\node_cache"
 #查看设置
 npm config get prefix
 
+#
+npm install -g create-react-app //全局安装脚手架
+create-react-app test-app
