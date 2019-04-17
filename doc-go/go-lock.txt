@@ -1,0 +1,9 @@
+读写锁是针对读写的互斥锁
+基本遵循两大原则：
+1、可以随便读，多个goroutine同时读
+2、写的时候，啥也不能干。不能读也不能写
+RWMutex提供了四个方法：
+func (*RWMutex) Lock // 写锁定
+func (*RWMutex) Unlock // 写解锁
+func (*RWMutex) RLock // 读锁定
+func (*RWMutex) RUnlock // 读解锁
