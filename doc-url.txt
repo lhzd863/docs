@@ -27,6 +27,7 @@ https://github.com/grpc/grpc-go
 
 #jwt
 https://blog.csdn.net/tianwenxue/article/details/84998517
+https://github.com/mzgoddard/gojwt
 #go框架
 https://github.com/avelino/awesome-go
 #百度云api上传文件
