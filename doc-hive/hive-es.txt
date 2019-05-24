@@ -1,4 +1,4 @@
-CREATE external TABLE yx_adstats.r01_inviewclick_line_es(
+CREATE external TABLE yx_test.r01_inviewclick_line_es(
   uid string, 
   inview_seq decimal(38,0), 
   click_seq decimal(38,0), 
