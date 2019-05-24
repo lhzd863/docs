@@ -86,3 +86,7 @@ ALTER TABLE test ADD DROP PARTITION(x=x1,y=y2)
 ALTER TABLE test ADD COLUMNS(new_col INT,new_col2 STRING);
 #删除或者替换列
 ALTER TABLE test REPLACE COLUMNS(new_col INT,new_col2 STRING);
+#
+add jar /home/lsmk/liuh/elasticsearch/hadoop-jar/elasticsearch-hadoop-hive-6.3.2.jar
+
+
