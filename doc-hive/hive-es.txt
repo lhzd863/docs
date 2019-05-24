@@ -1,0 +1,15 @@
+CREATE external TABLE yx_adstats.r01_inviewclick_line_es(
+  uid string, 
+  inview_seq decimal(38,0), 
+  click_seq decimal(38,0), 
+  inview_cnt decimal(38,0), 
+  click_cnt decimal(38,0))
+STORED BY "org.elasticsearch.hadoop.hive.EsStorageHandler"
+TBLPROPERTIES(
+"es.nodes" = "172.18.18.99:9200",
+"es.mapping.id" = "uid",
+"es.index.auto.create" = "true",
+"es.resource" = "t_index/t_type",
+"es.mapping.names" = "uid:uid,inview_seq:inview_seq,click_seq:click_seq,inview_cnt:inview_cnt,click_cnt:click_cnt",
+"es.write.operation"="upsert"
+); 
