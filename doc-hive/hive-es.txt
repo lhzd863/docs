@@ -34,3 +34,6 @@ curl -H "Content-Type: application/json" -XGET '172.18.18.99:9200/r01_athena_bas
   }
 }'
 
+cd /data/elasticsearch-6.3.2
+./bin/elasticsearch-plugin install https://github.com/NLPchina/elasticsearch-sql/releases/download/6.3.2.0/elasticsearch-sql-6.3.2.0.zip
+
