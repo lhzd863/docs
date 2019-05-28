@@ -20,6 +20,6 @@ from yx_adstats.r01_inviewclick_line where pt='20190523.000000';
 
 hive -hiveconf hive.aux.jars.path=file:///usr/local/elasticsearch/elasticsearch-hadoop-5.5.1.jar
 
-add jar /home/lsmk/liuh/elasticsearch/hadoop-jar/elasticsearch-hadoop-hive-6.3.2.jar
+add jar /home/lsmk/liuh/elasticsearch/hadoop-jar/elasticsearch-hadoop-hive-6.3.2.jar;
 
 
