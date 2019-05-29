@@ -120,4 +120,5 @@ https://github.com/emicklei/go-restful
 https://github.com/prometheus/tsdb
 #cron
 https://github.com/robfig/cron
+https://github.com/apache/hive/tree/release-1.2.0
 
