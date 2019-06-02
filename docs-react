@@ -1,0 +1,18 @@
+#
+render() {
+    const { hits, isLoading } = this.state;
+
+    if (isLoading) {
+      return <p>Loading ...</p>;
+    }
+
+    return (
+      <ul>
+        {hits.sort(function (x, y){if (x.AudioName < y.AudioName) {return -1;} if (x.AudioName > y.AudioName) {return 1;} return 0;}).map(hit =>
+          <li key={hit.Seq}>
+            <a href={GLOBAL_CONTEXT.URL_BASE_VIDEO+hit.Location+"/"+hit.AudioName}>{hit.AudioName}</a>
+          </li>
+        )}
+      </ul>
+    );
+  }
