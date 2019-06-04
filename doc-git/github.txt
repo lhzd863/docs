@@ -1,0 +1,2 @@
+#
+ssh-keygen -t rsa -C "lhzd863@126.com"
