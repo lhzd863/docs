@@ -1,2 +1,3 @@
 #
 ssh-keygen -t rsa -C "lhzd863@126.com"
+cat id_rsa.pub
