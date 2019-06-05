@@ -90,5 +90,10 @@ ALTER TABLE test REPLACE COLUMNS(new_col INT,new_col2 STRING);
 add jar /home/lsmk/liuh/elasticsearch/hadoop-jar/elasticsearch-hadoop-hive-6.3.2.jar
 #查询显示header
 set hive.cli.print.header=true;
-
+#获取任务id，然后通过命令关闭：
+hadoop job -list
+hadoop job -kill job_id
+#新版本的hadoop可能要新的命令：
+yarn application -list
+yarn application -kill job_id
 
