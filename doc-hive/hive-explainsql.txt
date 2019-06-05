@@ -1,0 +1,2 @@
+#空值替换为随机数
+case when length(coalesce(t1.aid,''))=0 then concat('hive',rand()) else t1.aid end = t2.aid
