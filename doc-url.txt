@@ -122,3 +122,11 @@ https://github.com/prometheus/tsdb
 https://github.com/robfig/cron
 https://github.com/apache/hive/tree/release-1.2.0
 https://github.com/apache/hive/tree/rel/release-1.2.2
+#
+#GO-RESTFUL
+https://www.jianshu.com/p/4724fd7084cb
+https://github.com/jobbole/awesome-ios-cn
+https://github.com/jobbole/awesome-go-cn
+https://github.com/robbert229/jwt
+https://github.com/muesli/smartcrop
+
