@@ -129,4 +129,5 @@ https://github.com/jobbole/awesome-ios-cn
 https://github.com/jobbole/awesome-go-cn
 https://github.com/robbert229/jwt
 https://github.com/muesli/smartcrop
-
+#
+https://github.com/sql-machine-learning/
