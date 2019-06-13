@@ -4,3 +4,6 @@ apt-get install nginx
 #
 /usr/sbin/nginx
 /etc/nginx/nginx.conf
+#
+/etc/nginx/sites-enabled/default
+
