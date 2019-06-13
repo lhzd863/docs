@@ -6,4 +6,6 @@ apt-get install nginx
 /etc/nginx/nginx.conf
 #
 /etc/nginx/sites-enabled/default
+#
+./nginx -s reload
 
