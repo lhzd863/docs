@@ -3,7 +3,7 @@ date_format(date_sub(from_unixtime(unix_timestamp(),'yyyy-MM-dd'),1),'yyyyMMdd')
 date_format(date_sub(current_date,0),'yyyyMMdd')
 
 #上月
-select add_months(current_date,-1);
+add_months(current_date,-1);
 
 #本周一日期：
 date_format(date_sub(current_date,pmod(datediff(current_date,'1920-01-01')-3,7)-1),'yyyyMMdd')
