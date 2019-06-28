@@ -109,7 +109,7 @@ CMD ["/bin/bash"]
 #退出容器仍然运行
 docker exec -it a25110c0b43c /bin/bash
 
-#
+#创建容器
 docker run --name centos7.4 -v /home/osa:/home/osa -itd fd8cefdc3209
 docker exec -it c272c8fece2e /bin/bash
 
