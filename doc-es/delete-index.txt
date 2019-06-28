@@ -1,0 +1,45 @@
+#！/bin/bash
+######################################################
+# $Name:        clean_amazon_index.sh
+# $Version:     v1.0
+# $Function:    clean amazon log index
+# $Author:      djx
+# $Create Date: 2017-10-18
+# $Description: shell
+######################################################
+#本文未加文件锁，需要的可以加
+#脚本的日志文件路径
+CLEAN_LOG="/var/log/clean_amazon_index.log"
+#索引前缀
+INDEX_PRFIX="amazon-mysql-log"
+#elasticsearch 的主机ip及端口
+SERVER_PORT=192.168.1.123:9200
+#取出已有的索引信息
+INDEXS=$(curl -s "${SERVER_PORT}/_cat/indices?v" |grep "${INDEX_PRFIX}"|awk '{print $3}')
+#删除多少天以前的日志，假设输入10，意味着10天前的日志都将会被删除
+DELTIME=10
+# seconds since 1970-01-01 00:00:00 seconds
+SECONDS=$(date -d  "$(date  +%F) -${DELTIME} days" +%s)
+#判断日志文件是否存在，不存在需要创建。
+if [ ! -f  "${CLEAN_LOG}" ]
+then
+touch "${CLEAN_LOG}"
+fi
+#删除指定日期索引
+echo "----------------------------clean time is $(date +%Y-%m-%d_%H:%M:%S) ------------------------------" >>${CLEAN_LOG}
+for del_index in ${INDEXS}
+do
+        indexDate=$( echo ${del_index} |cut -d "-" -f 4,5,6 )
+    #根据索引的名称的长度进行切割，不同长度的索引在这里需要进行对应的修改
+        indexSecond=$( date -d ${indexDate} +%s )
+        if [ $(( $SECONDS- $indexSecond )) -gt 0 ]
+                then
+                        echo "${del_index}" >>${CLEAN_LOG}
+            #取出删除索引的返回结果
+                        delResult=`curl -s  -XDELETE "${SERVER_PORT}/"${del_index}"?pretty" |sed -n '2p'`
+            #写入日志
+                        echo "clean time is $(date)" >>${CLEAN_LOG}
+                        echo "delResult is ${delResult}" >>${CLEAN_LOG}
+ 
+        fi
+done
