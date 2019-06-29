@@ -147,3 +147,5 @@ https://github.com/kubernetes/klog
 https://github.com/smartwalle/alipay
 #
 https://github.com/buraksezer/consistent
+#
+https://github.com/sensorbee/sensorbee
