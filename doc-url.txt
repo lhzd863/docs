@@ -145,3 +145,5 @@ https://github.com/kubernetes/kubernetes
 https://github.com/kubernetes/klog
 #支付sdk
 https://github.com/smartwalle/alipay
+#
+https://github.com/buraksezer/consistent
