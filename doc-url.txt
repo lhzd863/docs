@@ -167,4 +167,6 @@ https://github.com/melihmucuk/geocache
 github.com/julienschmidt/httprouter
 #
 https://github.com/facebook
+#
+github.com/bitly/go-simplejson
 
