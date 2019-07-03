@@ -1,0 +1,6 @@
+dt=`date +%F`
+ip=127.0.0.1
+nohup ./nsqlookupd > nsqlookupd_${dt}.log 2>&1 &
+nohup ./nsqd --lookupd-tcp-address=$ip:4160 > nsqd_${dt}.log 2>&1 &
+nohup ./nsqadmin --lookupd-http-address=$ip:4161 > nsqadmin_${dt}.log 2>&1 &
+nohup ./nsq_to_file --topic=test --output-dir=./tmp --lookupd-http-address=$ip:4161 > nsq_to_file_${dt}.log 2>&1 &
