@@ -1,0 +1,4 @@
+#nsq
+git clone https://github.com/nsqio/nsq $GOPATH/src/github.com/nsqio/nsq
+cd $GOPATH/src/github.com/nsqio/nsq
+dep ensure
