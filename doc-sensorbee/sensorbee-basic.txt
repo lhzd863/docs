@@ -2,3 +2,5 @@
 ./sensorbee topology create tmp
 #
 ./sensorbee shell -t tmp
+#
+CREATE SOURCE mqtt_src TYPE mqtt WITH topic="test",broker="tcp://172.18.18.99:4161";
