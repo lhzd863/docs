@@ -1,2 +1,4 @@
 #create database
-./sensorbee topology create wordcount
+./sensorbee topology create tmp
+#
+./sensorbee shell -t tmp
