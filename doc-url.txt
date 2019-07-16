@@ -171,4 +171,6 @@ https://github.com/facebook
 github.com/bitly/go-simplejson
 #
 http://flink.iteblog.com/concepts/programming-model.html
+#预测方式与实践
+https://otexts.com/fppcn/
 
