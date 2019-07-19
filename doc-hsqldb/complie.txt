@@ -1,1 +1,3 @@
 #
+cd hsqldb-2.5.0/hsqldb/build
+ant hsqldb
