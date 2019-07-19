@@ -15,4 +15,5 @@ server.silent = true
 
 #set passwd manager
 set password "adm";
-
+#
+jdbc:hsqldb:hsql://47.89.240.84:8988/adm
