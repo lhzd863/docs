@@ -2,6 +2,11 @@
 cd hsqldb-2.5.0/hsqldb/build
 ant hsqldb
 
+#server.properties
+hsqldb-2.5.0/hsqldb/sample/server.properties
+#sqltool.rc
+hsqldb-2.5.0/hsqldb/sample/sqltool.rc
+
 #config
 server.port = 9996
 server.database.0=file:data/admdata/admdata
