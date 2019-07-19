@@ -19,3 +19,6 @@ set password "adm";
 #myibtais config
 <property name="driver" value="org.hsqldb.jdbcDriver" />
 <property name="url" value="jdbc:hsqldb:hsql://47.89.240.84:8988/adm" />
+
+#命令行
+java -jar $HSQLDB_HOME/lib/sqltool.jar --rcFile=$HSQLDB_HOME/sqltool.rc
