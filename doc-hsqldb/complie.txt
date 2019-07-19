@@ -1,3 +1,10 @@
 #
 cd hsqldb-2.5.0/hsqldb/build
 ant hsqldb
+
+#config
+server.port = 9996
+server.database.0=file:data/admdata/admdata
+server.dbname.0 = admdata
+server.silent = true
+
