@@ -62,8 +62,10 @@ enable char(1) DEFAULT '1',
 PRIMARY KEY (page_name)
 );
 
-insert into om_page (id,page_id,page_name,feather,icon,page_title,desc) values(1000,100,'vue-mon.html','home','el-icon-setting','监控','监控');
-insert into om_page (page_id,page_name,feather,icon,page_title,desc) values(100,'vue-card-index.html','home','el-icon-setting','Card','Card');
+insert into om_page (id,page_id,page_name,feather,icon,page_title,desc) 
+values(1000,100,'vue-mon.html','home','el-icon-setting','监控','监控');
+insert into om_page (page_id,page_name,feather,icon,page_title,desc) 
+values(100,'vue-card-index.html','home','el-icon-setting','Card','Card');
 
 
 create table om_token
