@@ -1,0 +1,3 @@
+#
+java -jar $HSQLDB_HOME/lib/sqltool.jar --sql="select * from om_user;" openyx-sa
+
