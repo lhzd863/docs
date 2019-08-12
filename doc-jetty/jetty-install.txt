@@ -3,7 +3,6 @@ https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/9.4.19.v2019
 
 #mkdir dir   
 jetty/jetty-distribution-9.4.19.v20190610
-jetty/demo-base
 cp jetty/jetty-distribution-9.4.19.v20190610/demo-base  jetty
 #set env
 JETTY_HOME=jetty/jetty-distribution-9.4.19.v20190610
