@@ -1,7 +1,7 @@
 #download
 https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/9.4.19.v20190610/jetty-distribution-9.4.19.v20190610.zip
 
-#mkdir dir   cp ${JETTY_HOME}/jetty-distribution-9.4.19.v20190610
+#mkdir dir   
 jetty/jetty-distribution-9.4.19.v20190610
 jetty/demo-base
 cp jetty/jetty-distribution-9.4.19.v20190610/demo-base  jetty
