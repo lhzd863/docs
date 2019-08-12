@@ -1,1 +1,36 @@
-#
+#download
+https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/9.4.19.v20190610/jetty-distribution-9.4.19.v20190610.zip
+
+#mkdir dir   cp ${JETTY_HOME}/jetty-distribution-9.4.19.v20190610
+jetty/jetty-distribution-9.4.19.v20190610
+jetty/demo-base
+cp jetty/jetty-distribution-9.4.19.v20190610/demo-base  jetty
+#set env
+JETTY_HOME=jetty/jetty-distribution-9.4.19.v20190610
+JETTY_BASE=jetty/demo-base
+#${JETTY_BASE}/start.sh
+nohup java -jar $JETTY_HOME/start.jar jetty.http.port=12508 > run.log 2>&1 &
+#upload war xml
+${JETTY_BASE}/webapps/adm.war
+${JETTY_BASE}/webapps/adm.xml
+#adm.xml
+<?xml version="1.0"  encoding="UTF-8"?>
+<!DOCTYPE Configure PUBLIC
+    "-//Mort Bay Consulting//DTD Configure//EN"
+    "http://www.eclipse.org/jetty/configure_9_3.dtd">
+
+<Configure class="org.eclipse.jetty.webapp.WebAppContext">
+  <Set name="war"><SystemProperty name="jetty.base" default="."/>/webapps/adm-0.0.1.war</Set>
+  <Set name="contextPath">/adm</Set>
+</Configure>
+#or upload war WEB-INF/jetty-web.xml
+${JETTY_BASE}/webapps/adm.war
+#jetty-web.xml
+<!DOCTYPE Configure PUBLIC
+    "-//Mort Bay Consulting//DTD Configure//EN"
+    "http://www.eclipse.org/jetty/configure_9_3.dtd">
+
+<Configure class="org.eclipse.jetty.webapp.WebAppContext">
+  <Set name="war"><SystemProperty name="jetty.base" default="."/>/webapps/adm-0.0.1.war</Set>
+  <Set name="contextPath">/adm</Set>
+</Configure>
