@@ -4,3 +4,10 @@
 ./sensorbee shell -t tmp
 #
 CREATE SOURCE mqtt_src TYPE mqtt WITH topic="test",broker="tcp://172.18.18.99:4161";
+#start
+nohup ./sensorbee run -c sensorbee.yaml> run.log 2>&1 &
+topologies:
+  tmp:
+    #bql_file: tmp_create_database.bql
+    
+    
