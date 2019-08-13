@@ -9,5 +9,5 @@ nohup ./sensorbee run -c sensorbee.yaml> run.log 2>&1 &
 topologies:
   tmp:
     #bql_file: tmp_create_database.bql
-    
+http://sensorbee.io/    
     
