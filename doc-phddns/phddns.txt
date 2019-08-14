@@ -1,4 +1,14 @@
+
+
 #
 phddns start（启动）| stop（停止）| status（状态）| restart（重启）|
 phddns reset（重置）
 phddns version（版本）
+
+诊断域名：2c2192g178.iask.in
+域名IP地址指向：47.98.179.115
+#安装
+rpm -ivh phddns-3.0.2.x86_64.rpm
+#卸载
+rpm -e phddns-3.0.2-1.x86_64
+
