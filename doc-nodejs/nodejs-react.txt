@@ -18,6 +18,7 @@ npm install babel-preset-react --save-dev
 #webpack --config webpack/webpack.config.js
 #home nodejs webpack.config.js
 #环境变量添加D:\workspace-react\node_modules\.bin
+#添加环境变量D:\softinstall\nodejs\node_global
 #
 npm run start
 
