@@ -6,10 +6,9 @@ mv nodejs /usr/local/
 ln -s /usr/local/nodejs/bin/node /usr/local/bin
 ln -s /usr/local/nodejs/bin/npm /usr/local/bin
 
-
-#react install
+#config
 npm config set registry https://registry.npm.taobao.org --global
 npm config set disturl https://npm.taobao.org/dist --global
-
+#react install
 npm install react react-dom --save-dev
-
+npm install webpack webpack-dev-server --save-dev
