@@ -11,3 +11,5 @@ ln -s /usr/local/nodejs/bin/npm /usr/local/bin
 npm config set registry https://registry.npm.taobao.org --global
 npm config set disturl https://npm.taobao.org/dist --global
 
+npm install react react-dom --save-dev
+
