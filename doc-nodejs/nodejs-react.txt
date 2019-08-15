@@ -20,6 +20,8 @@ npm install -g create-react-app --save-dev
 #home nodejs webpack.config.js
 #环境变量添加D:\workspace-react\node_modules\.bin
 #添加环境变量D:\softinstall\nodejs\node_global
+#webpack 版本冲突
+export SKIP_PREFLIGHT_CHECK=true
 #
 npm run start
 
