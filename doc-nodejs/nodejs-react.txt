@@ -1,0 +1,45 @@
+#home nodejs
+var path = require("path");
+var webpack = require('webpack');
+module.exports = {
+  entry: { app: ['./app/main.jsx'] },
+  output: {
+    path: path.resolve(__dirname, "./build"),
+    publicPath: "http://127.0.0.1:8080/build/",
+    filename: "bundle.js"
+  },
+  resolve: {
+    extensions: ['','.js','.jsx']
+  },  
+  module: {
+    loaders: [
+      {test:/\.jsx$/, loaders:['jsx?harmony']}
+    ],
+    loaders:[
+      {
+        test: /\.jsx?$/,
+        loader: 'babel',
+        include: path.resolve(__dirname),
+        query: {
+          presets: ['es2015', 'react']
+        }
+      }
+    ]
+  },
+  devServer: {
+    historyApiFallback: true,
+    hot: true,
+    inline: true,
+    progress: true
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+    'process.env.NODE.ENV':"development"
+    }),
+    new webpack.HotModuleReplacementPlugin()
+  ]
+};
+
+
+
+
