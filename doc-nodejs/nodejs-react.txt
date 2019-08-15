@@ -12,6 +12,9 @@ npm install babel-core --save-dev
 npm install babel-loader --save-dev
 npm install babel-preset-es2015 --save-dev
 npm install babel-preset-react --save-dev
+#babel-loader: babel加载器
+#babel-preset-es2015: 支持es2015
+#babel-preset-react: jsx 转换成js
 #home nodejs webpack.config.js
 var path = require("path");
 var webpack = require('webpack');
@@ -54,6 +57,7 @@ module.exports = {
   ]
 };
 
-
+#
+npm run start
 
 
