@@ -22,6 +22,7 @@ npm install -g create-react-app --save-dev
 #添加环境变量D:\softinstall\nodejs\node_global
 #webpack 版本冲突
 export SKIP_PREFLIGHT_CHECK=true
+npm install react-grid-layout --save-dev
 #
 npm run start
 
