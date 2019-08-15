@@ -14,3 +14,9 @@ npm config set disturl https://npm.taobao.org/dist --global
 --save 表示在 package.json 文件的 dependencies 节点下添加包的引用
 npm install react react-dom --save-dev
 npm install webpack webpack-dev-server --save-dev
+#支持符合 ES6 规范的脚本文件（.js 或 .jsx）
+npm install babel-core --save-dev
+npm install babel-loader --save-dev
+npm install babel-preset-es2015 --save-dev
+npm install babel-preset-react --save-dev
+
