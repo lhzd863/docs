@@ -53,4 +53,9 @@ parcelify entry.js -c bundle.css
 "style": [
   "./node_modules/tipso/src/tipso.css"
 ]
+#引用bundle.css
+<link rel="stylesheet" href="bundle.css" />
+
+
+
 
