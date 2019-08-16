@@ -37,6 +37,14 @@ npm install -g parcelify
 #引用外部js处理方式：https://www.html.cn/archives/5537/
 #运行browserify来创建bundle.js，--debug标记来为打包文件添加source maps。这将使它更容易在浏览器的控制台进行调试
 browserify entry.js --debug &gt; bundle.js
+#告诉browserify在那里可以找到tipso。要做到这一点，添加一个browser键到你的package.json中。
+"browser": {
+  "tipso": "./node_modules/tipso/src/tipso.js"
+}
 #添加CSS，运行parcelify来创建bundle.css
 parcelify entry.js -c bundle.css
+#告诉parcelify在哪里可以找到你所需要的CSS。要做到这一点，添加一个style键到你的package.json中
+"style": [
+  "./node_modules/tipso/src/tipso.css"
+]
 
