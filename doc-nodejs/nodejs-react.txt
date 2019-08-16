@@ -37,6 +37,6 @@ npm install -g parcelify
 #引用外部js处理方式：https://www.html.cn/archives/5537/
 #运行browserify来创建bundle.js，--debug标记来为打包文件添加source maps。这将使它更容易在浏览器的控制台进行调试
 browserify entry.js --debug &gt; bundle.js
-#运行parcelify来创建bundle.css
+#添加CSS，运行parcelify来创建bundle.css
 parcelify entry.js -c bundle.css
 
