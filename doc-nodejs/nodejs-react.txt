@@ -29,5 +29,5 @@ npm run start
 npm run build
 #不放置在Root目录下的坑
 由于默认paths.js【路径：你的react项目名\node_modules\react-scripts\config\paths.js】的配置是’/’即对根目录有效，所以如果不放在root下则需要将’/’变成’./’即相对路径有效。（修改代码约在第45行） 
-#jquery等js打包
+#jquery等js打包，将所有的JavaScript打包成一个单一的文件，该文件可以包含到你的HTML中
 npm install -g browserify
