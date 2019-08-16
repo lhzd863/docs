@@ -33,3 +33,4 @@ npm run build
 npm install -g browserify
 #
 npm install -g parcelify
+#引用外部js处理方式：https://www.html.cn/archives/5537/
