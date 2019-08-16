@@ -29,7 +29,9 @@ npm run start
 #打包
 npm run build
 #不放置在Root目录下的坑由于默认paths.js【路径：你的react项目名\node_modules\react-scripts\config\paths.js】的配置是’/’即对根目录有效，
-#所以如果不放在root下则需要将’/’变成’./’即相对路径有效。（修改代码约在第45行） 
+#所以如果不放在root下则需要将’/’变成’./’即相对路径有效。（修改代码约在第45行）
+
+#添加js
 #jquery等js打包，将所有的JavaScript打包成一个单一的文件，该文件可以包含到你的HTML中
 npm install -g browserify
 #
@@ -41,7 +43,11 @@ browserify entry.js --debug &gt; bundle.js
 "browser": {
   "tipso": "./node_modules/tipso/src/tipso.js"
 }
-#添加CSS，运行parcelify来创建bundle.css
+#引用bundle.js
+<script src="./bundle.js"></script>
+
+#添加CSS
+#运行parcelify来创建bundle.css
 parcelify entry.js -c bundle.css
 #告诉parcelify在哪里可以找到你所需要的CSS。要做到这一点，添加一个style键到你的package.json中
 "style": [
