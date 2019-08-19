@@ -13,3 +13,5 @@ rest.port: 8081
 
 #url
 https://blog.csdn.net/xu470438000/article/details/79576989
+#start
+bash start-cluster.sh 
