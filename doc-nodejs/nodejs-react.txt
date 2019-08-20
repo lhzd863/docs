@@ -59,5 +59,6 @@ parcelify entry.js -c bundle.css
 #install yarn
 npm install  yarn-install  --save-dev
 
+npm install bootstrap
 
 
