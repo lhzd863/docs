@@ -1,2 +1,2 @@
-#
-numpy
+#当前用户安装指定版本应用
+pip install --user numpy==1.11.2
