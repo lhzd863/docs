@@ -1,3 +1,5 @@
 #freetype-py
 pip install freetype-py
+#
+pip install pypng
 
