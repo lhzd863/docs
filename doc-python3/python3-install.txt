@@ -1,3 +1,5 @@
+#安装GCC
+
 #
 rpm -Uvh keyutils-libs-devel-1.5.8-3.el7.x86_64.rpm
 rpm -Uvh libcom_err-devel-1.42.9-11.el7.x86_64.rpm
