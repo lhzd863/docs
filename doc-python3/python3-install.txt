@@ -12,7 +12,7 @@ rpm -Uvh openssl-devel-1.0.2k-12.el7.x86_64.rpm
 
 
 
-tar -zxvf Python-3.7.0.tgz                      #解压
+tar -zxvf Python-3.6.6.tgz                      #解压
 cd Python-3.6.6                                 #进入解压目录
 mkdir /usr/local/Python-3.6.6                   #创建安装目录 
 ./configure --prefix=/usr/local/Python-3.6.6    #编译 
