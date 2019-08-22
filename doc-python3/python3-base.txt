@@ -2,3 +2,7 @@
 pip install --user numpy==1.11.2
 #卸载
 pip uninstall numpy==1.11.2
+#获取python工作目录
+os.getcwd()
+
+
