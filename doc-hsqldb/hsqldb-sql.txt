@@ -3,3 +3,5 @@ java -jar $HSQLDB_HOME/lib/sqltool.jar --sql="select * from om_user;" openyx-sa
 #rcFile
 java -jar $HSQLDB_HOME/lib/sqltool.jar --autoCommit --continueOnErr=false --sql="select * from om_user;" \
 --rcFile=/home/lsmk/liuh/hsqldb/sqltool.rc openyx-sa
+#table list
+select * from information_schema.tables where table_schema='PUBLIC';
