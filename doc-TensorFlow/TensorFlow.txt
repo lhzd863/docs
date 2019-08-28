@@ -1,0 +1,8 @@
+# Current stable release for CPU-only
+pip install tensorflow
+
+# Preview nightly build for CPU-only (unstable)
+pip install tf-nightly
+
+# Install TensorFlow 2.0 Beta
+pip install tensorflow==2.0.0-beta0
