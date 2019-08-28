@@ -4,5 +4,7 @@ pip install --user numpy==1.11.2
 pip uninstall numpy==1.11.2
 #获取python工作目录
 os.getcwd()
+#
+pip install --user matplotlib==2.1.0
 
 
