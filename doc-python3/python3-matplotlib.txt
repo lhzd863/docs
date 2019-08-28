@@ -9,6 +9,6 @@ rpm -ivh freetype-2.4.11-15.el7.x86_64.rpm
 rpm -ivh freetype-devel-2.4.11-15.el7.x86_64.rpm
 libpng-1.5.13-7.el7_2.x86_64.rpm
 rpm -ivh libpng-devel-1.5.13-7.el7_2.x86_64.rpm
-#
+#cycler-0.10.0 kiwisolver-1.1.0 matplotlib-3.1.1 pyparsing-2.4.2
 pip install matplotlib
-
+#
