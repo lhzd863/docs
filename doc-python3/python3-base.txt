@@ -8,5 +8,6 @@ os.getcwd()
 pip install --user matplotlib==2.1.0
 #
 pip install statsmodels
-
+#安装列表
+pip list
 
