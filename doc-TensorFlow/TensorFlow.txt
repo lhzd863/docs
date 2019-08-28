@@ -6,3 +6,25 @@ pip install tf-nightly
 
 # Install TensorFlow 2.0 Beta
 pip install tensorflow==2.0.0-beta0
+#
+absl-py-0.8.0 
+astor-0.8.0 
+gast-0.2.2 
+google-pasta-0.1.7 
+grpcio-1.23.0 
+h5py-2.9.0 
+keras-applications-1.0.8 
+keras-preprocessing-1.1.0 
+markdown-3.1.1 
+protobuf-3.9.1 
+setuptools-41.2.0 
+tb-nightly-1.14.0a20190603 
+tensorflow-2.0.0b1 
+termcolor-1.1.0 
+tf-estimator-nightly-1.14.0.dev2019060501 
+werkzeug-0.15.5 
+wheel-0.33.6 
+wrapt-1.11.2
+
+https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.13.1-cp36-cp36m-linux_x86_64.whl
+
