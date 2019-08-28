@@ -6,5 +6,7 @@ pip uninstall numpy==1.11.2
 os.getcwd()
 #
 pip install --user matplotlib==2.1.0
+#
+pip install statsmodels
 
 
