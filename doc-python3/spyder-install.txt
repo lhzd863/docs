@@ -1,0 +1,10 @@
+#获取python工作目录
+python
+import os
+os.getcwd()
+
+#cp file to 工作目录
+spyder-3.3.6-py3-none-any.whl
+#install
+pip install spyder-3.3.6-py3-none-any.whl
+
