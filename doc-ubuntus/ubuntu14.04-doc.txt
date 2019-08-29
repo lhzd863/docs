@@ -11,3 +11,11 @@ export PS1='[\u@\h \w]$'
 \w 显示当前绝对路径（当前用户目录会以 ~代替）
 $PWD 显示当前全路径
 \$ 显示命令行'$'或者'#'符号
+
+#查看安装包
+dpkg -l|grep libfreetype6
+#查看安装路径
+dpkg -L | grep ftp
+#查看软件版本，例如：aptitude  show ftp
+aptitude show
+
