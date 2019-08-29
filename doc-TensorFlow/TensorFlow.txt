@@ -31,3 +31,21 @@ https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.13.1-cp36-cp36m
 
 #window
 https://storage.googleapis.com/tensorflow/windows/cpu/tensorflow-1.13.1-cp36-cp36m-win_amd64.whl
+
+#1.13.1
+absl-py-0.8.0 
+astor-0.8.0 
+gast-0.2.2 
+grpcio-1.23.0 
+h5py-2.9.0 
+keras-applications-1.0.8 
+keras-preprocessing-1.1.0 
+markdown-3.1.1 
+mock-3.0.5 
+protobuf-3.9.1 
+tensorboard-1.13.1 
+tensorflow-1.13.1 
+tensorflow-estimator-1.13.0 
+termcolor-1.1.0 
+werkzeug-0.15.5 
+wheel-0.33.6
