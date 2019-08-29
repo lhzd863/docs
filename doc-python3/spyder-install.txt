@@ -7,4 +7,6 @@ os.getcwd()
 spyder-3.3.6-py3-none-any.whl
 #install
 pip install spyder-3.3.6-py3-none-any.whl
+#timeout
+pip --default-timeout=100 install spyder-3.3.6-py3-none-any.whl
 
