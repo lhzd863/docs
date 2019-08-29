@@ -1,0 +1,4 @@
+#安装https://blog.csdn.net/xu_san_duo/article/details/53098624
+pip install grpcio
+pip install protobuf
+pip install grpcio_tools
