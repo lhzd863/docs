@@ -19,3 +19,5 @@ dpkg -L | grep ftp
 #查看软件版本，例如：aptitude  show ftp
 aptitude show
 
+#mem
+cat /proc/meminfo | grep MemTotal
