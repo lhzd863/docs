@@ -21,3 +21,5 @@ aptitude show
 
 #mem
 cat /proc/meminfo | grep MemTotal
+#cpu
+cat /proc/cpuinfo | grep process
