@@ -1,0 +1,40 @@
+#https://www.e-learn.cn/content/qita/2476720
+
+#
+export HADOOP_CLASSPATH=$($HADOOP_HOME/bin/hadoop classpath)
+#
+yarn-session.sh -n 2 -s 6 -jm 1024 -tm 1024 -nm test -d
+其中：
+　　-n(--container)：TaskManager 的数量
+　　-s(--slots)： 每个 TaskManager 的 slot 数量，默认一个 slot 一个 core，默认每个taskmanager 的 slot 的个数为 1
+　　-jm：JobManager 的内存（单位 MB)
+　　-tm：每个 taskmanager 的内存（单位 MB)
+　　-nm：yarn 的 appName(现在 yarn 的 ui 上的名字)
+　　-d：后台执行
+#提交 Jar 到集群运行
+flink run -m yarn-cluster examples/batch/WordCount.jar
+
+1 在官网下载 1.9.0 版本 Flink
+2 将安装包上传到要按照 JobManager 的节点（hadoop-senior01）。
+3 进入 Linux 系统对安装包进行解压：
+4 修改安装目录下 conf 文件夹内的 flink-conf.yaml 配置文件，指定 JobManager： 
+5 修改安装目录下 conf 文件夹内的 slave 配置文件，指定 TaskManager： 
+6 将配置好的 Flink 目录分发给其他的两台节点：
+以上步骤 Standalone 已经完成
+7. 明确虚拟机中已经设置好了环境变量 HADOOP_HOME。 （安装Hadoop时已做）
+8. 启动 Hadoop 集群（HDFS 和 Yarn）。
+9. 在 hadoop102 节 点 提 交 Yarn-Session， 使 用 安 装目 录 下 bin 目录中的
+yarn-session.sh 脚本进行提交：
+/opt/modules/flink/bin/yarn-session.sh -n 2 -s 6 -jm 1024 -tm 1024 -nm test -d
+其中：
+　　-n(--container)：TaskManager 的数量。
+　　-s(--slots)： 每个 TaskManager 的 slot 数量，默认一个 slot 一个 core，默认每个taskmanager 的 slot 的个数为 1。
+　　-jm：JobManager 的内存（单位 MB)。
+　　-tm：每个 taskmanager 的内存（单位 MB)。
+　　-nm：yarn 的 appName(现在 yarn 的 ui 上的名字)。
+　　-d：后台执行。
+10. 启动后查看 Yarn 的 Web 页面，可以看到刚才提交的会话
+11. 在提交 Session 的节点查看进程：
+12. 提交 Jar 到集群运行
+13. 提交后在 Yarn 的 Web 页面查看任务运行情况
+14. 任务运行结束后在控制台打印如下输出
