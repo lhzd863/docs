@@ -1,0 +1,51 @@
+#kafka-2-kafka
+-- source
+CREATE TABLE user_log (
+    user_id VARCHAR,
+    item_id VARCHAR,
+    category_id VARCHAR,
+    behavior VARCHAR,
+    ts TIMESTAMP
+) WITH (
+    'connector.type' = 'kafka',
+    'connector.version' = 'universal',
+    'connector.topic' = 'user_behavior5',
+    'connector.startup-mode' = 'earliest-offset',
+    'connector.properties.0.key' = 'zookeeper.connect',
+    'connector.properties.0.value' = '172.18.18.99:2181',
+    'connector.properties.1.key' = 'bootstrap.servers',
+    'connector.properties.1.value' = '172.18.18.99:9092',
+    'update-mode' = 'append',
+    'format.type' = 'json',
+    'format.derive-schema' = 'true'
+);
+
+-- sink
+CREATE TABLE user_log1 (
+    user_id VARCHAR,
+    item_id VARCHAR,
+    pt VARCHAR
+) WITH (
+    'connector.type' = 'kafka',
+    'connector.version' = 'universal',
+    'update-mode' = 'append',
+    'connector.topic' = 'user_log',
+    'connector.startup-mode' = 'earliest-offset',
+    'connector.properties.0.key' = 'zookeeper.connect',
+    'connector.properties.0.value' = '172.18.18.99:2181',
+    'connector.properties.1.key' = 'bootstrap.servers',
+    'connector.properties.1.value' = '172.18.18.99:9092',
+    'connector.properties.2.key' = 'group.id',
+    'connector.properties.2.value' = 'testGroup',
+    'format.type' = 'json',
+    'format.derive-schema' = 'true'
+);
+
+
+INSERT INTO user_log1
+SELECT
+ user_id
+,item_id
+,DATE_FORMAT(ts, 'yyyy-MM-dd HH:00')
+FROM user_log
+;
