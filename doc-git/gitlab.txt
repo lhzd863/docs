@@ -2,3 +2,9 @@ ssh-keygen -t rsa -C "lhzd863@126.com"
 
 gitlab
 Setting->SSH keys->Add an SSH key
+
+#取消之前push
+git reset –-soft  具体想回退的版本号
+git reset –-hard 具体想回退的版本号
+#push
+git push origin liuhui --force
