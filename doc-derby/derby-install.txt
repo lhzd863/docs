@@ -4,3 +4,5 @@ wget http://apache.website-solution.net//db/derby/db-derby-10.14.2.0/db-derby-10
 ij> connect 'jdbc:derby:openyx;create=True;user=root;password=root';
 ij> connect 'jdbc:derby:openyx';
 ij(CONNECTION1)> show tables;
+#
+nohup ./startNetworkServer -h 172.18.18.99 -p 1527 > run.log 2>&1 &
