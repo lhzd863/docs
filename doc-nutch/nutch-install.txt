@@ -1,0 +1,5 @@
+#
+wget http://mirrors.tuna.tsinghua.edu.cn/apache/nutch/2.3.1/apache-nutch-2.3.1-src.tar.gz
+
+
+
