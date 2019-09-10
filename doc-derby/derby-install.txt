@@ -6,3 +6,5 @@ ij> connect 'jdbc:derby:openyx';
 ij(CONNECTION1)> show tables;
 #
 nohup ./startNetworkServer -h 172.18.18.99 -p 1527 > run.log 2>&1 &
+#
+bash ./stopNetworkServer -h 172.18.18.99 -p 1527
