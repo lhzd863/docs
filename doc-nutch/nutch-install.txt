@@ -3,7 +3,7 @@ wget http://mirrors.tuna.tsinghua.edu.cn/apache/nutch/2.3.1/apache-nutch-2.3.1-s
 #
 nohup bin/crawl -s urls/ TestCrawl/  10 > run.log 2>&1 &
 #
-+^https?://([a-z0-9-]+\.)*nutch\.apache\.org/
++^https?://([a-z0-9-]+\.)*qq\.com/
 #
 <configuration>
   <property>
@@ -22,5 +22,7 @@ urls/seed.txt
 https://www.qq.com/
 #
 mkdir TestCrawl
+#
+nutch readdb TestCrawl/crawldb/ -stats
 
 
