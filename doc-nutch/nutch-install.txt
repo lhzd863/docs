@@ -1,5 +1,20 @@
 #
 wget http://mirrors.tuna.tsinghua.edu.cn/apache/nutch/2.3.1/apache-nutch-2.3.1-src.tar.gz
+#
+nohup bin/crawl -s urls/ TestCrawl/  10 > run.log 2>&1 &
+#
++^https?://([a-z0-9-]+\.)*nutch\.apache\.org/
+#
+<configuration>
+  <property>
+    <name>http.agent.name</name>
+    <value>nutch-190</value>
+  </property>
+  <property>
+    <name>plungin.folders</name>
+    <value>/home/hadoop/nutch/apache-nutch-1.15/runtime/local/plugins</value>
+  </property>
+</configuration>
 
 
 
