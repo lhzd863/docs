@@ -15,6 +15,8 @@ nohup bin/crawl -s urls/ TestCrawl/  10 > run.log 2>&1 &
     <value>/home/hadoop/nutch/apache-nutch-1.15/runtime/local/plugins</value>
   </property>
 </configuration>
+#
+export NUTCH_RUNTIME_HOME=/home/hadoop/nutch/apache-nutch-1.15/runtime/local
 
 
 
