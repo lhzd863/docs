@@ -1,0 +1,59 @@
+#source的名字
+agent.sources = kafkaSource
+# channels的名字，建议按照type来命名
+agent.channels = memoryChannel
+# sink的名字，建议按照目标来命名
+agent.sinks = hdfsSink
+
+# 指定source使用的channel名字
+agent.sources.kafkaSource.channels = memoryChannel
+# 指定sink需要使用的channel的名字,注意这里是channel
+agent.sinks.hdfsSink.channel = memoryChannel
+# For each one of the sources, the type is defined
+
+#-------- kafkaSource相关配置-----------------
+# 定义消息源类型
+agent.sources.kafkaSource.type = org.apache.flume.source.kafka.KafkaSource
+# 定义kafka所在zk的地址
+#
+# 这里特别注意: 是kafka的zookeeper的地址
+#
+agent.sources.kafkaSource.zookeeperConnect = 172.18.18.99:2181
+# 配置消费的kafka topic
+#agent.sources.kafkaSource.topic = testtopic# 配置消费者组的id
+agent.sources.kafkaSource.topic = pdm_t05_inview_01
+agent.sources.kafkaSource.groupId = test-consumer-group
+# 消费超时时间,参照如下写法可以配置其他所有kafka的consumer选项。注意格式从kafka.xxx开始是consumer的配置属性
+agent.sources.kafkaSource.kafka.consumer.timeout.ms = 100
+
+#------- memoryChannel相关配置-------------------------
+# channel类型
+agent.channels.memoryChannel.type = memory
+# channel存储的事件容量
+agent.channels.memoryChannel.capacity=10000
+# 事务容量
+agent.channels.memoryChannel.transactionCapacity=1000
+agent.channels.memoryChannel.keep-alive = 60
+
+#---------hdfsSink 相关配置------------------
+agent.sinks.hdfsSink.type = hdfs
+# 注意, 我们输出到下面一个子文件夹datax中
+agent.sinks.hdfsSink.hdfs.path = hdfs://ns1/user/lsmk/stats/res/athena/tmp_liuh/inview
+agent.sinks.hdfsSink.hdfs.writeFormat = Text
+agent.sinks.hdfsSink.hdfs.fileType = DataStream
+
+agent.sinks.hdfsSink.hdfs.rollSize = 102400000
+agent.sinks.hdfsSink.hdfs.rollCount = 0
+agent.sinks.hdfsSink.hdfs.rollInterval = 60
+
+#配置前缀和后缀
+agent.sinks.hdfsSink.hdfs.filePrefix=test
+agent.sinks.hdfsSink.hdfs.fileSuffix=.data
+
+#避免文件在关闭前使用临时文件
+agent.sinks.hdfsSink.hdfs.inUserPrefix=_
+agent.sinks.hdfsSink.hdfs.inUserSuffix=
+
+#自定义拦截器
+#agent.sources.kafkaSource.interceptors=i1
+#agent.sources.kafkaSource.interceptors.i1.type=com.hadoop.flume.FormatInterceptor$Builder
