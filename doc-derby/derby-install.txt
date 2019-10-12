@@ -5,6 +5,8 @@ connect 'jdbc:derby://172.18.18.99:1527/openyx;create=true';
 ij> connect 'jdbc:derby:openyx;create=True;user=root;password=root';
 ij> connect 'jdbc:derby:openyx';
 ij(CONNECTION1)> show tables;
+connect 'jdbc:derby://172.18.18.99:1527/openyx;create=true;user=openyx;password=openyx';
+
 #
 nohup ./startNetworkServer -h 172.18.18.99 -p 1527 > run.log 2>&1 &
 #
