@@ -18,11 +18,15 @@ agent.sources.kafkaSource.type = org.apache.flume.source.kafka.KafkaSource
 #
 # 这里特别注意: 是kafka的zookeeper的地址
 #
-agent.sources.kafkaSource.zookeeperConnect = 172.18.18.99:2181
+#agent.sources.kafkaSource.zookeeperConnect = 172.18.18.99:2181
+agent.sources.kafkaSource.zookeeperConnect = 172.18.18.13:2181,172.18.19.129:2181,172.18.19.130:2181
+agent.sources.kafkaSource.bootstrap.servers = 172.18.18.13:18080,172.18.19.129:18080,172.18.19.130:18080,172.18.19.161:18080
+
 # 配置消费的kafka topic
 #agent.sources.kafkaSource.topic = testtopic# 配置消费者组的id
-agent.sources.kafkaSource.topic = pdm_t05_inview_01
-agent.sources.kafkaSource.groupId = test-consumer-group
+#agent.sources.kafkaSource.topic = pdm_t05_inview_01
+agent.sources.kafkaSource.topic = rcv_inview_ct_m
+#agent.sources.kafkaSource.groupId = test-consumer-group
 # 消费超时时间,参照如下写法可以配置其他所有kafka的consumer选项。注意格式从kafka.xxx开始是consumer的配置属性
 agent.sources.kafkaSource.kafka.consumer.timeout.ms = 100
 
