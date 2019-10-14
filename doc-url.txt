@@ -195,3 +195,4 @@ http://central.maven.org/maven2/org/apache/flink/
 #
 https://github.com/deeplearning-ai/machine-learning-yearning-cn
 https://deeplearning-ai.github.io/machine-learning-yearning-cn/docs/home/
+https://github.com/deeplearning-ai/machine-learning-yearning-cn/releases/download/v0.5.0/MLY-zh-cn.pdf
