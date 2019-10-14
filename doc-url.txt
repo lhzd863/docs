@@ -194,4 +194,4 @@ github.com/jcelliott/lumber
 http://central.maven.org/maven2/org/apache/flink/
 #
 https://github.com/deeplearning-ai/machine-learning-yearning-cn
-
+https://deeplearning-ai.github.io/machine-learning-yearning-cn/docs/home/
