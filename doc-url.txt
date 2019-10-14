@@ -192,4 +192,6 @@ https://github.com/nanobox-io/golang-scribble/blob/master/scribble.go
 github.com/jcelliott/lumber
 #
 http://central.maven.org/maven2/org/apache/flink/
+#
+https://github.com/deeplearning-ai/machine-learning-yearning-cn
 
