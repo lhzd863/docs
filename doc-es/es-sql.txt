@@ -1,1 +1,7 @@
-#
+#sql
+POST /_xpack/sql?format=txt
+{
+    "query": "select * from t05_inview"
+}
+
+curl -X GET "172.18.18.99:9200/_sql" -H 'Content-Type: application/json' -d'select * from t05_inview  '
