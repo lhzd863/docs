@@ -14,7 +14,14 @@ ps -ef|grep -i /home/k8s/prometheus/node_exporter/node_exporter|grep -v grep |aw
 nohup ./pushgateway --web.listen-address=0.0.0.0:9091 --persistence.file=data/persistence-file.txt > run.log 2>&1 &
 #reload
 curl -X POST http://172.18.18.99:9090/-/reload 
-
+#alertmanager
+nohup ./alertmanager --config.file="alertmanager.yml" \
+    --storage.path="data/" \
+    --data.retention=120h \
+    --alerts.gc-interval=30m  \
+    --web.listen-address=":9093" \
+    > run.log 2>&1 &
+    
 
 #node_exporter 安装依赖
 mpfr-3.1.1-4.el7.x86_64.rpm
