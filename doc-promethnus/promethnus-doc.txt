@@ -10,6 +10,8 @@ nohup  /home/k8s/prometheus/node_exporter/node_exporter  \
 ps -ef|grep -i /home/k8s/prometheus/prometheus-2.3.2/prometheus|grep -v grep |awk -F ' ' '{print $2}'|xargs kill -9
 #node_exporter停止
 ps -ef|grep -i /home/k8s/prometheus/node_exporter/node_exporter|grep -v grep |awk -F ' ' '{print $2}'|xargs kill -9
+#pushgateway
+nohup ./pushgateway --web.listen-address=0.0.0.0:9091 --persistence.file=data/persistence-file.txt > run.log 2>&1 &
 
 #node_exporter 安装依赖
 mpfr-3.1.1-4.el7.x86_64.rpm
