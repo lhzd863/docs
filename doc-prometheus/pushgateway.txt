@@ -1,3 +1,5 @@
+#推送测试数据到 pushgateway
 echo "some_metric 3.14" | curl --data-binary @- http://172.18.18.99:9091/metrics/job/some_job
+#删除某个组下的某实例的所有数据
 curl -X DELETE http://172.18.18.99:9091/metrics/job/some_job
 
