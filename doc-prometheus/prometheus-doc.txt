@@ -21,7 +21,8 @@ nohup ./alertmanager --config.file="alertmanager.yml" \
     --alerts.gc-interval=30m  \
     --web.listen-address=":9093" \
     > run.log 2>&1 &
-    
+#
+./amtool alert --alertmanager.url=http://172.18.18.99:9093
 
 #node_exporter 安装依赖
 mpfr-3.1.1-4.el7.x86_64.rpm
