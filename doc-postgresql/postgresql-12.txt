@@ -5,6 +5,9 @@ service postgresql-12 status
 
 
 
-#设置访问
-
+#设置/var/lib/pgsql/12/data/pg_hba.conf
+host    all             all             0.0.0.0/0               md5
+#
+listening_address: '*'
+#
 alter system set listen_addresses = '0.0.0.0';
