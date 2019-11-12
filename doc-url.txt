@@ -205,3 +205,6 @@ https://github.com/DTStack
 https://github.com/ddbourgin/numpy-ml
 #
 https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
+#
+https://github.com/silviomori/udacity-deeplearning-pytorch-challenge-lab
+
