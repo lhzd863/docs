@@ -2,3 +2,9 @@
 service postgresql-12 stop
 service postgresql-12 start
 service postgresql-12 status
+
+
+
+#设置访问
+
+alter system set listen_addresses = '0.0.0.0';
