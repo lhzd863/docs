@@ -1,0 +1,3 @@
+#
+service postgresql-12 stop
+service postgresql-12 start
