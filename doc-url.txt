@@ -207,4 +207,10 @@ https://github.com/ddbourgin/numpy-ml
 https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
 #
 https://github.com/silviomori/udacity-deeplearning-pytorch-challenge-lab
+#文件生成器
+https://suulnnka.github.io/BullshitGenerator/index.html
+https://github.com/menzi11/BullshitGenerator
+
+
+
 
