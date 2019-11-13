@@ -2,3 +2,31 @@
 curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh Miniconda3-latest-Linux-x86_64.sh
 conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
+
+
+#
+ package                    |            build
+    ---------------------------|-----------------
+    blas-1.0                   |              mkl           6 KB
+    cudatoolkit-10.1.243       |       h6bb024c_0       347.4 MB
+    freetype-2.9.1             |       h8a8886c_1         550 KB
+    intel-openmp-2019.4        |              243         729 KB
+    jpeg-9b                    |       h024ee3a_2         214 KB
+    libgfortran-ng-7.3.0       |       hdf63c60_0        1006 KB
+    libpng-1.6.37              |       hbc83047_0         278 KB
+    libtiff-4.1.0              |       h2733197_0         589 KB
+    mkl-2019.4                 |              243       131.2 MB
+    mkl-service-2.3.0          |   py37he904b0f_0         218 KB
+    mkl_fft-1.0.15             |   py37ha843d7b_0         172 KB
+    mkl_random-1.1.0           |   py37hd6b4f25_0         321 KB
+    ninja-1.9.0                |   py37hfd86e86_0         1.2 MB
+    numpy-1.17.3               |   py37hd14ec0e_0           4 KB
+    numpy-base-1.17.3          |   py37hde5b4d6_0         5.2 MB
+    olefile-0.46               |           py37_0          50 KB
+    pillow-6.2.1               |   py37h34e0f95_0         643 KB
+    pytorch-1.3.1              |py3.7_cuda10.1.243_cudnn7.6.3_0       428.0 MB  pytorch
+    torchvision-0.4.2          |       py37_cu101        14.9 MB  pytorch
+    zstd-1.3.7                 |       h0b5b093_0         401 KB
+    ------------------------------------------------------------
+                                           Total:       933.0 MB
+                                           
