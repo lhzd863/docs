@@ -97,3 +97,14 @@ ps是查看进程命令，kill pid 你想结束的进程
 emulator-5554
 HTC91245667
 adb -s emulator-5554 shell就可以连接到模拟器的shell环境。注意里面的-s参数
+
+
+#手机截屏
+//设置文件名
+set fileName=/sdcard/%date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%.png
+//截图到sdcard
+adb shell screencap -p %fileName%
+//pull到当前位置
+adb pull %fileName%
+//删除sdcard中的截图
+adb shell  rm %fileName%
