@@ -108,3 +108,5 @@ adb shell screencap -p %fileName%
 adb pull %fileName%
 //删除sdcard中的截图
 adb shell  rm %fileName%
+#
+https://jackpal.github.io/Android-Terminal-Emulator/
