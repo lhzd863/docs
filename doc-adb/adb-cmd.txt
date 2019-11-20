@@ -93,4 +93,7 @@ ps是查看进程命令，kill pid 你想结束的进程
 
 获取设备名称： adb shell cat /system/build.prop
 查看ADB帮助： adb help
-跑monkey： adb shell monkey -v -p your.package.name 500
+#使用adb命令操作多台设备，先用：adb devices命令查看所有设备的代号如命令结果如下
+emulator-5554
+HTC91245667
+adb -s emulator-5554 shell就可以连接到模拟器的shell环境。注意里面的-s参数
