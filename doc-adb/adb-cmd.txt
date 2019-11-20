@@ -2,3 +2,4 @@
 adb shell input tap
 #向设备发送一个滑动指令，并且可以选择设置滑动时长  adb shell input swipe 100 100 200 200  300 //从 100 100 经历300毫秒滑动到 200 200
 input swipe [duration(ms)]
+adb shell input swipe 100 100 100 100  1000 //在 100 100 位置长按 1000毫秒
