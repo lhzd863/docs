@@ -8,3 +8,4 @@ adb input keyevent
 #该命令主要是用于向获得焦点的EditText控件输入内容
 adb  shell  text
 adb shell input text  "hello,world"
+#
