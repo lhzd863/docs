@@ -1,0 +1,2 @@
+#该命令是用于向设备发送一个点击操作的指令，参数是<x> <y>坐标 eg.adbshell input tap 100 100
+adb shell input tap
