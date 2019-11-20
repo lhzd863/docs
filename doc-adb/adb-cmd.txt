@@ -26,3 +26,5 @@ adb shell wm size
 adb install -s // 比如：adb install -s baidu.apk
 #安装APK
 adb install //比如：adb install baidu.apk
+#卸载APK
+adb uninstall //比如：adb uninstall com.baidu.aaa
