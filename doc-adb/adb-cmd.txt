@@ -5,3 +5,6 @@ input swipe [duration(ms)]
 adb shell input swipe 100 100 100 100  1000 //在 100 100 位置长按 1000毫秒
 #该命令主要是向系统发送一个按键指令，实现模拟用户在键盘上的按键动作  adb shell input keyevent 26
 adb input keyevent
+#该命令主要是用于向获得焦点的EditText控件输入内容
+adb  shell  text
+adb shell input text  "hello,world"
