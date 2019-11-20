@@ -18,7 +18,7 @@ adb  shell am start -n xxxxxx/xxxx
 adb devices
 #终止adb服务进程
 adb kill-server
-#重启adb服务进程
+#重启adb服务进程  adb -P <port> start-server # 默认端口为 5037。
 adb start-server
 #查看屏幕分辨率
 adb shell wm size
