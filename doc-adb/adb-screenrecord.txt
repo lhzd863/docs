@@ -1,0 +1,31 @@
+#
+在Android 4.4（Kitkat - API level 19）上集成了一个比较好用的视频(.mp4格式)录制功能 –screenrecord。
+使用方法
+1.  基本用法
+$ adb shell screenrecord /sdcard/myscreenrecord.mp4
+/sdcard/myscreenrecord.mp4为视频录制文件路径
+录制默认分辨率，默认4Mbps，默认180s的视频，保存到sdcard上名为myscreenrecord.mp4
+2.  旋转(参数：–rotate)
+$ adb shell screenrecord --rotate /sdcard/myscreenrecord.mp4
+旋转90度
+3.  指定分辨率(参数：–size)
+$adb shell screenrecord --size 112x112 /sdcard/myscreenrecord.mp4
+分辨率为112x112,建议不要指定分辨率，使用默认分辨率效果最佳;
+注意，分辨率不是完全可以随意定制的，比如在我手机上录制100x100的会提示错误：
+The max width/height supported by codec is1920x1088
+100x100is not supported by codec, suggest to set it as112x112
+4.  指定比特率(参数：–bit-rate)
+$adb shell screenrecord --bit -rate 8000000 /sdcard/myscreenrecord.mp4
+设置比特率为8Mbps，比特率越大，文件越大，画面越清晰；
+5.  限制录制时间 （参数: –time-limit）
+$adb shell screenrecord --time -limit 10 /sdcard/myscreenrecord.mp4
+限制视频录制时间为10s,如果不限制,默认180s
+6.  导出视频
+$adb pull /sdcard/myscreenrecord.mp4
+7.  注意
+请关注视频文件生成大小，根据自身情况而定；
+暂不支持声音；
+咱时不支持模拟器录制(模拟器录制看这里)，出现如下提示：Unable to get output buffers (err=-38)
+Encoder failed (err=-38)，可认为是此原因；
+8.  命令查看
+adb shell screenrecord --help
