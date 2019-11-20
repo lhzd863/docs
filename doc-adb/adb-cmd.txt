@@ -10,5 +10,8 @@ adb  shell  text
 adb shell input text  "hello,world"
 #先列出手机上所有应用信息
 adb shell dumpsys package > ./package.txt
-
+#强制关闭应用
+adb shell am force-stop xxxxxx
+#启动应用
+adb  shell am start -n xxxxxx/xxxx
 
