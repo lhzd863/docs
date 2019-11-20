@@ -1,2 +1,4 @@
 #该命令是用于向设备发送一个点击操作的指令，参数是<x> <y>坐标 eg.adbshell input tap 100 100
 adb shell input tap
+#向设备发送一个滑动指令，并且可以选择设置滑动时长  adb shell input swipe 100 100 200 200  300 //从 100 100 经历300毫秒滑动到 200 200
+input swipe [duration(ms)]
