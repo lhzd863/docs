@@ -56,3 +56,41 @@ adb shell cat /proc/cpuinfo
 adb install -r //比如：adb install -r baidu.apk
 #清除应用数据与缓存
 adb shell pm clear （apk包名）
+#查看设备cpu和内存占用情况
+adb shell top
+#查看占用内存前6的app
+adb shell top -m 6
+#刷新一次内存信息，然后返回
+adb shell top -n 1
+#查询各进程内存使用情况
+adb shell procrank
+#杀死一个进程
+adb shell kill [pid]
+ps是查看进程命令，kill pid 你想结束的进程
+
+查看进程列表： adb shell ps
+查看指定进程状态： adb shell ps -x [PID]
+查看后台services信息： adb shell service list
+查看当前内存占用： adb shell cat /proc/meminfo
+查看IO内存分区： adb shell cat /proc/iomem
+将system分区重新挂载为可读写分区：adb remount
+从本地复制文件到设备： adb push
+从设备复制文件到本地： adb pull
+
+列出目录下的文件和文件夹，等同于dos中的dir命令：adb shell ls
+进入文件夹，等同于dos中的cd 命令： adb shell cd
+
+重命名文件： adb shell rename path/oldfilename path/newfilename
+删除system/avi.apk： adb shell rm /system/avi.apk
+删除文件夹及其下面所有文件： adb shell rm -r
+
+移动文件： adb shell mv path/file newpath/file
+设置文件权限： adb shell chmod 777 /system/fonts/DroidSansFallback.ttf
+
+新建文件夹： adb shell mkdir path/foldelname
+查看文件内容： adb shell cat
+查看wifi密码： adb shell cat /data/misc/wifi/*.conf
+
+获取设备名称： adb shell cat /system/build.prop
+查看ADB帮助： adb help
+跑monkey： adb shell monkey -v -p your.package.name 500
