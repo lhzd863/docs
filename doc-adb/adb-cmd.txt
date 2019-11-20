@@ -28,3 +28,31 @@ adb install -s // 比如：adb install -s baidu.apk
 adb install //比如：adb install baidu.apk
 #卸载APK
 adb uninstall //比如：adb uninstall com.baidu.aaa
+#卸载app但保留数据和缓存文件
+adb uninstall -k //比如：adb uninstall -k com.baidu.search
+#连接设备
+adb connect 192.168.1.61
+#断开设备
+adb disconnect 192.168.1.61
+#列出手机装的所有app的包名
+adb shell pm list packages
+#列出系统应用的所有包名
+adb shell pm list packages -s
+#列出除了系统应用的第三方应用包名
+adb shell pm list packages -3
+#重启到recovery，即恢复模式
+adb reboot recovery
+#查看log
+adb logcat
+#清除log缓存
+adb logcat -c
+#查看bug报告
+adb bugreport
+#获取机器MAC地址
+adb shell cat /sys/class/net/wlan0/address
+#获取CPU序列号
+adb shell cat /proc/cpuinfo
+#保留数据和缓存文件，重新安装apk
+adb install -r //比如：adb install -r baidu.apk
+#清除应用数据与缓存
+adb shell pm clear （apk包名）
