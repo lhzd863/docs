@@ -14,4 +14,15 @@ adb shell dumpsys package > ./package.txt
 adb shell am force-stop xxxxxx
 #启动应用
 adb  shell am start -n xxxxxx/xxxx
-
+#显示系统中全部设备
+adb devices
+#终止adb服务进程
+adb kill-server
+#重启adb服务进程
+adb start-server
+#查看屏幕分辨率
+adb shell wm size
+#安装apk到sd卡
+adb install -s // 比如：adb install -s baidu.apk
+#安装APK
+adb install //比如：adb install baidu.apk
