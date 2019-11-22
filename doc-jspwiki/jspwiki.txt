@@ -1,0 +1,10 @@
+#权限：页面级别的权限控制要比全局控制的优先级高。需要在页面的最顶端加上
+[{ALLOW 权限 角色}]
+[{DENY 权限 角色}]
+#在jspwiki.policy中修改的是全局权限，可以对用户组的权限进行管理。jspwiki默认的用户组有
+用户组	解释
+All	所有用户
+Anonymous	未登录用户，也没有cookie的用户
+Asserted	未登录，但有cookie的用户
+Authenticated	登录用户
+Admin	管理员
