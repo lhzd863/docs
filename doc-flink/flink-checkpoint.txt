@@ -12,3 +12,7 @@ nsbdm_flnk_r03_click_sink_mysql0200  50c863d4dabe7011a95294701b587196
 nsbdm_flnk_r03_inview_sink_mysql0200  311e07c7f281acc86aa6674fca84e550
 nsbdm_flnk_r03_spend_sink_mysql0200  18028bb6bf66bf9fcc6ab9d28d4f76ec
 
+命令：
+flink run -s hdfs://ns1/user/lsmk/flink_home/flink-checkpoints/6fc38ae7e3169f156fa54e45f53ebc45/chk-25/_metadata  \
+          -c com.fsql.kafka.consumer.PdmLogTxt2Json ${STREAM_HOME}/lib/fsql-0.0.1-SNAPSHOT.jar \
+          
