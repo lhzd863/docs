@@ -5,4 +5,5 @@ npm i react --save
 npm i react-dom --save
 npm i react-scripts --save
 npm install react-app-rewired customize-cra --save-dev
+npm install babel-plugin-import --save-dev
 
