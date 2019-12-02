@@ -1,2 +1,6 @@
 #demo https://github.com/ant-design/antd-mobile-samples/tree/master/create-react-app
-
+npm install antd-mobile --save
+npm i react-script --save
+npm i react --save
+npm i react-dom --save
+npm i react-scripts --save
