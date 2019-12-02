@@ -8,5 +8,6 @@ npm install react-app-rewired customize-cra --save-dev
 npm install babel-plugin-import --save-dev
 npm install less-loader --save
 npm install less --save
+npm install --save-dev babel-plugin-import less less-loader style-loader css-loader
 #startup
 npm start
