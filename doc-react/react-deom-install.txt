@@ -7,3 +7,4 @@ npm i react-scripts --save
 npm install react-app-rewired customize-cra --save-dev
 npm install babel-plugin-import --save-dev
 npm install less-loader --save
+npm install less --save
