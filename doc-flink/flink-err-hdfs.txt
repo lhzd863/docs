@@ -18,6 +18,6 @@ Caused by: java.lang.NoClassDefFoundError: Could not initialize class org.apache
         at org.apache.flink.runtime.fs.hdfs.HadoopFsFactory.create(HadoopFsFactory.java:85)
         ... 10 more
 
-#解决方式：
+#解决方式：flink-1.9.0/lib 添加jar包
 1.flink-shaded-hadoop-2-2.6.5-7.0.jar
 2.flink-shaded-hadoop-2-uber-2.6.5-7.0.jar
