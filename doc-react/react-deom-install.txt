@@ -7,5 +7,6 @@ npm i react-scripts --save
 npm install react-app-rewired customize-cra --save-dev
 npm install babel-plugin-import --save-dev
 npm install --save-dev less less-loader style-loader css-loader@0.28.7
+npm install react-router-dom --save
 #startup
 npm start
