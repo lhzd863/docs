@@ -1,0 +1,31 @@
+#cors set
+cors := restful.CrossOriginResourceSharing{
+                ExposeHeaders:  []string{"X-My-Header"},
+                AllowedHeaders: []string{"Content-Type", "Accept","Access-Control-Allow-Headers","Access-Control-Allow-Origin"},
+                AllowedMethods: []string{"GET", "POST", "PUT", "DELETE"},
+                CookiesAllowed: false,
+                Container:      restful.DefaultContainer}
+        restful.DefaultContainer.Filter(cors.Filter)
+        
+        
+#fetch set
+fetch("",{
+      method: "Post",
+      mode: "cors",
+      headers: {
+          'Content-Type': 'application/json;charset=UTF-8',
+          'Access-Control-Allow-Origin': '*'
+      },
+      body: JSON.stringify({
+        type: 'json',
+      })
+     })
+     .then(response => response.json())
+     .then((dat) => {
+          alert(dat)
+          data=dat;
+          console.log(dat)
+     })
+     .catch(function (err) {
+          console.log(err);
+     });
