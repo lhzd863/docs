@@ -10,3 +10,8 @@ npm install --save-dev less less-loader style-loader css-loader@0.28.7
 npm install react-router-dom --save
 #startup
 npm start
+
+npm install --save react-markdown
+npm install -D raw-loader
+
+
