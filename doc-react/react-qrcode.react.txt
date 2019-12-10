@@ -1,0 +1,13 @@
+#
+npm install qrcode.react --save
+
+import QRCode from 'qrcode.react';
+
+React.render(
+
+  <QRCode value="http://facebook.github.io/react/" />,
+
+  mountNode
+
+);
+
