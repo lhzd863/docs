@@ -1,0 +1,7 @@
+#
+localStorage.getItem("cmts")
+#
+var cti = JSON.parse(localStorage.getItem("cmts") || '[]')
+cti.unshift(comment)
+localStorage.removeItem('cmts');
+localStorage.setItem('cmts',JSON.stringify(cti))
