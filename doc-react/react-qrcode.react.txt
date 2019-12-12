@@ -13,4 +13,21 @@ React.render(
 
 #npm install qrcode-reader --save
 #https://www.npmjs.com/package/qrcode-reader
-
+var fs = require('fs')
+var Jimp = require("jimp");
+var QrCode = require('qrcode-reader');
+var buffer = fs.readFileSync(__dirname+ '/myinfo.JPG');
+Jimp.read(buffer, function(err, image) {
+        if (err) {
+          console.error(err);
+        }
+        var qr = new QrCode();
+        qr.callback = function(err, value) {
+          if (err) {
+              console.error(err);
+          }
+          console.log(value.result);
+          //console.log(value);
+        };
+        qr.decode(image.bitmap);
+});
