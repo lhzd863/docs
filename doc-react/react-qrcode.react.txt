@@ -12,3 +12,5 @@ React.render(
 );
 
 #npm install qrcode-reader --save
+#https://www.npmjs.com/package/qrcode-reader
+
