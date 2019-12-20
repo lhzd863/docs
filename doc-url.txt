@@ -226,4 +226,5 @@ https://github.com/onurakpolat/awesome-bigdata
 https://github.com/camsong/redux-in-chinese
 #
 https://github.com/jerairrest/react-chartjs-2
+https://www.chartjs.org/samples/latest/
 
