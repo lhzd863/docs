@@ -1,2 +1,31 @@
 #
-git clone 
+git clone https://github.com/ffay/lanproxy.git
+#
+mvn package
+#资源放在distribution目录中，包括client和server
+
+#client config.properties
+client.key=2c2571973a5f44b6ae808081cb56e88e
+ssl.enable=false
+ssl.jksPath=test.jks
+ssl.keyStorePassword=123456
+server.host=122.51.161.53
+#default ssl port is 4993
+server.port=4900
+
+#server config.properties
+server.bind=0.0.0.0
+server.port=4900
+#
+server.ssl.enable=true
+server.ssl.bind=0.0.0.0
+server.ssl.port=4993
+server.ssl.jksPath=test.jks
+server.ssl.keyStorePassword=123456
+server.ssl.keyManagerPassword=123456
+server.ssl.needsClientAuth=false
+#
+config.server.bind=0.0.0.0
+config.server.port=8090
+config.admin.username=admin
+config.admin.password=123456
