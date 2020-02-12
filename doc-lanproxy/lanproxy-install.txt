@@ -1,4 +1,4 @@
-#
+#https://github.com/ffay/lanproxy
 git clone https://github.com/ffay/lanproxy.git
 #
 mvn package
