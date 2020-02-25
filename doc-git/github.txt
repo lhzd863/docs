@@ -3,3 +3,9 @@ ssh-keygen -t rsa -C "lhzd863@126.com"
 cat id_rsa.pub
 #
 ssh -T git@github.com
+
+
+
+git config --global user.email lhzd863@126.com
+git config --global user.name lhzd863
+
