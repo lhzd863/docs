@@ -1,0 +1,7 @@
+#
+zookeeper.connect=172.18.18.104:2181
+#
+log.retention.hours=9
+#
+log.dirs=/home/xxx/STREAM/kafka/log
+
