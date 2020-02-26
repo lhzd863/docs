@@ -3,7 +3,7 @@
 192.168.1.1xx
 #conf/master
 192.168.1.1xx:8081
-#conf/flink-conf.yaml
+#conf/flink-conf.yaml  Common
 jobmanager.rpc.address: 192.168.1.1xx
 jobmanager.rpc.port: 6123
 rest.port: 8081
