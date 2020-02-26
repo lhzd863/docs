@@ -10,6 +10,13 @@ rest.port: 8081
 taskmanager.numberOfTaskSlots: 64
 parallelism.default: 64
 state.backend: rocksdb
+jobmanager.heap.size: 1024m
+taskmanager.heap.size: 16384m
+#checkpoint
+state.backend: rocksdb
+state.checkpoints.dir: hdfs://ns1/user/lsmk/flink_home/flink-checkpoints
+state.savepoints.dir: hdfs://ns1/user/lsmk/flink_home/flink-savepoints
+state.backend.incremental: true
 
 #启动一个yarn session使用4个taskmanager
 ./bin/yarn-session.sh -n 4 -jm 1024 -tm 4096
