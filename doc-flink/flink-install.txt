@@ -17,6 +17,7 @@ state.backend: rocksdb
 state.checkpoints.dir: hdfs://ns1/user/lsmk/flink_home/flink-checkpoints
 state.savepoints.dir: hdfs://ns1/user/lsmk/flink_home/flink-savepoints
 state.backend.incremental: true
+state.backend.rocksdb.localdir: /data/flink-home/rocksdb-dir
 
 #启动一个yarn session使用4个taskmanager
 ./bin/yarn-session.sh -n 4 -jm 1024 -tm 4096
