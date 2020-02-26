@@ -22,6 +22,15 @@ state.backend.rocksdb.localdir: /data/flink-home/rocksdb-dir
 web.log.path: /data/flink-home/web-dir/log
 web.tmpdir: /data/flink-home/web-dir/tmp
 web.upload.dir: /data/flink-home/web-dir/upload
+#tmp
+io.tmp.dirs: /data/flink-home/tmp-dir
+#metrics
+metrics.reporter.promgateway.class: org.apache.flink.metrics.prometheus.PrometheusPushGatewayReporter
+metrics.reporter.promgateway.host: 172.18.18.99
+metrics.reporter.promgateway.port: 9091
+metrics.reporter.promgateway.jobName: flink_wifi
+metrics.reporter.promgateway.randomJobNameSuffix: false
+metrics.reporter.promgateway.deleteOnShutdown: false
 
 #启动一个yarn session使用4个taskmanager
 ./bin/yarn-session.sh -n 4 -jm 1024 -tm 4096
