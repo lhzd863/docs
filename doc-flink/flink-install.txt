@@ -26,7 +26,7 @@ web.upload.dir: /data/flink-home/web-dir/upload
 io.tmp.dirs: /data/flink-home/tmp-dir
 #metrics
 metrics.reporter.promgateway.class: org.apache.flink.metrics.prometheus.PrometheusPushGatewayReporter
-metrics.reporter.promgateway.host: 172.18.18.99
+metrics.reporter.promgateway.host: 172.18.18.xx
 metrics.reporter.promgateway.port: 9091
 metrics.reporter.promgateway.jobName: flink_wifi
 metrics.reporter.promgateway.randomJobNameSuffix: false
