@@ -17,6 +17,7 @@ state.backend: rocksdb
 state.checkpoints.dir: hdfs://ns1/user/lsmk/flink_home/flink-checkpoints
 state.savepoints.dir: hdfs://ns1/user/lsmk/flink_home/flink-savepoints
 state.backend.incremental: true
+jobmanager.execution.failover-strategy: region
 state.backend.rocksdb.localdir: /data/flink-home/rocksdb-dir
 #Rest
 web.log.path: /data/flink-home/web-dir/log
