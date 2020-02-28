@@ -7,3 +7,11 @@ conda config --set show_channel_urls yes
 conda create --name py37 python=3.7
 #查看当前conda管理的虚拟环境
 conda info --envs
+#/root/.pip/pip.conf
+[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+#/root/.condarc
+channels:
+- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+- defaults
+show_channel_urls: true
