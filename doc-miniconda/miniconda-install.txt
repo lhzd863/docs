@@ -5,3 +5,5 @@ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/f
 conda config --set show_channel_urls yes
 #install python
 conda create --name py37 python=3.7
+#查看当前conda管理的虚拟环境
+conda info --envs
