@@ -247,3 +247,5 @@ https://www.toolnb.com/
 https://github.com/ffay/lanproxy
 #
 https://github.com/ffay/lanproxy
+#
+https://github.com/mixpanel/mixpanel-js
