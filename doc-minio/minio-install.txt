@@ -1,0 +1,2 @@
+#
+/home/k8s/minio/minio server --address :12309 --config-dir ./conf ./data
