@@ -1,2 +1,4 @@
 #
 /home/k8s/minio/minio server --address :12309 --config-dir ./conf ./data
+#
+./mc config host add home http://192.168.1.189:12309 admin password admin1234567890z
