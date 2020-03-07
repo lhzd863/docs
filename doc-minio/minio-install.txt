@@ -2,3 +2,6 @@
 /home/k8s/minio/minio server --address :12309 --config-dir ./conf ./data
 #
 ./mc config host add minio http://192.168.1.189:12309 admin admin1234567890z
+#
+./mc policy set public minio/audio
+
