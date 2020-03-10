@@ -1,3 +1,6 @@
+#列出镜像
+docker images
+docker image ls
 #查看容器
 docker ps -a
 #停止容器
