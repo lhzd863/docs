@@ -253,3 +253,5 @@ https://github.com/mixpanel/mixpanel-js
 https://github.com/VolantMQ/volantmq
 #
 https://github.com/synrc/n2o
+#
+https://github.com/g4zhuj/hashring
