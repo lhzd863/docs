@@ -1,0 +1,15 @@
+#
+global:
+  resolve_timeout: 5m
+
+route:
+  group_by: ['wifi']
+  group_wait: 10s
+  group_interval: 10s
+  repeat_interval: 1h
+  receiver: 'web.hook'
+receivers:
+- name: 'web.hook'
+  webhook_configs:
+  - url: 'http://172.18.18.xx:12502/api/alert?accesstoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjMzMTA2OTk5MTYsImlzcyI6Ind
+pZmkifQ.sN431XqpwPeXih-9XG3VRWAMI5RHS6coly00x0lOh60'
