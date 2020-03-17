@@ -1,0 +1,8 @@
+#
+nohup ./alertmanager --config.file="alertmanager.yml" \
+    --storage.path="data/" \
+    --data.retention=120h \
+    --alerts.gc-interval=30m  \
+    --web.listen-address=":9093" \
+    > run.log 2>&1 &
+    
