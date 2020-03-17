@@ -1,0 +1,19 @@
+#
+groups:
+- name: stat-job
+  rules:
+  - alert: "wifi"
+    expr: metrics_wifi_crm_job_errquit != 0
+    for: 1m
+    labels:
+      severity: High
+      type: "zhangxin"
+      to: "liuhui"
+    annotations:
+      index: "metrics_wifi_crm_job_errquit"
+      summary: "host: {{ $labels.instance }}"
+      description: "exit code: {{ $value }}"
+      value: "{{ $value }}"
+      op: "!="
+      eval: 0
+      
