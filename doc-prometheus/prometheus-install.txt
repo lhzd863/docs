@@ -1,0 +1,5 @@
+#
+nohup ./prometheus \
+--config.file=./prometheus.yml \
+--web.enable-lifecycle \
+>run.log 2>&1 &
