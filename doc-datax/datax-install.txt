@@ -1,2 +1,4 @@
 #查看配置模板
 python datax.py -r mysqlreader -w mysqlwriter
+#同步命令
+python datax.py sync2.json
