@@ -52,8 +52,8 @@ order by ordinal_position asc;
   echo "$template_str" > ./$tb.json
 
   local tmp_cal_job="${cal_job}"
-  retryLogin "RDCTL_MSQL_S00_LOGIN_172018019209"
-  errquit $? "RDCTL_MSQL_S00_LOGIN_172018019209 su login fail"
+  retryLogin "RDCTL_MSQL_S00_LOGIN_xxxx"
+  errquit $? "RDCTL_MSQL_S00_LOGIN_xxxx su login fail"
 
   sql="
 use $db;
