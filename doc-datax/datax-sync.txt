@@ -1,0 +1,72 @@
+while read line
+do
+  db=`echo "$line"|awk -F ',' '{printf $1}'`
+  tb=`echo "$line"|awk -F ',' '{printf $2}'`
+  sip=`echo "$line"|awk -F ',' '{printf $3}'`
+  susername=`echo "$line"|awk -F ',' '{printf $4}'`
+  spassword=`echo "$line"|awk -F ',' '{printf $5}'`
+  dip=`echo "$line"|awk -F ',' '{printf $6}'`
+  dusername=`echo "$line"|awk -F ',' '{printf $7}'`
+  dpassword=`echo "$line"|awk -F ',' '{printf $8}'`
+  
+  sql="
+show create table ${db}.${tb};
+"
+  local tbddl=`mysqlcmds "$sql"`
+  ddlstr=`echo "$tbddl"|sed 's/\\\n/ /g'|sed "s/$tb//"`
+
+  sql="
+select concat('\"',trim(column_name),'\"') 
+from information_schema.columns
+where table_schema = '${db}'
+and table_name = '${tb}'
+and column_name not in ('id')
+order by ordinal_position asc;
+"
+  echo "$sql"
+  local collst=`mysqlcmds "$sql"`
+  if [ ${#collst} -lt 1 ];then
+      echo "table columns not exist. "
+      exit 1
+  fi
+  for tlst in `echo "$collst"`
+  do
+     columnslst="$columnslst,$tlst"
+  done
+  local columnslst=${columnslst:1}
+
+  echo "$columnslst"
+
+  #column
+  template_str=`cat sync/mysql2mysql-template.json|sed "s/\[COLUMN2020\]/$columnslst/g"`
+  template_str=`echo "$template_str"|sed "s/\[SIP2020\]/$sip/g"`
+  template_str=`echo "$template_str"|sed "s/\[SUSERNAME2020\]/$susername/"`
+  template_str=`echo "$template_str"|sed "s/\[SPASSWORD2020\]/$spassword/"`
+  template_str=`echo "$template_str"|sed "s/\[DIP2020\]/$dip/g"`
+  template_str=`echo "$template_str"|sed "s/\[DUSERNAME2020\]/$dusername/"`
+  template_str=`echo "$template_str"|sed "s/\[DPASSWORD2020\]/$dpassword/"`
+  template_str=`echo "$template_str"|sed "s/\[TABLE2020\]/$tb/g"`
+  template_str=`echo "$template_str"|sed "s/\[SDB2020\]/$db/g"`
+  template_str=`echo "$template_str"|sed "s/\[DDB2020\]/$db/g"`
+
+  echo "$template_str" > ./$tb.json
+
+  local tmp_cal_job="${cal_job}"
+  retryLogin "RDCTL_MSQL_S00_LOGIN_172018019209"
+  errquit $? "RDCTL_MSQL_S00_LOGIN_172018019209 su login fail"
+
+  sql="
+use $db;
+$ddlstr;
+"
+  mysqlcmd "$sql"
+
+  retryLogin "${tmp_cal_job}" 
+  errquit $? "${tmp_cal_job} su login fail"
+
+  
+  python datax.py ./$tb.json
+  
+  rm -f ./$tb.json
+
+done < ./lst.txt
