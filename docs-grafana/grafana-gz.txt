@@ -1,0 +1,4 @@
+#
+nohup ./grafana-server start > run.log 2>&1 &
+
+
