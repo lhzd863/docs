@@ -1,4 +1,6 @@
 #
 nohup ./grafana-server start > run.log 2>&1 &
 
-
+#modify port
+conf/defaults.ini
+http_port = 3001
