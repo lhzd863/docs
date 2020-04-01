@@ -1,3 +1,14 @@
 #运行
 ./james start
 
+#domainlist.xml
+<domainlist class="org.apache.james.domainlist.jpa.JPADomainList">
+   <autodetect>true</autodetect>
+   <autodetectIP>true</autodetectIP>
+   <defaultDomain>122.51.161.53</defaultDomain>
+</domainlist>
+
+#mailetcontainer.xml
+<context>
+        <postmaster>postmaster@122.51.161.53</postmaster>
+</context>
