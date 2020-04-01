@@ -12,3 +12,6 @@
 <context>
         <postmaster>postmaster@122.51.161.53</postmaster>
 </context>
+
+#smtpserver.xml
+<helloName autodetect="true">122.51.161.53</helloName>
