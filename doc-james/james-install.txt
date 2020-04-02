@@ -15,3 +15,7 @@
 
 #smtpserver.xml
 <helloName autodetect="true">122.51.161.53</helloName>
+
+#
+bash ./james-cli.sh -h 47.89.240.84 -p 9999 adduser admin@47.89.240.84 xxx
+
