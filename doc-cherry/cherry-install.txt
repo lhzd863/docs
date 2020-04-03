@@ -1,1 +1,6 @@
 #
+nohup ./cherry --config=conf/sample.cherry > run.log 2>&1 &
+
+#IP cherry/sample/conf/sample.cherry
+servername = "xxx.xx.xx.xx"
+aliens-on-earth:12320
