@@ -1,0 +1,13 @@
+#
+select 
+ if(@fid=t5.idea_id and @cid=t5.unit_id,@rank:=@rank+1,@rank:=1) as rank,
+ t5.*
+ ,@fid:=t5.idea_id
+ ,@cid:=t5.unit_id
+ from (select @fid:=null,@cid:=null,@rank:=0) r, 
+ (select coalesce(idea_id,'') as idea_id,coalesce(unit_id,'') as unit_id,coalesce(form_id,'') as form_id,coalesce(conv_goal,'') as conv_goal,coalesce(wechat,'') as wechat
+ from xx.mgr 
+ where date_format(create_time,'%Y-%m-%d')='${cal_date_0}'
+ group by  coalesce(idea_id,''),coalesce(unit_id,''),coalesce(form_id,''),coalesce(conv_goal,''),coalesce(wechat,'')
+ order by id) t5
+ 
