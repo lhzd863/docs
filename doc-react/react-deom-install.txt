@@ -23,3 +23,8 @@ npm install qrcode.react --save
 #
 npm install react-chartjs-2 --save
 npm install chart --save
+
+#
+npm run build
+npm install -g serve
+serve -s build
