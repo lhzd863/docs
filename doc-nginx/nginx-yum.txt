@@ -1,2 +1,4 @@
 #
 yum install nginx
+#/etc/nginx.conf
+
