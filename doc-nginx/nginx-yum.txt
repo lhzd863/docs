@@ -1,4 +1,13 @@
 #
 yum install nginx
 #/etc/nginx.conf
-
+# 设置开机启动 
+systemctl enable nginx
+# 启动nginx服务
+service nginx start
+# 停止nginx服务
+service nginx stop
+# 重启nginx服务
+service nginx restart
+# 重新加载配置，一般是在修改过nginx配置文件时使用
+service nginx reload
