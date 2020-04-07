@@ -17,3 +17,5 @@ npm install -D raw-loader
 #
 npm i element-react --save
 npm install element-theme-default --save
+#
+npm install qrcode-reader --save
