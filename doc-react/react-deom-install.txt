@@ -19,3 +19,4 @@ npm i element-react --save
 npm install element-theme-default --save
 #
 npm install qrcode-reader --save
+npm install qrcode.react --save
