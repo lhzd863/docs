@@ -25,6 +25,7 @@ npm install react-chartjs-2 --save
 npm install chart --save
 
 #
-npm run build
 npm install -g serve
+#
+npm run build
 serve -s build
