@@ -1,3 +1,4 @@
 #https://github.com/miyakogi/pyppeteer
+pyppeteer-install
 yum install libexif
 yum install libXScrnSaver
