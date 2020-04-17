@@ -1,0 +1,25 @@
+#
+rm -rf /home/nginx-html/zdwst/*
+cp -r /home/k8s/nodejs/zdwst/build/*  /home/nginx-html/zdwst/
+#
+cd /home/nginx-html/zdwst/
+tar -czf favicon.ico.gz favicon.ico
+tar -czf logo192.png.gz logo192.png
+tar -czf logo512.png.gz logo512.png
+tar -czf precache-manifest.50e3cd488a97203198d69e917d4d8bfc.js.gz precache-manifest.50e3cd488a97203198d69e917d4d8bfc.js
+tar -czf service-worker.js.gz service-worker.js
+#
+cd /home/nginx-html/zdwst/static/js
+tar -czf 2.26c3ea56.chunk.js.gz 2.26c3ea56.chunk.js
+tar -czf main.d9bc8297.chunk.js.gz main.d9bc8297.chunk.js
+tar -czf runtime-main.ab58bb48.js.gz runtime-main.ab58bb48.js
+#
+cd /home/nginx-html/zdwst/static/css
+tar -czf 2.3313b4e0.chunk.css.gz 2.3313b4e0.chunk.css
+tar -czf main.60a54239.chunk.css.gz main.60a54239.chunk.css
+#
+cd /home/nginx-html/zdwst/static/media
+tar -czf element-icons.b02bdc1b.ttf.gz element-icons.b02bdc1b.ttf
+tar -czf logo.1025ccaa.svg.gz logo.1025ccaa.svg
+
+
