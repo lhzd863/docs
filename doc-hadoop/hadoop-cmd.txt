@@ -1,0 +1,2 @@
+#查看支持压缩方式
+hadoop checknative
