@@ -1,1 +1,23 @@
 #
+cd /etc/systemd/system
+
+#lanproxy.service
+[Unit]
+Description=lanproxy
+After=syslog.target network.target
+
+[Service]
+Type=forking
+Environment=JAVA_HOME=/home/k8s/jdk/jdk1.8.0_191
+ExecStart=bash /home/k8s/bin/autostart.sh
+ExecStop=bash /home/k8s/bin/autostart.sh
+Restart=always
+User=k8s
+Group=k8s
+
+[Install]
+WantedBy=multi-user.target
+
+#
+systemctl start lanproxy
+systemctl stop lanproxy
