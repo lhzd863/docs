@@ -1,7 +1,7 @@
 #
 cd /etc/systemd/system
 
-#lanproxy.service
+#vi lanproxy.service
 [Unit]
 Description=lanproxy
 After=syslog.target network.target
