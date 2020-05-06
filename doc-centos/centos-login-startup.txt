@@ -19,5 +19,6 @@ Group=k8s
 WantedBy=multi-user.target
 
 #
-systemctl start lanproxy
-systemctl stop lanproxy
+systemctl start lanproxy.service
+systemctl stop lanproxy.service
+systemctl enable lanproxy.service
