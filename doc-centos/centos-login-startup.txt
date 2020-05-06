@@ -22,3 +22,4 @@ WantedBy=multi-user.target
 systemctl start lanproxy.service
 systemctl stop lanproxy.service
 systemctl enable lanproxy.service
+systemctl status lanproxy.service
