@@ -6,6 +6,6 @@ Host xxx
     HostName xxx
     Port xxx
     User xxx
-    IdentityFile xxx
+    IdentityFile xxx/id_rsa
 #general id_rsa
 
