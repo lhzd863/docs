@@ -1,1 +1,9 @@
-#
+#ssh  git  ssh.exe put path
+D:\softinstall\Git\usr\bin
+#config
+# Read more about SSH config files: https://linux.die.net/man/5/ssh_config
+Host xxx
+    HostName xxx
+    Port xxx
+    User xxx
+    IdentityFile xxx
