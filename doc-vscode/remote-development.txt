@@ -8,4 +8,4 @@ Host xxx
     User xxx
     IdentityFile xxx/id_rsa
 #general id_rsa
-
+id_rsa.pub  content copy to remote ~/.ssh/authorized_keys
