@@ -7,3 +7,5 @@ Host xxx
     Port xxx
     User xxx
     IdentityFile xxx
+#general id_rsa
+
