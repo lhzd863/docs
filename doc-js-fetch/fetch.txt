@@ -1,1 +1,35 @@
 #
+var token = getToken()
+const url = global_system_data_url + '/system/user/info?accesstoken=' + token
+fetch(url, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json;charset=UTF-8'
+  },
+  body: JSON.stringify({
+    id: id0
+  })
+})
+  .then(response => response.json())
+  .then((responsedata) => {
+    if (responsedata.status_code !== 200) {
+      console.log(responsedata.status_txt)
+      reject(responsedata.status_txt)
+      return
+    }
+    var t = {}
+    t.username = responsedata.data[0].username
+    t.avatar = responsedata.data[0].avatar
+    t.roles = responsedata.data[0].role
+    t.introduction = responsedata.data[0].introduction
+    t.createtime = responsedata.data[0].createtime
+    t.updatetime = responsedata.data[0].updatetime
+    t.id = responsedata.data[0].id
+    t.role = responsedata.data[0].role.join(',')
+    t.enable = responsedata.data[0].enable
+    resolve(t)
+  })
+  .catch(function(err) {
+    console.log(err)
+    reject(err)
+  })
