@@ -1,1 +1,35 @@
 #
+axios({
+  url: url,
+  method: 'post',
+  header: {
+    'Content-Type': 'application/json;charset=UTF-8'
+  },
+  data: {
+    id: id0,
+    avatar: avatar0,
+    introduction: introduction0,
+    enable: enable0
+  },
+  withCredentials: false,
+  responseEncoding: 'utf8'
+})
+  .then((response) => {
+    if (response.status !== 200) {
+      reject(response.statusText)
+      return
+    }
+    return response.data
+  })
+  .then((responsedata) => {
+    if (responsedata.status_code !== 200) {
+      console.log(responsedata.status_txt)
+      reject(response.status_txt)
+      return
+    }
+    resolve(responsedata.data)
+  })
+  .catch(function(err) {
+    console.log(err)
+    reject(err)
+  })
