@@ -1,0 +1,12 @@
+#
+cd /etc/yum.repos.d
+#clickhouse.repo
+[clickhouse-stable]
+name=ClickHouse - Stable Repository
+baseurl=http://repo.clickhouse.tech/rpm/stable/$basearch/
+gpgkey=https://repo.clickhouse.tech/CLICKHOUSE-KEY.GPG
+gpgcheck=1
+enabled=1
+#
+yum install clickhouse-server clickhouse-client
+
