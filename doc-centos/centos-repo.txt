@@ -2,7 +2,11 @@
 cd /etc/yum.repos.d
 #2，备份系统自带的yum源
 mv CentOS-Base.repo CentOS-Base.repo.20200617
-http://mirrors.aliyun.com/repo/Centos-7.repo
+http://mirrors.aliyun.com/repo/Centos-7.repo  阿里
+#http://centos.ustc.edu.cn/CentOS-Base.repo  中科大
+#http://mirrors.sohu.com/help/CentOS-Base-sohu.repo  sohu
+#http://mirrors.163.com/.help/CentOS6-Base-163.repo  163
+
 #
 3，清理并重新生成yum缓存
 yum clean metadata
