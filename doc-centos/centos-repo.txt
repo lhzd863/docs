@@ -4,7 +4,7 @@ cd /etc/yum.repos.d
 mv CentOS-Base.repo CentOS-Base.repo.20200617
 http://mirrors.aliyun.com/repo/Centos-7.repo
 #
-3，更新玩yum源后，执行下边命令更新yum配置，使操作立即生效
+3，清理并重新生成yum缓存
 yum clean metadata
 yum makecache
 
