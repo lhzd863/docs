@@ -2,3 +2,5 @@
 service mysqld stop
 #start
 service mysqld start
+#
+mysql -u root -p 
