@@ -1,0 +1,4 @@
+#stop
+service mysqld stop
+#start
+service mysqld start
