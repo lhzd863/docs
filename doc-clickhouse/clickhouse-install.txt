@@ -10,6 +10,9 @@ enabled=1
 #
 yum install clickhouse-server clickhouse-client
 
+#启动：
+sudo -u clickhouse clickhouse-server --config-file=/etc/clickhouse-server/config.xml
+
 #问题1：su: cannot open session: Permission denied
 解决方法:修改/etc/security/limits.d/clickhouse.conf
 clickhouse      soft    nofile  65536
