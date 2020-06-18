@@ -21,3 +21,5 @@ clickhouse      hard    nofile  65536
 Poco::Exception. Code: 1000, e.code() = 13, e.displayText() = Access to file denied: /var/log/clickhouse-server/clickhouse-server.log
 解决方法:chown -R clickhouse /var/lib/clickhouse
         chown -R clickhouse /var/log/clickhouse-server
+#数据存储
+/var/lib/clickhouse/data
