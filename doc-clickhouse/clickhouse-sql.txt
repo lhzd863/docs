@@ -1,0 +1,7 @@
+#查看分区
+SELECT
+    partition,
+    name,
+    active
+FROM system.parts
+WHERE table = 'visits'
