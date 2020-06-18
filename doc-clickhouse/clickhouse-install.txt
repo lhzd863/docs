@@ -17,3 +17,7 @@ sudo -u clickhouse clickhouse-server --config-file=/etc/clickhouse-server/config
 解决方法:修改/etc/security/limits.d/clickhouse.conf
 clickhouse      soft    nofile  65536
 clickhouse      hard    nofile  65536
+#问题2：Couldn't save preprocessed config to /var/lib/clickhouse//preprocessed_configs/config.xml: Access to file denied: /var/lib/clickhouse//preprocessed_configs/config.xml
+Poco::Exception. Code: 1000, e.code() = 13, e.displayText() = Access to file denied: /var/log/clickhouse-server/clickhouse-server.log
+解决方法:chown -R clickhouse /var/lib/clickhouse
+        chown -R clickhouse /var/log/clickhouse-server
