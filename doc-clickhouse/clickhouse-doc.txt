@@ -1,2 +1,4 @@
 #connect
 clickhouse-client --host=127.0.0.1
+clickhouse-client --host=122.51.161.53 --port 9000
+clickhouse-client --host=122.51.161.53 --port 9000 --query="$sql"
