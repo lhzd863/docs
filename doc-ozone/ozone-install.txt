@@ -1,1 +1,38 @@
+#配置ozone-site.xml
+<configuration>
+   <property>
+      <name>ozone.metadata.dirs</name>
+      <value>/home/k8s/ozone/data/metadata</value>
+   </property>
+   <property>
+      <name>ozone.scm.names</name>
+      <value>192.168.1.189</value>
+   </property>
+   <property>
+      <name>ozone.scm.datanode.id.dir</name>
+      <value>/home/hadoop/ozone/data/disk1</value>
+   </property>
+   <property>
+       <name>ozone.om.address</name>
+       <value>192.168.1.189</value>
+    </property>
+</configuration>
+
+
 #
+ozone scm --init
+ozone --daemon start scm
+#
+ozone om --init
+ozone --daemon start om
+#
+ozone --daemon start datanode
+
+or
+#添加$OZONE_HOME/etc/hadoop/workers
+192.168.1.189
+#
+ozone scm --init
+ozone om --init
+start-ozone.sh
+
