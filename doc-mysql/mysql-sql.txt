@@ -21,8 +21,9 @@ select
   PARTITION p20200622 VALUES LESS THAN (TO_DAYS('2020-06-22')),
 	 PARTITION p1 VALUES LESS THAN (MAXVALUE)
  );
-#删除primary key
-alter table products drop primary key;
+#删除和添加primary key
+alter table ad_crmdata.crm_cust_pay drop PRIMARY KEY;
+alter table ad_crmdata.crm_cust_pay ADD PRIMARY KEY(id,dt);
 #添加字段
 alter table ad_crmdata.crm_cust_sales add clue_num_grp bigint ;
 #删除字段
