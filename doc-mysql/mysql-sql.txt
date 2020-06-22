@@ -25,3 +25,6 @@ select
 alter table products drop primary key;
 #添加字段
 alter table ad_crmdata.crm_cust_sales add clue_num_grp bigint ;
+#删除字段
+alter table ad_crmdata.crm_cust_sales drop column cust_num_grp; 
+
