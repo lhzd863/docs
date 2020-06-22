@@ -15,3 +15,9 @@ select
  group by  coalesce(idea_id,''),coalesce(unit_id,''),coalesce(form_id,''),coalesce(conv_goal,''),coalesce(wechat,'')
  order by id) t5
  
+ #添加分区
+ ALTER TABLE ad_crmdata.crm_cust_pay PARTITION BY RANGE (TO_DAYS(dt))
+ (
+  PARTITION p20200622 VALUES LESS THAN (TO_DAYS('2020-06-22')),
+	 PARTITION p1 VALUES LESS THAN (MAXVALUE)
+ );
