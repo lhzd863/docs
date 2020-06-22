@@ -1,4 +1,4 @@
-#
+#rownumber 实现
 select 
  if(@fid=t5.idea_id and @cid=t5.unit_id,@rank:=@rank+1,@rank:=1) as rank,
  t5.*
@@ -21,3 +21,7 @@ select
   PARTITION p20200622 VALUES LESS THAN (TO_DAYS('2020-06-22')),
 	 PARTITION p1 VALUES LESS THAN (MAXVALUE)
  );
+#删除primary key
+alter table products drop primary key;
+#添加字段
+alter table ad_crmdata.crm_cust_sales add clue_num_grp bigint ;
