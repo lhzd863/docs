@@ -4,3 +4,7 @@ service mysqld stop
 service mysqld start
 #
 mysql -u root -p 
+#设置timeout
+SET SESSION wait_timeout = 3600;
+SHOW VARIABLES LIKE 'wait_timeout';
+set global connect_timeout=10;
