@@ -4,3 +4,5 @@ go mod init github.com/lhzd863/autoflow
 go build
 #modify proxy
 go env -w GOPROXY=https://goproxy.cn,direct
+go env -w GO111MODULE=on
+go env -w GOPRIVATE="git.example.com,github.com/eddycjy/mquote"
