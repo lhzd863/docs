@@ -1,1 +1,4 @@
-gitlab.51y5.net/liuhui/yangtze-grpc
+#init
+go mod init github.com/lhzd863/autoflow
+#add dependency
+go build
