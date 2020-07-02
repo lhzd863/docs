@@ -2,3 +2,5 @@
 go mod init github.com/lhzd863/autoflow
 #add dependency
 go build
+#modify proxy
+go env -w GOPROXY=https://goproxy.cn,direct
