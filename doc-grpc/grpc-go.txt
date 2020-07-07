@@ -2,3 +2,5 @@
  protoc --go_out=plugins=grpc:./test/ ./test.proto
  
  
+#refs
+http://doc.oschina.net/grpc?t=60133
