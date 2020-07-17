@@ -39,6 +39,19 @@ CREATE TABLE table4 (
    'sink.buffer-flush.interval' = '10s'
 );
 
+CREATE TABLE landing_pv
+(
+    pt String,
+	dt String,
+	cid String,
+	cnt Int64,
+	PRIMARY KEY (topic,dt,cid) NOT ENFORCED
+) ENGINE = MergeTree 
+PARTITION BY dt  
+ORDER BY (pt,dt,cid) 
+PRIMARY KEY(pt,dt,cid) ;
+
+
 
 #clickhouse
 CREATE TABLE table1 (
