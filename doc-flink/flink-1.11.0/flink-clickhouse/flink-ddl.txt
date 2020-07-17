@@ -12,7 +12,7 @@ CREATE TABLE tab1 (
 );
 
 #derby
-CREATE TABLE landing_pv (
+CREATE TABLE table2 (
   t string, 
   cnt bigint,
   PRIMARY KEY (t) NOT ENFORCED
