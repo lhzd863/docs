@@ -24,3 +24,17 @@ CREATE TABLE table2 (
    'password' = 'xxx',
    'sink.buffer-flush.max-rows' = '0'
 );
+
+#
+CREATE TABLE table4 (
+  t string,
+  cnt bigint,
+  PRIMARY KEY (t) NOT ENFORCED
+) WITH (
+   'connector' = 'jdbc',
+   'url' = 'jdbc:mysql://122.51.161.53:3306/test',
+   'table-name' = 'xx',
+   'username' = 'xx',
+   'password' = 'xx',
+   'sink.buffer-flush.interval' = '10s'
+);
