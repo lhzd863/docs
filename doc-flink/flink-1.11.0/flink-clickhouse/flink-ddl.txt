@@ -11,7 +11,7 @@ CREATE TABLE tab1 (
     'format.type' = 'json'
 );
 
-#derby
+#derby  sink
 CREATE TABLE table2 (
   t string, 
   cnt bigint,
