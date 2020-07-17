@@ -5,6 +5,21 @@
 #refs 
 https://blog.csdn.net/txgANG/article/details/103737429
 
+$flink/lib add jar
+commons-codec-1.9.jar
+commons-logging-1.2.jar
+guava-19.0.jar
+httpclient-4.5.2.jar
+httpcore-4.4.4.jar
+httpmime-4.5.2.jar
+jackson-annotations-2.7.0.jar
+jackson-core-2.7.3.jar
+jackson-databind-2.7.3.jar
+jaxb-api-2.3.0.jar
+lz4-1.3.0.jar
+slf4j-api-1.7.21.jar
+
+
 #modify JdbcDialects.java 
 public final class JdbcDialects {
 
