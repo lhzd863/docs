@@ -1,0 +1,26 @@
+#kafka src
+CREATE TABLE tab1 (
+    sid STRING,
+    proctime as PROCTIME()
+) WITH (
+    'connector.type' = 'kafka', 
+    'connector.version' = 'universal', 
+    'connector.topic' = 'xxxx',
+    'connector.startup-mode' = 'earliest-offset', 
+    'connector.properties.bootstrap.servers' = 'xxx:9092,xxx:9092',
+    'format.type' = 'json'
+);
+
+#derby
+CREATE TABLE landing_pv (
+  t string, 
+  cnt bigint,
+  PRIMARY KEY (t) NOT ENFORCED
+) WITH (
+   'connector' = 'jdbc',
+   'url' = 'jdbc:derby://xxx:1527/xxx',
+   'table-name' = 'xxx',
+   'username' = 'xx',
+   'password' = 'xxx',
+   'sink.buffer-flush.max-rows' = '0'
+);
