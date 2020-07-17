@@ -38,3 +38,17 @@ CREATE TABLE table4 (
    'password' = 'xx',
    'sink.buffer-flush.interval' = '10s'
 );
+
+
+#clickhouse
+CREATE TABLE table1 (
+  pt string,
+  cnt bigint,
+  PRIMARY KEY (pt) NOT ENFORCED
+) WITH (
+   'connector' = 'jdbc',
+   'url' = 'jdbc:clickhouse://122.51.161.53:8123/test',
+   'table-name' = 'xxx',
+   'driver' = 'ru.yandex.clickhouse.ClickHouseDriver',
+   'sink.buffer-flush.interval' = '10s'
+);
