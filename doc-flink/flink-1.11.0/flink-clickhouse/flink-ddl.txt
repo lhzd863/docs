@@ -25,7 +25,7 @@ CREATE TABLE table2 (
    'sink.buffer-flush.max-rows' = '0'
 );
 
-#
+#mysql
 CREATE TABLE table4 (
   t string,
   cnt bigint,
