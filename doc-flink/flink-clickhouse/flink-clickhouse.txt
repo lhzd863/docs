@@ -2,8 +2,10 @@
 #add flink-connector-jdbc/src/main/java/org/apache/flink/connector/jdbc/dialect/ClickhouseDialect.java
 #add flink-connector-jdbc/src/main/java/org/apache/flink/connector/jdbc/internal/converter/JdbcRowConverter.java
 #modify flink-connector-jdbc/src/main/java/org/apache/flink/connector/jdbc/dialect/JdbcDialects.java  add new ClickhouseDialect()
+#refs 
+https://blog.csdn.net/txgANG/article/details/103737429
 
-#
+#modify JdbcDialects.java 
 public final class JdbcDialects {
 
         private static final List<JdbcDialect> DIALECTS = Arrays.asList(
