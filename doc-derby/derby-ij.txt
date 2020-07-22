@@ -1,0 +1,21 @@
+export DERBY_LIB=xxx/derby/derby-10.14.2.0/lib
+export LOCALCLASSPATH=$DERBY_LIB/derby.jar:$DERBY_LIB/derbynet.jar:$DERBY_LIB/derbytools.jar:$DERBY_LIB/derbyoptionaltools.jar:$DERBY_LIB/derbyclient.jar
+
+java -classpath "$LOCALCLASSPATH" -Djdbc.drivers=org.apache.derby.jdbc.EmbeddedDriver org.apache.derby.tools.ij  derby-sql.sql
+
+
+
+connect 'jdbc:derby://xxxx:1527/ad_lbsdata;user=ad_lbsdata;password=ad_lbsdata;create=true';
+
+create table ad_lbsdata.lbs_hdfs_dir
+(
+ dir      varchar(1000),
+ size     varchar(30),
+ unit     varchar(30),
+ subnum   varchar(30),
+ headstr  varchar(3000),
+ tailstr  varchar(3000),
+ ispt     varchar(30)
+);
+
+select count(1) from ad_lbsdata.lbs_hdfs_dir;
