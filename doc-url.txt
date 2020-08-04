@@ -270,3 +270,5 @@ https://github.com/d5/tengo
 https://github.com/saromanov/gocker
 #
 github.com/containerd/cgroups
+#
+https://github.com/yemount/pose-animator/
