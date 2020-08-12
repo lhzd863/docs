@@ -7,7 +7,7 @@ export PATH=$MAVEN_HOME/bin:$PATH
 
 #config
 <localRepository>/m2/repository</localRepository>
-<profile>
+   <profile>
       <id>jdk-1.8</id>
 
       <activation>
