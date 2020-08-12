@@ -4,3 +4,20 @@ wget http://mirror.bit.edu.cn/apache/maven/maven-3/3.6.2/binaries/apache-maven-3
 export MAVEN_HOME=/home/k8s/maven/apache-maven-3.6.3
 export CLASSPATH=$MAVEN_HOME/lib:$CLASSPATH
 export PATH=$MAVEN_HOME/bin:$PATH
+
+#config
+<localRepository>/m2/repository</localRepository>
+<profile>
+      <id>jdk-1.8</id>
+
+      <activation>
+	    <activeByDefault>true</activeByDefault>
+        <jdk>1.8</jdk>
+      </activation>
+
+      <properties> 
+	    <maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+	  </properties>
+    </profile>
