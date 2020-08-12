@@ -1,2 +1,6 @@
 #
 wget http://mirror.bit.edu.cn/apache/maven/maven-3/3.6.2/binaries/apache-maven-3.6.2-bin.tar.gz
+#
+export MAVEN_HOME=/home/k8s/maven/apache-maven-3.6.3
+export CLASSPATH=$MAVEN_HOME/lib:$CLASSPATH
+export PATH=$MAVEN_HOME/bin:$PATH
