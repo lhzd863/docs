@@ -1,0 +1,10 @@
+#upload lib
+flink-metrics-prometheus_2.12-1.11.0.jar
+#conf/flink-conf.yaml
+metrics.reporter.promgateway.class: org.apache.flink.metrics.prometheus.PrometheusPushGatewayReporter
+metrics.reporter.promgateway.host: 172.18.18.104
+metrics.reporter.promgateway.port: 9091
+metrics.reporter.promgateway.jobName: flink_prometheus_pushgateway
+metrics.reporter.promgateway.randomJobNameSuffix: true
+metrics.reporter.promgateway.deleteOnShutdown: false
+metrics.reporter.promgateway.interval: 60 SECONDS
