@@ -1,1 +1,6 @@
-#
+#vi /etc/security/limits.conf
+hadoop           soft    nofile  65536
+hadoop           hard    nofile  131072
+hadoop           soft    nproc   65536
+hadoop           hard    nproc   131072
+
