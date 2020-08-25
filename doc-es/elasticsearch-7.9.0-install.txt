@@ -5,4 +5,4 @@ hadoop           soft    nproc   65536
 hadoop           hard    nproc   131072
 #vi /etc/sysctl.conf
 vm.max_map_count=262144
-#
+#生效 sysctl -p
