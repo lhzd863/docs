@@ -41,3 +41,5 @@ stix-fonts-1.1.0-5.el7.noarch.rpm
 fontconfig-2.10.95-11.el7.x86_64.rpm
 urw-fonts-2.4-16.el7.noarch.rpm
 grafana-5.2.2-1.x86_64.rpm
+#
+curl -XPOST http://122.51.161.53:9090/-/reload
