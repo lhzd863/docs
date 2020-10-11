@@ -5,6 +5,6 @@ clickhouse-client --host=122.51.161.53 --port 9000 --query="$sql"
 
 #查看集群
 select * from system.clusters;
-#随机分片
+#随机分片 https://www.jianshu.com/p/20639fdfdc99
 CREATE TABLE ontime_all AS ontime_local
 ENGINE = Distributed(cluster_3shards_1replicas, default, ontime_local, rand())
