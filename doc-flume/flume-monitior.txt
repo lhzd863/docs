@@ -1,0 +1,66 @@
+#flume 配置json reporting
+
+nohup bin/flume-ng agent --conf conf/ -f conf/flume-conf.properties -n ldp_agent -Dflume.monitoring.type=http -Dflume.monitoring.port=5201 -Df
+lume.root.logger=INFO,console > run.log 2>&1 &
+
+注意： 执行命令添加  -Dflume.monitoring.type=http -Dflume.monitoring.port=5201 -Dflume.root.logger=INFO,console 
+
+
+
+#exporter_node 
+
+# https://github.com/woozhijun/flume_exporter
+
+exporter_node配置：
+
+agents:
+- name: "flume-agents"
+  enabled: true
+# multiple urls can be separated by ,
+  urls: ["http://xxx:5201/metrics","http://xxx:5201/metrics"]
+
+启动：nohup ./flume_exporter --metric-file=./metrics.yml --config-file=./config.yml > run.log 2>&1 & 
+
+
+
+#prometheus prometheus.yml配置
+
+- job_name: flume-discovery
+
+#flume
+#
+
+  - job_name: flume-discovery
+
+    #flume
+    #
+
+    file_sd_configs:
+      - files:
+        - '/home/lsmk/liuh/prometheus/prometheus-2.16.0.linux-amd64/tmp/flume-nodes.json'
+    metric_relabel_configs:
+      - source_labels: [host]
+        regex: '10.2.14.16:5201'
+        replacement: flume-10.2.14.16-5201
+        target_label: logs
+        action: replace
+      - source_labels: [host]
+        regex: '10.2.18.5:5201'
+        replacement: flume-10.2.18.5-5201
+        target_label: logs
+        action: replace
+        
+#flume-nodes.json
+
+[{
+        "targets": ["10.2.14.16:9360"],
+        "labels": {
+                "alias": "flume-kafka",
+                "job": "flume"
+        }
+}]
+
+
+
+#granfana https://grafana.com/grafana/dashboards/10736
+
