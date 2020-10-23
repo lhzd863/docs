@@ -1,1 +1,25 @@
 #
+pip install shadowsocks
+#/etc/shadowsocks.json
+{
+"server":"0.0.0.0",
+"local_address":"127.0.0.1",
+"local_port":1080,
+"port_password":{
+"8488":"lhzd863",
+"12320":"lhzd863"
+},
+"timeout":300,
+"method":"aes-256-ctr",
+"fast_open":false
+}
+#
+ssserver -c /etc/shadowsocks.json -d start
+
+#err
+AttributeError: /home/miniconda/miniconda3/lib/python3.7/lib-dynload/../../libcrypto.so.1.1: undefined symbol: EVP_CIPHER_CTX_cleanup
+#replace all EVP_CIPHER_CTX_cleanup to EVP_CIPHER_CTX_reset
+/home/miniconda/miniconda3/lib/python3.7/site-packages/shadowsocks/crypto/openssl.py
+
+
+
