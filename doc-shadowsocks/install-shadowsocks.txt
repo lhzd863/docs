@@ -21,5 +21,7 @@ AttributeError: /home/miniconda/miniconda3/lib/python3.7/lib-dynload/../../libcr
 #replace all EVP_CIPHER_CTX_cleanup to EVP_CIPHER_CTX_reset
 /home/miniconda/miniconda3/lib/python3.7/site-packages/shadowsocks/crypto/openssl.py
 
+#
+ssserver -c /etc/shadowsocks.json -d stop
 
 
