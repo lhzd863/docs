@@ -1,0 +1,12 @@
+#基础lib
+log4j-slf4j-impl-2.12.1.jar
+log4j-api-2.12.1.jar
+log4j-1.2-api-2.12.1.jar
+log4j-core-2.12.1.jar
+flink-shaded-zookeeper-3.4.14.jar
+flink-json-1.11.2.jar
+flink-csv-1.11.2.jar
+flink-table_2.11-1.11.2.jar
+flink-table-blink_2.11-1.11.2.jar
+flink-dist_2.11-1.11.2.jar
+#
