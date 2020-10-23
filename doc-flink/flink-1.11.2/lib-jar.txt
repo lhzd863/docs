@@ -9,4 +9,7 @@ flink-csv-1.11.2.jar
 flink-table_2.11-1.11.2.jar
 flink-table-blink_2.11-1.11.2.jar
 flink-dist_2.11-1.11.2.jar
-#
+#jdbc -mysql
+mysql-connector-java-5.1.49.jar
+#prometheus
+flink-metrics-prometheus_2.11-1.11.2.jar
