@@ -26,4 +26,9 @@ jackson-annotations-2.7.0.jar
 jackson-core-2.7.3.jar
 jaxb-api-2.3.0.jar
 slf4j-api-1.7.21.jar
+#jdbc
+flink-connector-jdbc_2.11-1.11.2.jar
+#kafka
+flink-sql-connector-kafka_2.11-1.11.2.jar
+
 
