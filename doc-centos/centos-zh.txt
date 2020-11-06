@@ -3,5 +3,5 @@ LANG="zh_CN.UTF-8"
 #/etc/locale.conf
 LANG="zh_CN.UTF-8"
 
-#connect
+#connect  SecureCTR
 terminal->appearance->character encoding = UTF-8
