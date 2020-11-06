@@ -11,3 +11,10 @@ sudo dnf install -y postgresql13-server
 sudo /usr/pgsql-13/bin/postgresql-13-setup initdb
 sudo systemctl enable postgresql-13
 sudo systemctl start postgresql-13
+
+#
+/var/lib/pgsql/13/data/pg_hba.conf
+host    all             all             0.0.0.0/0               md5
+
+#
+
