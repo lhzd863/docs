@@ -1,0 +1,6 @@
+#/etc/sysconfig/i18n
+LANG="zh_CN.UTF-8"
+#/etc/locale.conf
+LANG="zh_CN.UTF-8"
+
+#connect
