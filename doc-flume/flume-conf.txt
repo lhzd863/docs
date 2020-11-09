@@ -18,9 +18,9 @@ agent.sources.kafkaSource.type = org.apache.flume.source.kafka.KafkaSource
 #
 # 这里特别注意: 是kafka的zookeeper的地址
 #
-#agent.sources.kafkaSource.zookeeperConnect = 172.18.18.99:2181
-agent.sources.kafkaSource.zookeeperConnect = 172.18.18.13:2181,172.18.19.129:2181,172.18.19.130:2181
-agent.sources.kafkaSource.bootstrap.servers = 172.18.18.13:18080,172.18.19.129:18080,172.18.19.130:18080,172.18.19.161:18080
+#agent.sources.kafkaSource.zookeeperConnect = xxx:2181
+agent.sources.kafkaSource.zookeeperConnect = xxx:2181
+agent.sources.kafkaSource.bootstrap.servers = xxx:18080
 
 # 配置消费的kafka topic
 #agent.sources.kafkaSource.topic = testtopic# 配置消费者组的id
@@ -42,7 +42,7 @@ agent.channels.memoryChannel.keep-alive = 60
 #---------hdfsSink 相关配置------------------
 agent.sinks.hdfsSink.type = hdfs
 # 注意, 我们输出到下面一个子文件夹datax中
-agent.sinks.hdfsSink.hdfs.path = hdfs://ns1/user/lsmk/stats/res/athena/tmp_liuh/inview
+agent.sinks.hdfsSink.hdfs.path = hdfs://xxx/inview
 agent.sinks.hdfsSink.hdfs.writeFormat = Text
 agent.sinks.hdfsSink.hdfs.fileType = DataStream
 
