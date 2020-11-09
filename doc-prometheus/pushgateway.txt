@@ -1,9 +1,9 @@
 #推送测试数据到 pushgateway
-echo "some_metric 3.14" | curl --data-binary @- http://172.18.18.99:9091/metrics/job/some_job
+echo "some_metric 3.14" | curl --data-binary @- http://xxx:9091/metrics/job/some_job
 #删除某个组下的所有数据
-curl -X DELETE http://172.18.18.99:9091/metrics/job/some_job
+curl -X DELETE http://xxx:9091/metrics/job/some_job
 #添加更复杂的数据指标
-cat <<EOF | curl --data-binary @- http://172.18.18.99:9091/metrics/job/some_job/instance/some_instance
+cat <<EOF | curl --data-binary @- http://xxx:9091/metrics/job/some_job/instance/some_instance
 # TYPE some_metric counter
 some_metric{label="val1"} 42
 # TYPE another_metric gauge
