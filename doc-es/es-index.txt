@@ -1,7 +1,7 @@
 #
 #获取当前索引
-curl -u elastic:changeme '172.18.18.99:9200/_cat/indices?v'
+curl -u elastic:changeme 'xxx:9200/_cat/indices?v'
 #删除索引
-curl -XDELETE -u elastic:changeme http://172.18.18.99:9200/e01_basic_index_20190612
+curl -XDELETE -u elastic:changeme http://xxx:9200/e01_basic_index_20190612
 #删除7天前数据
-curl -XDELETE -u elastic:changeme http://172.18.18.99:9200/*_$(date -d '-7days' +'%Y%m%d')
+curl -XDELETE -u elastic:changeme http://xxx:9200/*_$(date -d '-7days' +'%Y%m%d')
