@@ -22,10 +22,10 @@ from yx_adstats.r01_inviewclick_line where pt='20190523.000000';
 hive -hiveconf hive.aux.jars.path=file:///usr/local/elasticsearch/elasticsearch-hadoop-5.5.1.jar
 
 add jar XXX/elasticsearch/hadoop-jar/elasticsearch-hadoop-hive-6.3.2.jar;
-insert into yx_test.r01_inviewclick_line_es 
+insert into test.r01_inviewclick_line_es 
 select uid,inview_seq,click_seq,inview_cnt,click_cnt,pt from yx_adstats.r01_inviewclick_line where pt='20190527.000000';
 
-curl -H "Content-Type: application/json" -XGET 'XXX:9200/r01_athena_basic_h_es_20190527_000000/type/_search?pretty' -d '
+curl -H "Content-Type: application/json" -XGET 'XXX:9200/r01_basic_h_es_20190527_000000/type/_search?pretty' -d '
 {
   "query": {
     "bool": {
