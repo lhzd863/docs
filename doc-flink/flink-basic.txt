@@ -1,4 +1,4 @@
 #
 flink run -c com.std.WindowWordCount std-0.0.1-SNAPSHOT.jar \
---output /home/lsmk/liuh/tmp/std/tmp.txt \
---input /home/lsmk/liuh/tmp/std/test.txt
+--output xxx/tmp/std/tmp.txt \
+--input xxx/tmp/std/test.txt
