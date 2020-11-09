@@ -1,7 +1,7 @@
 #
 bin/kafka-server-start.sh config/server.properties
 #Create a topic
-bin/kafka-topics.sh --create --bootstrap-server 172.18.18.99:9092 --replication-factor 1 --partitions 1 --topic test
+bin/kafka-topics.sh --create --bootstrap-server xxx:9092 --replication-factor 1 --partitions 1 --topic test
 #list
 bin/kafka-topics.sh --list --bootstrap-server localhost:9092
 #send message
