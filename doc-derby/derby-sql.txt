@@ -1,4 +1,4 @@
-connect 'jdbc:derby:dedb;user=ad_crmdata;password=ad_crmdata;create=true'; 
-connect 'jdbc:derby://10.131.0.57:1527/ad_crmdata;user=ad_crmdata;password=ad_crmdata;create=true';
+connect 'jdbc:derby:dedb;user=data;password=data;create=true'; 
+connect 'jdbc:derby://xxx:1527/data;user=data;password=data;create=true';
 
 
