@@ -5,7 +5,7 @@ java -classpath "$LOCALCLASSPATH" -Djdbc.drivers=org.apache.derby.jdbc.EmbeddedD
 
 
 
-connect 'jdbc:derby://xxxx:1527/ad_lbsdata;user=data;password=data;create=true';
+connect 'jdbc:derby://xxxx:1527/data;user=data;password=data;create=true';
 
 create table data.lbs_hdfs_dir
 (
