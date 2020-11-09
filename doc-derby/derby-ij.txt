@@ -5,9 +5,9 @@ java -classpath "$LOCALCLASSPATH" -Djdbc.drivers=org.apache.derby.jdbc.EmbeddedD
 
 
 
-connect 'jdbc:derby://xxxx:1527/ad_lbsdata;user=ad_lbsdata;password=ad_lbsdata;create=true';
+connect 'jdbc:derby://xxxx:1527/ad_lbsdata;user=data;password=data;create=true';
 
-create table ad_lbsdata.lbs_hdfs_dir
+create table data.lbs_hdfs_dir
 (
  dir      varchar(1000),
  size     varchar(30),
@@ -18,4 +18,4 @@ create table ad_lbsdata.lbs_hdfs_dir
  ispt     varchar(30)
 );
 
-select count(1) from ad_lbsdata.lbs_hdfs_dir;
+select count(1) from data.lbs_hdfs_dir;
