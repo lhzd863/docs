@@ -1,11 +1,11 @@
 #
 wget http://apache.website-solution.net//db/derby/db-derby-10.14.2.0/db-derby-10.14.2.0-bin.tar.gz
 #
-connect 'jdbc:derby://xxx:1527/openyx;create=true';
-ij> connect 'jdbc:derby:openyx;create=True;user=root;password=root';
-ij> connect 'jdbc:derby:openyx';
+connect 'jdbc:derby://xxx:1527/test;create=true';
+ij> connect 'jdbc:derby:test;create=True;user=root;password=root';
+ij> connect 'jdbc:derby:test';
 ij(CONNECTION1)> show tables;
-connect 'jdbc:derby://xxx:1527/openyx;create=true;user=openyx;password=openyx';
+connect 'jdbc:derby://xxx:1527/openyx;create=true;user=test;password=test';
 
 #
 nohup ./startNetworkServer -h xxx -p 1527 > run.log 2>&1 &
