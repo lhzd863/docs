@@ -15,7 +15,7 @@ type Person struct {
 
 func main() {
     config :=nsq.NewConfig()
-    w,err :=nsq.NewProducer("172.18.18.99:4150",config)
+    w,err :=nsq.NewProducer("xxx:4150",config)
     if err !=nil {
         log.Panic("Could not create producer.")
     }
