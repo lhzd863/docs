@@ -19,7 +19,7 @@ func main() {
         return nil
     }))
     //err = q.ConnectToNSQD("192.168.9.111:32771");
-    err = q.ConnectToNSQD("172.18.18.99:4150");
+    err = q.ConnectToNSQD("xxx:4150");
     if err !=nil {
         log.Panic("Could not connect")
     }
