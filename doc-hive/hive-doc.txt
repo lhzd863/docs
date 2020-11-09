@@ -60,10 +60,10 @@ alter table my_partition_test_table if not exists add partition (p_hour='2017113
 ALTER TABLE my_partition_test_table DROP IF EXISTS PARTITION (p_loctype='MHA');
 
 #创建结果相同的表
-create table YX_test.t_20181214 like YX_NSH_PDMDATA.T00_WK_SUBJECT;
+create table test.t_20181214 like NSH_PDMDATA.T00_WK_SUBJECT;
 
 #空值处理
-select coalesce(subject_id,'') from yx_nsh_pdmdata.t00_wk_subject;
+select coalesce(subject_id,'') from nsh_pdmdata.t00_wk_subject;
 
 #查看字段和表注释
 DESC student;
