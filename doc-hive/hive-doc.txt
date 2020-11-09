@@ -87,7 +87,7 @@ ALTER TABLE test ADD COLUMNS(new_col INT,new_col2 STRING);
 #删除或者替换列
 ALTER TABLE test REPLACE COLUMNS(new_col INT,new_col2 STRING);
 #添加jar
-add jar /home/lsmk/liuh/elasticsearch/hadoop-jar/elasticsearch-hadoop-hive-6.3.2.jar
+add jar xxx/elasticsearch/hadoop-jar/elasticsearch-hadoop-hive-6.3.2.jar
 #查询显示header
 set hive.cli.print.header=true;
 #获取任务id，然后通过命令关闭：
