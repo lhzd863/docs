@@ -14,8 +14,8 @@ jobmanager.heap.size: 1024m
 taskmanager.heap.size: 16384m
 #checkpoint
 state.backend: rocksdb
-state.checkpoints.dir: hdfs://ns1/user/lsmk/flink_home/flink-checkpoints
-state.savepoints.dir: hdfs://ns1/user/lsmk/flink_home/flink-savepoints
+state.checkpoints.dir: hdfs://xxx/flink_home/flink-checkpoints
+state.savepoints.dir: hdfs://xxx/flink_home/flink-savepoints
 state.backend.incremental: true
 jobmanager.execution.failover-strategy: region
 state.backend.rocksdb.localdir: /data/flink-home/rocksdb-dir
