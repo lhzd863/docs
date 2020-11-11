@@ -1,0 +1,3 @@
+#dump
+pg_dump -U postgres rdm_pdmdata   >./dum.sql
+#import
