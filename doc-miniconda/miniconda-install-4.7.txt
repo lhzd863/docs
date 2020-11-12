@@ -26,3 +26,10 @@ conda search sra-tools
 conda install -y sra-tools  # done正确安装，且能调出软件help
 ......
 source deactivate # 退出当前环境
+
+
+
+#激活环境
+source /etc/profile
+source activate
+conda activate py3.9
