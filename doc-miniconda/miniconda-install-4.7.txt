@@ -33,3 +33,7 @@ source deactivate # 退出当前环境
 source /etc/profile
 source activate
 conda activate py3.9
+
+#登录默认环境
+~/.bash_profile 添加  conda activate py3.9
+
