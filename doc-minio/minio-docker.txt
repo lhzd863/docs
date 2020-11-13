@@ -1,2 +1,8 @@
+#
+docker pull minio/minio
 docker run -itd -p 9000:9000 --name minio -e MINIO_ACCESS_KEY=xxx -e MINIO_SECRET_KEY=xxx -v /home/aya/minio/data:/home/aya/minio/data minio/minio server /home/aya/minio/data
-
+#客户端
+docker pull minio/mc
+docker run -itd --entrypoint=/bin/sh minio/mc
+mc config host add minio http://106.75.249.244:9000 lhzd8630 lhzd8630 --api s3v4
+mc policy set public minio/my-app
