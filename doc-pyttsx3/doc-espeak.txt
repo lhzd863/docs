@@ -1,0 +1,7 @@
+apt-get update
+apt install espeak
+apt install ffmpeg
+
+
+#输入要转语音的中文后发现不报错了，但是语音是异常的(好像说的是chinese letter letter…)。
+engine.setProperty('voice', 'zh')
