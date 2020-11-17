@@ -10,6 +10,8 @@ zh_CN.GB18030 GB18030
 zh_CN.GBK GBK
 #
 locale-gen zh_CN.UTF-8
+#选择zh_CN.UTF-8
+dpkg-reconfigure locales
 #vim /etc/vim/vimrc
 在最下面添加如下配置
 set fileencodings=utf-8,gbk,utf-16le,cp1252,iso-8859-15,ucs-bom
