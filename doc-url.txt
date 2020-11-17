@@ -274,3 +274,5 @@ github.com/containerd/cgroups
 https://github.com/yemount/pose-animator/
 #
 https://github.com/sirupsen/logrus
+#
+https://pkgs.org/download/libpulse.so.0
