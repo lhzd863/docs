@@ -1,6 +1,4 @@
-apt-get update
-apt install espeak
-apt install ffmpeg
+apt update && sudo apt install espeak ffmpeg libespeak1
 
 
 #输入要转语音的中文后发现不报错了，但是语音是异常的(好像说的是chinese letter letter…)。
