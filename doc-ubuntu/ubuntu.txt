@@ -1,0 +1,2 @@
+#切换dash 或bash
+dpkg-reconfigure dash
