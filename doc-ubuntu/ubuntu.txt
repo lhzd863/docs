@@ -1,2 +1,17 @@
 #切换dash 或bash
 dpkg-reconfigure dash
+
+#vi中文乱码
+apt-get install language-pack-zh-hans language-pack-zh-hans-base language-pack-gnome-zh-hans language-pack-gnome-zh-hans-base
+#修改 /var/lib/locales/supported.d/local
+zh_CN.UTF-8 UTF-8
+en_US.UTF-8 UTF-8
+zh_CN.GB18030 GB18030
+zh_CN.GBK GBK
+#
+locale-gen zh_CN.UTF-8
+#vim /etc/vim/vimrc
+在最下面添加如下配置
+set fileencodings=utf-8,gbk,utf-16le,cp1252,iso-8859-15,ucs-bom
+set termencoding=utf-8
+set encoding=utf-8
