@@ -4,3 +4,17 @@ apt update && sudo apt install espeak ffmpeg libespeak1
 #输入要转语音的中文后发现不报错了，但是语音是异常的(好像说的是chinese letter letter…)
 #https://www.xampp.cc/archives/7188
 engine.setProperty('voice', 'zh')
+
+
+#Full dictionary is not installed for 'zh'
+# 简言之就是两步: 下载解压我给的压缩文件并复制到/usr/lib/x86_64-linux-gnu目录下; 然后执行espeak --compile命令即可
+
+sudo apt install espeak # 下载我下面链接给的zip文件,然后解压(假设解压后的目录是~/Downloads/espeak-data)
+cd /usr/lib/x86_64-linux-gnu
+sudo cp espeak-data espeak-data.bak	# 最好是先备份一下espeak-data目录
+sudo cp ~/Downloads/espeak-data/* espeak-data
+cd espeak-data
+
+espeak --compile=zh
+espeak --compile=zhy	# 成功
+
