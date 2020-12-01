@@ -8,3 +8,7 @@ select * from system.clusters;
 #随机分片 https://www.jianshu.com/p/20639fdfdc99
 CREATE TABLE ontime_all AS ontime_local
 ENGINE = Distributed(cluster_3shards_1replicas, default, ontime_local, rand())
+
+
+
+echo "SELECT count(1) from xxx where date='2020-12-01' FORMAT Pretty" | curl 'http://xxx:8123/?password=xxx' -d @-
