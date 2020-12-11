@@ -1,1 +1,3 @@
-#
+#/etc/profile
+export CATALINA_HOME=/home/aya/tomcat/apache-tomcat-9.0.41
+
