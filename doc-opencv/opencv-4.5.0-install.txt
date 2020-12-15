@@ -5,3 +5,6 @@ sudo apt-get install build-essential libgtk2.0-dev libavcodec-dev libavformat-de
 #源码编译
 mkdir my_build_dir && cd my_build_dir
 cmake ../opencv-3.4.12
+make
+make install
+
