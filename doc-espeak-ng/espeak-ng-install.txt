@@ -3,3 +3,7 @@ yum install espeak-ng
 
 #ubuntu 
 /usr/share/espeak-ng-data
+
+#
+cd /usr/share/espeak-ng-data
+cp -r xxx/espeak-ng/dictsource/* ./
