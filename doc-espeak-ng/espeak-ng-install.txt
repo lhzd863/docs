@@ -8,3 +8,5 @@ yum install espeak-ng
 cd /usr/share/espeak-ng-data
 cp -r xxx/espeak-ng/dictsource/* ./
 espeak-ng --compile=zh
+#列表
+espeak-ng --voices
