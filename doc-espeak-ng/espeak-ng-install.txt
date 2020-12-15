@@ -1,3 +1,5 @@
 #
 yum install espeak-ng
 
+#ubuntu 
+/usr/share/espeak-ng-data
