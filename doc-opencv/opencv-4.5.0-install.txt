@@ -2,3 +2,6 @@
 sudo apt-get install cmake  
 sudo apt-get install build-essential libgtk2.0-dev libavcodec-dev libavformat-dev libjpeg.dev libtiff4.dev libswscale-dev libjasper-dev  
 
+#源码编译
+mkdir my_build_dir && cd my_build_dir
+cmake ../opencv-3.4.12
