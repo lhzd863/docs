@@ -11,3 +11,8 @@ make install
 #/etc/ld.so.conf.d/opencv.conf  添加
 /usr/local/lib
 ldconfig
+
+
+
+#
+https://www.jianshu.com/p/f646448da265
