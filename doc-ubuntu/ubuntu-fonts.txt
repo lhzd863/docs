@@ -1,0 +1,10 @@
+#打包window7 的字体包
+C:\Windows\Fonts
+#上传到路径/usr/share/fonts
+/usr/share/fonts/win7fonts
+#安装
+mkfontscale
+mkfontdir
+fc-cache -fv
+
+
