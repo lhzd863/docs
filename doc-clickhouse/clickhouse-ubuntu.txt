@@ -9,4 +9,6 @@ apt-get install -y clickhouse-server clickhouse-client
 #
 https://blog.csdn.net/u012551524/article/details/109185191
 
+#问题1.E: Malformed entry 1 in list file /etc/apt/sources.list.d/clickhouse.list
+删除/etc/apt/sources.list.d/clickhouse.list 重新执行
 
