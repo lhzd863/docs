@@ -1,0 +1,20 @@
+    upstream flink {
+        server xxx:8081 max_fails=3 fail_timeout=15s;
+    }
+
+    server {
+        listen 80;
+        server_name  xxxx;
+        root         /var/www/html/;
+  
+        location / {
+            proxy_pass http://flink;
+            auth_basic            "Welcome...";
+            auth_basic_user_file  htpasswd;
+            index index.php index.html index.htm;
+        }
+     
+        location ~ /\.ht {
+            deny all;
+        }
+    }
