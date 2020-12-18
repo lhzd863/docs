@@ -10,6 +10,7 @@ make install
 
 #/etc/ld.so.conf.d/opencv.conf  添加
 /usr/local/lib
+#
 ldconfig
 
 
