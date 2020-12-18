@@ -27,6 +27,9 @@ config.xml  users.xml
 /var/lib/clickhouse/tmp/
 /var/log/clickhouse-server
 
+# 默认启动脚本，注意，这个名字虽然叫server，其实是个shell脚本
+file /etc/init.d/clickhouse-server 
+
 # 最大文件打开数
 cat /etc/security/limits.d/clickhouse.conf 
 clickhouse      soft    nofile  262144
