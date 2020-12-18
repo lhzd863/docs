@@ -26,3 +26,8 @@ config.xml  users.xml
 /var/lib/clickhouse
 /var/lib/clickhouse/tmp/
 /var/log/clickhouse-server
+
+# 最大文件打开数
+cat /etc/security/limits.d/clickhouse.conf 
+clickhouse      soft    nofile  262144
+clickhouse      hard    nofile  262144
