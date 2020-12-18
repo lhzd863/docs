@@ -38,4 +38,20 @@ clickhouse      hard    nofile  262144
 # 默认crontab目录（没啥用）
 /etc/cron.d/clickhouse-server
 
+# 剩下就是/usr/bin下的二进制文件，但其实都是软链接到了clickhouse这个二进制文件
+ll | grep click -i
+-r-xr-xr-x  1 root   root    302858160 Dec 18 10:19 clickhouse*
+lrwxrwxrwx  1 root   root           19 Dec 18 10:19 clickhouse-benchmark -> /usr/bin/clickhouse*
+lrwxrwxrwx  1 root   root           19 Dec 18 10:19 clickhouse-client -> /usr/bin/clickhouse*
+lrwxrwxrwx  1 root   root           19 Dec 18 10:19 clickhouse-compressor -> /usr/bin/clickhouse*
+lrwxrwxrwx  1 root   root           19 Dec 18 10:19 clickhouse-copier -> /usr/bin/clickhouse*
+lrwxrwxrwx  1 root   root           19 Dec 18 10:19 clickhouse-extract-from-config -> /usr/bin/clickhouse*
+lrwxrwxrwx  1 root   root           19 Dec 18 10:19 clickhouse-format -> /usr/bin/clickhouse*
+lrwxrwxrwx  1 root   root           19 Dec 18 10:19 clickhouse-git-import -> /usr/bin/clickhouse*
+lrwxrwxrwx  1 root   root           19 Dec 18 10:19 clickhouse-local -> /usr/bin/clickhouse*
+lrwxrwxrwx  1 root   root           19 Dec 18 10:19 clickhouse-obfuscator -> /usr/bin/clickhouse*
+-rwxr-xr-x  1 root   root     95831048 Dec  9 20:56 clickhouse-odbc-bridge*
+-rwxr-xr-x  1 root   root    302858160 Dec  9 20:56 clickhouse.old*
+-rwxr-xr-x  1 root   root         2014 Dec  9 20:19 clickhouse-report*
+lrwxrwxrwx  1 root   root           19 Dec 18 10:19 clickhouse-server -> /usr/bin/clickhouse*
 
