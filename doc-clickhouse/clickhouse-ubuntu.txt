@@ -19,3 +19,10 @@ Start clickhouse-server with:
 Start clickhouse-client with:
  clickhouse-client --password
  
+ls /etc/clickhouse-server
+config.xml  users.xml
+
+# 上述文件定义了默认数据目录，临时目录位置，日志目录
+/var/lib/clickhouse
+/var/lib/clickhouse/tmp/
+/var/log/clickhouse-server
