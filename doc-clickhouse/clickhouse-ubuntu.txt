@@ -34,3 +34,8 @@ file /etc/init.d/clickhouse-server
 cat /etc/security/limits.d/clickhouse.conf 
 clickhouse      soft    nofile  262144
 clickhouse      hard    nofile  262144
+
+# 默认crontab目录（没啥用）
+/etc/cron.d/clickhouse-server
+
+
