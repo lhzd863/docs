@@ -57,3 +57,10 @@ lrwxrwxrwx  1 root   root           19 Dec 18 10:19 clickhouse-server -> /usr/bi
 
 #
 https://www.jianshu.com/p/ae45e0aa2b52
+
+#/etc/init.d/clickhouse-server
+CLICKHOUSE_LOGDIR=xxx/log
+CLICKHOUSE_DATADIR=xxx/data
+CLICKHOUSE_CONFIG=xxx/config.xml
+
+
