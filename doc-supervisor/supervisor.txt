@@ -15,4 +15,14 @@ user=xxx
 
 #重新启动
 supervisorctl reload
+#查看进程
+supervisorctl status
+#启动某个进程
+supervisorctl start xxxx
+#停止某个进程
+supervisorctl stop xxxx
+#重启某个进程
+supervisorctl restart xxxx
+
+
 
