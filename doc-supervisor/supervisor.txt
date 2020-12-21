@@ -12,3 +12,7 @@ stderr_logfile_backups=100
 stdout_logfile_backups=100
 user=xxx
 
+
+#重新启动
+supervisorctl reload
+
