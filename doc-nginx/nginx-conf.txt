@@ -1,0 +1,8 @@
+#
+       location /api/ {
+            expires -1;
+            rewrite ^/api/(.*) /api/$1 break;
+            proxy_pass http://apinstance;
+            access_log /home/aya/nginx/logs/access_api_my_server-$logdt.log main;
+            error_log /var/log/nginx/error_api_my_server.log;
+        }
