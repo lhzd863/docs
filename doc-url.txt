@@ -278,4 +278,7 @@ https://github.com/sirupsen/logrus
 https://pkgs.org/download/libpulse.so.0
 #face_recognition
 https://github.com/ageitgey/face_recognition/blob/master/README_Simplified_Chinese.md
+#
+https://github.com/bharathgs/Awesome-pytorch-list
+
 
