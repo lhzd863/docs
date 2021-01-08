@@ -1,0 +1,2 @@
+#
+apt-get install libsndfile1-dev libpulse-dev libncurses5-dev libmp3lame-dev libespeak-dev
