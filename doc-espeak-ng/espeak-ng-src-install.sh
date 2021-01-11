@@ -5,3 +5,7 @@ tar -zxvf espeak-ng-1.50.tgz
 ./autogen.sh
 ./configure --prefix=/usr --with-extdict-zh=yes
 make LIBDIR=/usr/lib/x86_64-linux-gnu install
+
+#test
+espeak-ng -vcmn  "你好" -w tt.wav
+
