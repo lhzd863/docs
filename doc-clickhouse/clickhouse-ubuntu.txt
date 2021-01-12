@@ -64,3 +64,8 @@ CLICKHOUSE_DATADIR=xxx/data
 CLICKHOUSE_CONFIG=xxx/config.xml
 
 
+
+clickhouse-client --password xxx --port 9001 -h 106.75.249.244
+
+
+
