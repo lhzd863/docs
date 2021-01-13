@@ -1,0 +1,18 @@
+#
+支持的发音'Cantonese', 'Mandarin', 'Toisanese', 'Hakka', 'Tibetan', 'Ngangien' and 'Hangul'
+#使用广东话
+ekho -v Cantonese "你好"
+#读文件
+ekho -f 测试文件.txt
+#生成录音文件
+ekho "你好。请继续保持努力！" -o holdon.wav
+#将文本转换成广东话版本的ogg格式的录音文件
+ekho -v Cantonese -f 测试文件.txt -t ogg -o gdh.ogg
+#调整语速
+ekho "大家好，今天是星期五" -s -50 ~ 100（默认是0）
+#调整语调
+ekho "大家好，今天是星期五" -p -100 ~ 100（默认是0，不包括-100）
+#调整音量
+ekho "大家好，今天是星期五" -a -100 ~ 100（默认是0，不包括-100）
+
+
