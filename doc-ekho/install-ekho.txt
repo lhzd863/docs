@@ -1,2 +1,9 @@
 #
-apt-get install libsndfile1-dev libpulse-dev libncurses5-dev libmp3lame-dev libespeak-dev
+$ sudo apt-get install libsndfile1-dev libpulse-dev libncurses5-dev libmp3lame-dev libespeak-dev
+$ tar xJvf ekho-xxx.tar.xz
+$ cd ekho-xxx
+$ ./configure
+$ make
+$ sudo make install
+$ ekho "hello 123"
+
