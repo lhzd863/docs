@@ -12,8 +12,9 @@ make install
 wget https://github.com/tesseract-ocr/tesseract/archive/4.1.1.tar.gz
 ./autogen.sh
  ./configure
- make && make install
- 
+ make
+ make install
+ ldconfig
 
 #error: error: Leptonica 1.74 or higher is required. Try to install libleptonica-dev package.
 #vi /etc/profile把下面配置添加到最后
