@@ -10,4 +10,8 @@ make
 make install
 #
 wget https://github.com/tesseract-ocr/tesseract/archive/4.1.1.tar.gz
+./autogen.sh
+ ./configure
+ make && make install
+ 
 
