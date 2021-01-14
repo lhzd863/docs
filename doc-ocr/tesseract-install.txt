@@ -3,5 +3,11 @@ https://github.com/tesseract-ocr
 
 #dependency
 wget https://github.com/DanBloomberg/leptonica/releases/download/1.80.0/leptonica-1.80.0.tar.gz
+tar -zxvf leptonica-1.80.0.tar.gz
+cd leptonica-1.80.0
+./configure
+make
+make install
+#
 wget https://github.com/tesseract-ocr/tesseract/archive/4.1.1.tar.gz
 
