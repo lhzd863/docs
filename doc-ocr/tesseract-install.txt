@@ -15,3 +15,9 @@ wget https://github.com/tesseract-ocr/tesseract/archive/4.1.1.tar.gz
  make && make install
  
 
+#error: error: Leptonica 1.74 or higher is required. Try to install libleptonica-dev package.
+#vi /etc/profile把下面配置添加到最后
+export LD_LIBRARY_PATH=$LD_LIBRARY_PAYT:/usr/local/lib
+export LIBLEPT_HEADERSDIR=/usr/local/include
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+. /etc/profile
