@@ -1,0 +1,5 @@
+#exp
+clickhouse-client -h xxx --password xxx --database="xxx" --port xxx --query="
+select * from xxx.xxxx
+FORMAT CSV
+" >>  qry_20210309.csv
