@@ -1,6 +1,41 @@
 #
- protoc --go_out=plugins=grpc:./test/ ./test.proto
+ #protoc --go_out=plugins=grpc:./test/ ./test.proto
+ protoc   --go_out=./ ./gproto/worker.proto
+ 
  
  
 #refs
 http://doc.oschina.net/grpc?t=60133
+
+
+#
+  syntax = "proto3";
+  // 定义包名
+  package gproto;
+  option go_package = "github.com/lhzd863/cmd-rpc/gproto";
+  
+  service Worker {
+    // 定义接口 (结构体可以复用)
+    // 方法 (请求消息结构体) returns (返回消息结构体) {}
+    rpc Ping (Req) returns (Res) {}
+    rpc Beat (Req) returns (Res) {}
+    rpc Invoke (Req) returns (Res) {}
+    rpc Stop (Req) returns (Res) {}
+    rpc Status (Req) returns (Res) {}
+    rpc Lst (Req) returns (Res) {}
+    rpc Log (stream Req) returns (stream Res) {}
+  }
+
+  // 定义 Req 消息结构
+  message Req {
+    // 类型 字段 = 标识号
+    string JsonStr = 1;
+  }
+
+  // 定义 Res 消息结构
+  message Res {
+    string Status_Txt = 1;
+    int32 Status_Code = 2;
+    string Data = 3;
+  }
+
