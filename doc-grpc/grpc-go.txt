@@ -1,6 +1,6 @@
 #
  #protoc --go_out=plugins=grpc:./test/ ./test.proto
- protoc   --go_out=./ ./gproto/worker.proto
+protoc --go_out=plugins=grpc:./ ./worker.proto
  
  
  
