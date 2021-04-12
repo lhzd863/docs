@@ -6,4 +6,6 @@ rustc --version
 rustup update
 #path
 ~/.cargo/bin add $PATH
+#uninstall
+rustup self uninstall
 
