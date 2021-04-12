@@ -4,4 +4,6 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustc --version
 #update
 rustup update
+#path
+~/.cargo/bin add $PATH
 
