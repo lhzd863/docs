@@ -9,3 +9,7 @@ rustup update
 #uninstall
 rustup self uninstall
 
+#
+cargo new greeting 
+cargo build 
+cargo run 
