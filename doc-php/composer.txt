@@ -1,0 +1,8 @@
+#Composer 安装与使用
+php -r "copy('https://install.phpcomposer.com/installer', 'composer-setup.php');"
+php composer-setup.php
+mv composer.phar /usr/local/bin/composer
+#切换为国内镜像
+composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
+#更新 composer
+composer selfupdate
