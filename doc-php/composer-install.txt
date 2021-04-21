@@ -7,3 +7,8 @@ apt-get update
 apt -y install php7.4
 #check
 php -v
+
+
+#disable nginx
+ systemctl disable --now apache2
+ 
