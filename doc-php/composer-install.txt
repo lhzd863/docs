@@ -12,3 +12,4 @@ php -v
 #disable nginx
  systemctl disable --now apache2
 apt-get install nginx php7.4-fpm 
+#PHP FPM 配置文件为 /etc/php/7.4/fpm/pool.d/www.conf
