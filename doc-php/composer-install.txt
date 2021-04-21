@@ -11,4 +11,4 @@ php -v
 
 #disable nginx
  systemctl disable --now apache2
- 
+apt-get install nginx php7.4-fpm 
