@@ -1,0 +1,2 @@
+#
+php -r "copy('https://install.phpcomposer.com/installer', 'composer-setup.php');"
