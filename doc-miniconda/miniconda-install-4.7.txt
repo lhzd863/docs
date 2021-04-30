@@ -37,3 +37,5 @@ conda activate py3.9
 #登录默认环境
 ~/.bash_profile 添加  conda activate py3.9
 
+#-bash: /home/miniconda3/envs/py3.6/bin/python: Invalid argument
+conda update -n base -c defaults conda
