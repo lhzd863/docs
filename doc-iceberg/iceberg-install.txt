@@ -14,3 +14,5 @@ CREATE CATALOG hadoop_catalog WITH (
   'warehouse'='hdfs://xxx/user/xxx/dw',
   'property-version'='1'
 );
+CREATE DATABASE hadoop_catalog.iceberg_db;
+USE hadoop_catalog.iceberg_db;
