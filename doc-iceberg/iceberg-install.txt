@@ -1,2 +1,8 @@
+export FLINK_HOME=flink-1.11.3
+export HADOOP_HOME=CDH-5.14.0
+export HADOOP_CLASSPATH=`$HADOOP_HOME/bin/hadoop classpath`
+export CLASSPATH=$FLINK_HOME/lib:$CLASSPATH
+export PATH=$FLINK_HOME/bin:$PATH
+
 #
 ./bin/sql-client.sh embedded -j $FLINK_HOME/lib/iceberg-flink-runtime-0.11.1.jar shell
