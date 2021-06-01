@@ -16,3 +16,9 @@ CREATE CATALOG hadoop_catalog WITH (
 );
 CREATE DATABASE hadoop_catalog.iceberg_db;
 USE hadoop_catalog.iceberg_db;
+
+CREATE TABLE hadoop_catalog.iceberg_db.sample (
+    id BIGINT COMMENT 'unique id',
+    data STRING
+);
+
