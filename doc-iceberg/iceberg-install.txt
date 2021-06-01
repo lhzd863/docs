@@ -22,3 +22,25 @@ CREATE TABLE hadoop_catalog.iceberg_db.sample (
     data STRING
 );
 
+CREATE DATABASE hadoop_catalog.iceberg_db;
+USE hadoop_catalog.iceberg_db;
+
+CREATE TABLE hadoop_catalog.iceberg_db.sample (
+    id BIGINT COMMENT 'unique id',
+    data STRING
+);
+
+
+CREATE TABLE hadoop_catalog.iceberg_db.sample_pt (
+    id BIGINT COMMENT 'unique id',
+    data STRING
+) PARTITIONED BY (data);
+
+CREATE TABLE  hadoop_catalog.iceberg_db.sample_like LIKE hadoop_catalog.iceberg_db.sample;
+
+ALTER TABLE hadoop_catalog.iceberg_db.sample SET ('write.format.default'='avro')
+
+#java.lang.UnsupportedOperationException: Cannot rename Hadoop tables
+ALTER TABLE hadoop_catalog.iceberg_db.sample RENAME TO hadoop_catalog.iceberg_db.new_sample;
+
+DROP TABLE hadoop_catalog.iceberg_db.sample;
