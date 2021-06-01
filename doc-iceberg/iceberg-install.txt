@@ -1,0 +1,2 @@
+#
+./bin/sql-client.sh embedded -j $FLINK_HOME/lib/iceberg-flink-runtime-0.11.1.jar shell
