@@ -52,5 +52,5 @@ DROP TABLE hadoop_catalog.iceberg_db.sample;
 #dependency jar  
 orc-core-1.6.8.jar
 parquet-column-1.12.0.jar
-
+iceberg-flink-runtime-0.11.1.jar
 
