@@ -44,3 +44,10 @@ ALTER TABLE hadoop_catalog.iceberg_db.sample SET ('write.format.default'='avro')
 ALTER TABLE hadoop_catalog.iceberg_db.sample RENAME TO hadoop_catalog.iceberg_db.new_sample;
 
 DROP TABLE hadoop_catalog.iceberg_db.sample;
+
+
+#dependency jar  
+orc-core-1.6.8.jar
+parquet-column-1.12.0.jar
+
+
