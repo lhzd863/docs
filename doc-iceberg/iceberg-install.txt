@@ -7,6 +7,9 @@ export PATH=$FLINK_HOME/bin:$PATH
 #
 ./bin/sql-client.sh embedded -j $FLINK_HOME/lib/iceberg-flink-runtime-0.11.1.jar shell
 
+$FLINK_HOME/bin/sql-client.sh embedded -j iceberg/iceberg-flink-runtime-0.11.1.jar shell
+
+
 #
 CREATE CATALOG hadoop_catalog WITH (
   'type'='iceberg',
