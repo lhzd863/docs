@@ -54,3 +54,18 @@ orc-core-1.6.8.jar
 parquet-column-1.12.0.jar
 iceberg-flink-runtime-0.11.1.jar
 
+
+CREATE CATALOG hadoop_catalog WITH (
+  'type'='iceberg',
+  'catalog-type'='hadoop',
+  'warehouse'='hdfs://nameservice1/tmp/liuh/dw',
+  'property-version'='1'
+);
+USE CATALOG hadoop_catalog;
+SET table.dynamic-table-options.enabled=true;
+INSERT INTO hadoop_catalog.iceberg_db.sample_pt
+select * from hadoop_catalog.iceberg_db.sample
+/*+ OPTIONS('streaming'='true', 'monitor-interval'='1s')*/
+;
+
+
