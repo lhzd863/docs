@@ -1,1 +1,3 @@
+#
+wget https://repo1.maven.org/maven2/io/trino/trino-cli/358/trino-cli-358-executable.jar
 ./trino --server localhost:8089 --catalog jmx --schema default
