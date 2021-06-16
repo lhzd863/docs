@@ -1,0 +1,1 @@
+./trino --server localhost:8089 --catalog jmx --schema default
