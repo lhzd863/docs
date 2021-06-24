@@ -1,3 +1,6 @@
 #
 bash sbin/start-all.sh
 bash sbin/stop-all.sh
+
+#
+show current namespace;
