@@ -1,5 +1,7 @@
+```
 st=>start: 开始:>https://www.123si.org
 op1=>operation: 作业1
 op2=>operation: 作业2
 e=>end: 结束:>https://www.123si.org[blank]
 st->op1(right)->op2->e
+```
