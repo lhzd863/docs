@@ -1,7 +1,12 @@
 ```flow
-st=>start: 开始:>https://www.123si.org
-op1=>operation: 作业1
-op2=>operation: 作业2
-e=>end: 结束:>https://www.123si.org[blank]
-st->op1(right)->op2->e
+id_start=>start:               开始(start)
+id_end=>end:                   结束(end)，可以点击:>https://cn.bing.com
+id_operation=>operation:       操作(operation)
+id_subroutine=>subroutine:     子程序(subroutine)
+id_condition=>condition:       判断(condition)
+id_inputoutput=>inputoutput:   输入输出(inputoutput)
+
+id_start->id_operation->id_condition
+id_condition(yes)->id_inputoutput->id_end
+id_condition(no)->id_subroutine->id_inputoutput
 ```
