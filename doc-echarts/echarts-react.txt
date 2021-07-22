@@ -1,1 +1,64 @@
 #
+import React from 'react';
+import "../../config.js";
+import Grid from '@material-ui/core/Grid';
+import AppHeader from '../header/AppHeader.js';
+import Box from '@material-ui/core/Box';
+import axios from 'axios';
+const echarts = require('echarts')
+
+class TestMui extends React.Component {
+
+  constructor (props) {
+    super(props)
+    this.state = {
+      lng:0,lat:0
+    }
+  }
+
+  componentDidMount() {
+     this.showBarChart(this.state.myChartData)
+  }
+
+  showBarChart = dataSet => {
+    var myChart = echarts.init(document.getElementById('BarWrap'))
+    const option = {
+      legend: {},
+      tooltip: {},
+      dataset: {
+        dimensions: ['product', '2015', '2016', '2017'],
+        source: [
+          { product: 'Matcha Latte', '2015': 43.3, '2016': 85.8, '2017': 93.7 },
+          { product: 'Milk Tea', '2015': 83.1, '2016': 73.4, '2017': 55.1 },
+          { product: 'Cheese Cocoa', '2015': 86.4, '2016': 65.2, '2017': 82.5 },
+          { product: 'Walnut Brownie', '2015': 72.4, '2016': 53.9, '2017': 39.1 },
+        ],
+      },
+      xAxis: { type: 'category' },
+      yAxis: {},
+      series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }],
+    }
+    myChart.setOption(option)
+  }
+
+
+  render () {
+
+    return (
+      <div>
+        <Grid container spacing={0} justifyContent="center" alignItems="center">
+          <Grid item xs={12}>
+            <Grid container spacing={0} justifyContent="center" alignItems="center">
+              <Grid item>
+                <div style={{ width: 400, height: 400 }} id="BarWrap" />
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </div>
+    );
+  }
+ 
+}
+
+export default TestMui;
