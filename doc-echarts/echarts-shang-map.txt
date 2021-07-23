@@ -4,3 +4,133 @@ https://geojson.io/
 https://datav.aliyun.com/tools/atlas/index.html
 #
 
+
+import React from 'react';
+import "../../config.js";
+import Grid from '@material-ui/core/Grid';
+import AppHeader from '../header/AppHeader.js';
+import Box from '@material-ui/core/Box';
+import $ from 'jquery'
+import axios from 'axios';
+import * as echarts from 'echarts';
+import ShJson from './SH.json';
+
+// const echarts = require('echarts');
+
+class TestMui extends React.Component {
+
+  constructor (props) {
+    super(props)
+    this.state = {
+      lng:0,lat:0
+    }
+  }
+
+  componentDidMount() {
+     this.handleShowChart()
+  }
+
+  handleShowChart() {
+    var myChart = echarts.init(document.getElementById('echarts-root'))
+    echarts.registerMap('sh', ShJson);
+    var option;
+    option = {
+      title: {
+        text : '上海地图',
+        subtext : '-。-'
+      },
+      //背景色
+      backgroundColor: '#fff',
+      color: ['#FF8C00', '#00acea', '#1DE9B6'],
+      tooltip: {
+        trigger: 'item',
+        formatter: '{b}'
+      },
+      legend: {
+        orient: 'vertical',
+        x:'right',
+        data:['数据名称']
+      },
+      dataRange: {
+        min: 0,
+        max: 1000,
+        color:['orange','yellow'],
+        text:['高','低'],           // 文本，默认为数值文本
+        calculable : true
+      },
+      visualMap: {
+        type: 'continuous',
+        seriesIndex: [2, 3],
+        min: 0,
+        max: 100,
+        calculable: true,
+        color: ['#ff3333', 'orange', 'yellow', 'lime', 'aqua'],
+        textStyle: {
+            color: '#fff'
+        }
+      },
+      geo: {
+          map: 'sh',
+          show: true
+      },
+      series : [
+        {
+          name: '数据名称',
+          type: 'map',
+          map: 'sh',
+          mapType: '上海',
+          selectedMode : 'single',
+          itemStyle:{
+            normal:{label:{show:true}},
+            emphasis:{label:{show:true}}
+          },
+          data:[
+            {name: '崇明县',value: Math.round(Math.random()*1000)},
+            {name: '宝山区',value: Math.round(Math.random()*1000)},
+            {name: '嘉定区',value: Math.round(Math.random()*1000)},
+            {name: '青浦区',value: Math.round(Math.random()*1000)},
+            {name: '杨浦区',value: Math.round(Math.random()*1000)},
+            {name: '虹口区',value: Math.round(Math.random()*1000)},
+            {name: '闸北区',value: Math.round(Math.random()*1000)},
+            {name: '普陀区',value: Math.round(Math.random()*1000)},
+            {name: '静安区',value: Math.round(Math.random()*1000)},
+            {name: '黄浦区',value: Math.round(Math.random()*1000)},
+            {name: '卢湾区',value: Math.round(Math.random()*1000)},
+            {name: '长宁区',value: Math.round(Math.random()*1000)},
+            {name: '徐汇区',value: Math.round(Math.random()*1000)},
+            {name: '浦东新区',value: Math.round(Math.random()*1000)},
+            {name: '松江区',value: Math.round(Math.random()*1000)},
+            {name: '闵行区',value: Math.round(Math.random()*1000)},
+            {name: '金山区',value: Math.round(Math.random()*1000)},
+            {name: '奉贤区',value: Math.round(Math.random()*1000)},
+            {name: '南汇区',value: Math.round(Math.random()*1000)}
+          ]
+        }
+      ]
+    };
+
+    myChart.setOption(option);
+  }
+
+
+  render () {
+
+    return (
+      <div>
+        <Grid container spacing={0} justifyContent="center" alignItems="center">
+          <Grid item xs={12}>
+            <Grid container spacing={0} justifyContent="center" alignItems="center">
+              <Grid item>
+                <div style={{ width: 330, height: 500 }} id="echarts-root" />
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </div>
+    );
+  }
+ 
+}
+
+export default TestMui;
+
