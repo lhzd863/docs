@@ -13,3 +13,5 @@ network:
       nameservers:
         adresses: [8.8.8.8]         #设置DNS
         
+#
+netplan apply
