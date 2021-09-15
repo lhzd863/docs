@@ -1,3 +1,15 @@
 #
 cd /etc/netplan
 #
+vi *.yaml
+#
+network:
+  version: 2
+  ethernets:
+    enp3s0:
+      dhcp3: no
+      adresses: [192.168.1.200/24]  #设置本机IP及掩码
+      gateway4: 192.168.1.1         #设置网关
+      nameservers:
+        adresses: [8.8.8.8]         #设置DNS
+        
