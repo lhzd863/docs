@@ -1,0 +1,7 @@
+#
+yum install cmake
+#
+yum install gcc gcc-c++ kernel-devel
+#安装gfortran
+yum install gcc-gfortran
+#
