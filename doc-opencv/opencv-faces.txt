@@ -1,4 +1,6 @@
+#OpenCV-Python 摄像头实时检测人脸
 https://www.jianshu.com/p/5d18ad0e7cc6
+#python实现人脸实时监控识别程序 face_recognition
 https://blog.csdn.net/nijiayan123/article/details/78755817
 #【Python3-OpenCV】实现实时摄像头人脸检测篇
 https://juejin.cn/post/6970951521198424077
