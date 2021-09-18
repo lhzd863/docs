@@ -23,6 +23,8 @@ mysqld -install
 mysqld --initialize
 #启动MySQL服务
 net start mysql
+#停止MySQL服务
+net stop mysql
 #进入MySQL
 mysql -u root -p
 #进入数据库
