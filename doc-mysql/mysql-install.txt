@@ -21,3 +21,13 @@ default-character-set=utf8
 mysqld -install
 #初始化命令
 mysqld --initialize
+#启动MySQL服务
+net start mysql
+#进入MySQL
+mysql -u root -p
+#进入数据库
+use mysql
+#输入修改密码命令
+update user set authentication_string = password("root123") where user ="root";
+
+
