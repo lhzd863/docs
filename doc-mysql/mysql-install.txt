@@ -1,2 +1,23 @@
-#
-https://www.jb51.net/article/187203.htm
+#https://www.jb51.net/article/187203.htm
+
+[mysqld]
+#端口号
+port = 3306
+#mysql-5.7.29-winx64的路径
+basedir=D:\mysql-5.7.29-winx64
+#mysql-5.7.29-winx64的路径+\data
+datadir=E:\mysql-5.7.29-winx64\data
+#最大连接数
+max_connections=200
+#编码
+character-set-server=utf8
+default-storage-engine=INNODB
+sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+[mysql]
+#编码
+default-character-set=utf8
+
+#安装命令
+mysqld -install
+#初始化命令
+mysqld --initialize
