@@ -1,1 +1,9 @@
-
+sqoop import  --connect "jdbc:mysql://xxx:3306/xxx?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull"  
+--username xxx  --password xxx  
+--query " select field2 from db.tb where \$CONDITIONS "  
+--hive-import  
+--hive-database ods_erp_source  
+--hive-table tmp_ods_pro_merchant_contract 
+--hive-drop-import-delims 
+--hive-overwrite 
+--delete-target-dir  --target-dir 'xxxx' --fields-terminated-by '\t'   --null-string '\\N'  --null-non-string '\\N'  -m 1
