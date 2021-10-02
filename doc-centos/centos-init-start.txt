@@ -1,1 +1,5 @@
-#开机启动
+#开机启动 
+#修改 /etc/rc.d/rc.local 
+chmow a+x /etc/rc.d/rc.local
+source /etc/profile
+su k8s -c "/home/k8s/lanproxy/proxy-client-0.1/bin/startup.sh"
