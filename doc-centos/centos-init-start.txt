@@ -1,5 +1,6 @@
 #开机启动 
-#修改 /etc/rc.d/rc.local 
+#修改 /etc/rc.d/rc.local权限 
 chmow a+x /etc/rc.d/rc.local
+#添加内容/etc/rc.d/rc.local
 source /etc/profile
 su k8s -c "/home/k8s/lanproxy/proxy-client-0.1/bin/startup.sh"
