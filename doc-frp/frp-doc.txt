@@ -1,5 +1,6 @@
 https://gofrp.org/docs/setup/
-#
+#server
+# frps.ini
 [common]
 bind_port = 12329
 #
@@ -12,3 +13,19 @@ admin_addr = xxx.xxx.xxx.xxx
 admin_port = 12327
 admin_user = admin
 admin_pwd = xxx
+
+#nohup ./frps -c ./frps.ini > run.log 2>&1 &
+
+#client
+# frpc.ini
+[common]
+server_addr = xxx.xxx.xxx.xxx
+server_port = 12329
+
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 22
+remote_port = 12330
+
+#nohup ./frpc -c ./frpc.ini > run.log 2>&1 &
