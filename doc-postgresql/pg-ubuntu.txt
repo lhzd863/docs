@@ -41,3 +41,10 @@ Data page checksums are disabled.
 
 fixing permissions on existing directory /var/lib/postgresql/14/main ... ok
 update-alternatives: using /usr/share/postgresql/14/man/man1/postmaster.1.gz to provide /usr/share/man/man1/postmaster.1.gz (postmaster.1.gz) in auto mode
+
+
+#
+systemctl status postgresql
+systemctl start postgresql
+systemctl stop postgresql
+
