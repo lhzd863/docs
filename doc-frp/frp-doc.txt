@@ -1,1 +1,14 @@
 https://gofrp.org/docs/setup/
+#
+[common]
+bind_port = 12329
+#
+dashboard_port = 12328
+# dashboard's username and password are both optional not set, default is admin.
+dashboard_user = admin
+dashboard_pwd = xxx
+#
+admin_addr = xxx.xxx.xxx.xxx
+admin_port = 12327
+admin_user = admin
+admin_pwd = xxx
