@@ -1,0 +1,12 @@
+#
+su - postgres
+#
+psql
+#
+create user test with password 'test';
+#
+create database test owner test;
+#
+grant all on database test to test;
+
+
