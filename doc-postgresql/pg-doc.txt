@@ -8,5 +8,6 @@ create user test with password 'test';
 create database test owner test;
 #
 grant all on database test to test;
-
+#backup
+pg_dump -h 106.75.249.244 -U test edw > edw.bak
 
