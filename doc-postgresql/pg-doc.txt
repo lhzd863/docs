@@ -10,4 +10,6 @@ create database test owner test;
 grant all on database test to test;
 #backup
 pg_dump -h 106.75.249.244 -U test edw > edw.bak
+#restore
+psql "host=127.0.0.1 port=5432 user=test password=xxx dbname=edw" <edw.bak
 
