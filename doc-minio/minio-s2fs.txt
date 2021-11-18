@@ -1,13 +1,13 @@
 1、minio: https://github.com/minio/minio，按照文档选择系统安装
-
 2、安装s3fs客户端:https://github.com/s3fs-fuse/s3fs-fuse
-
 3、启动mino，获取AccessKey和SecretKey并创建桶名
-
 4、在客户端上echo "AccessKey:SecretKey" > /etc/.passwd-s3fs  chmod 600 /etc/.passwd-s3fs
-
 5、s3fs -o passwd_file=/etc/.passwd-s3fs -o url=http://192.168.1.82:9000 -o allow_other -o nonempty -o no_check_certificate -o use_path_request_style -o umask=000 bucketname /data/
-
 6、df -h查看是否挂载成功，如果不成功，可以加参数-d -d -f -o f2 -o curldbg输出日志，客户端与minio服务器系统时间要同步
+
+
+#
+s3fs -o passwd_file=/etc/.passwd-s3fs -o url=http://119.3.82.174:9000 -o allow_other -o nonempty -o no_check_certificate -o use_path_request_style -o umask=000 data /mnt/minio
+s3fs -o passwd_file=/etc/.passwd-s3fs -o url=http://119.3.82.174:9000 -o allow_other -o nonempty -o no_check_certificate -o use_path_request_style -o umask=000 data /mnt/minio -d -d -f -o f2 -o curldbg
 
 
