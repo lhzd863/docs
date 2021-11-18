@@ -1,0 +1,9 @@
+#免登陆
+ssh-keygen -t rsa -P ''
+cat id_rsa.pub >> authorized_keys
+chmod 600 authorized_keys
+chmod 700 .ssh
+chmod 755 /home/xxx
+
+#log
+tail -f /var/log/auth.log
