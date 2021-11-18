@@ -1,0 +1,2 @@
+ssh-keygen -t rsa -C "xxx@126.com"
+ssh-add C:\Users\xxx\.ssh\id_rsa_null
