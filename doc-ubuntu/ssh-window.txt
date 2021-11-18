@@ -1,2 +1,15 @@
 ssh-keygen -t rsa -C "xxx@126.com"
 ssh-add C:\Users\xxx\.ssh\id_rsa_null
+
+#
+ssh-add C:\Users\liuhui5\.ssh\id_rsa_null
+
+
+
+#question
+Error connecting to agent: No such file or directory
+#
+get-service ssh*
+#start
+Set-Service -Name ssh-agent -StartupType Manual
+Start-Service ssh-agent
