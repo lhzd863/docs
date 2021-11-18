@@ -3,8 +3,8 @@ ssh-add C:\Users\xxx\.ssh\id_rsa_null
 
 #
 ssh-add C:\Users\liuhui5\.ssh\id_rsa_null
-
-
+#
+ssh-add -l
 
 #question
 Error connecting to agent: No such file or directory
