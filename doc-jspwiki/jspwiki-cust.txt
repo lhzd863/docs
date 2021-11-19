@@ -1,0 +1,27 @@
+#webapps/wiki/WEB-INF/classes
+#jspwiki.policy.file=/home/k8s/tomcat/wiki/jspwiki-custom.policy
+#jspwiki.filterConfig = /home/k8s/tomcat/wiki/filters.xml
+jspwiki.xmlGroupDatabaseFile=/home/k8s/tomcat/wiki/groupdatabase.xml
+jspwiki.xmlUserDatabaseFile=/home/k8s/tomcat/wiki/userdatabase.xml
+jspwiki.applicationName = wiki
+jspwiki.baseURL = http://xxx.xxx.xxx.xxx:12313
+jspwiki.pageProvider = VersioningFileProvider
+jspwiki.fileSystemProvider.pageDir = /home/k8s/tomcat/wiki/pageDir
+jspwiki.basicAttachmentProvider.storageDir = /home/k8s/tomcat/wiki/storageDir
+jspwiki.workDir = /home/k8s/tomcat/wiki/workDir
+#
+log4j.rootLogger=INFO, FileLog
+log4j.appender.FileLog = org.apache.log4j.RollingFileAppender
+log4j.appender.FileLog.MaxFileSize    = 10MB
+log4j.appender.FileLog.MaxBackupIndex = 14
+log4j.appender.FileLog.File = /home/k8s/tomcat/wiki/jspwiki.log
+log4j.appender.FileLog.layout = org.apache.log4j.PatternLayout
+log4j.appender.FileLog.layout.ConversionPattern = %d %p %c{2} - %m%n
+#
+mail.from = lhzd863 <lhzd863@sina.com>
+mail.smtp.host = smtp.sina.com
+mail.smtp.port = 25
+mail.smtp.account =  lhzd863@sina.com
+mail.smtp.password = xxx
+#
+jspwiki.defaultprefs.template.dateformat =yyyy-MMM-dd HH:mm:ss
