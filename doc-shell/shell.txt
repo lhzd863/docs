@@ -1,1 +1,2 @@
-
+#ASCII码转字符
+i=44 ;echo $i | awk '{printf("%c", $1)}'
