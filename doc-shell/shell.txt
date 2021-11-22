@@ -1,4 +1,4 @@
 #ASCII码转字符
 i=44 ;echo $i | awk '{printf("%c", $1)}'
 #字符串转ASCII码
-printf "%d" "'A"
+printf "%d" "',"
