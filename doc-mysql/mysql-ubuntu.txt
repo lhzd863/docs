@@ -13,3 +13,5 @@ service mysql start
 mysql -h 127.0.0.1 -u root -p
 
 
+#
+GRANT ALL PRIVILEGES ON TO 'root’@’%' IDENTIFIED BY 'root' WITH GRANT OPTION;
