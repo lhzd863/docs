@@ -1,0 +1,12 @@
+#install
+apt-get install mysql-server
+apt-get isntall mysql-client
+apt-get install libmysqlclient-dev
+#start
+service mysql stop
+service mysql start
+
+#/etc/mysql/my.cnf
+#
+
+
