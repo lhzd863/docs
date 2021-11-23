@@ -12,6 +12,9 @@ service mysql start
 #sql
 mysql -h 127.0.0.1 -u root -p
 
+#
+skip-grant-tables
+
 
 #
 GRANT ALL PRIVILEGES ON TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
