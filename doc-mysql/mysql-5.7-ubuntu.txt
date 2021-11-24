@@ -1,1 +1,6 @@
+#
 apt --fix-broken install libaio1 libnuma1 libtinfo5 libmecab2
+#
+wget https://downloads.mysql.com/archives/get/p/23/file/mysql-server_5.7.35-1ubuntu18.04_amd64.deb-bundle.tar
+#
+dpkg -i mysql-*.deb
