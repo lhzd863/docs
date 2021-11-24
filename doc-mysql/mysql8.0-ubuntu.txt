@@ -19,7 +19,8 @@ skip-grant-tables
 GRANT ALL PRIVILEGES ON TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
 
 #
-apt-get autoremove --purge mysql-server-8.0
 apt-get remove mysql-common
+apt-get autoremove --purge mysql-server-8.0
+dpkg -l |grep mysql|awk '{print $2}' |sudo xargs dpkg -P
 #
 /etc/mysql/mysql.conf.d/mysqld.cnf
