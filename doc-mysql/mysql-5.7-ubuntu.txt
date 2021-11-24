@@ -4,3 +4,260 @@ apt --fix-broken install libaio1 libnuma1 libtinfo5 libmecab2
 wget https://downloads.mysql.com/archives/get/p/23/file/mysql-server_5.7.35-1ubuntu18.04_amd64.deb-bundle.tar
 #
 dpkg -i mysql-*.deb
+#
+# 停止mysql服务
+sudo service mysql stop
+
+# 修改MySQL的登录设置，暂时不校验登陆密码
+sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+
+# 将[mysqld]下的“skip-external-locking”注释掉
+# 添加 “skip-grant-tables” 然后保存退出
+例如：
+================================================
+[mysqld]
+user        = mysql
+pid-file    = /var/run/mysqld/mysqld.pid
+socket      = /var/run/mysqld/mysqld.sock
+port        = 3306
+basedir     = /usr
+datadir     = /var/lib/mysql
+tmpdir      = /tmp
+lc-messages-dir = /usr/share/mysql
+#skip-external-locking
+skip-grant-tables
+=================================================
+
+# 重启mysql数据库
+sudo service mysql restart
+
+# 免密登陆mysql数据库
+mysql -u root mysql
+
+# 修改root密码
+update mysql.user set authentication_string=password('111222333') where user='root';
+
+# 刷新生效
+flush privileges;
+
+# 还原MySQL的登录设置
+# 将[mysqld]下添加的“skip-grant-tables” 删除
+# 将“skip-external-locking”的注释放开然后保存退出
+sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+例如：
+================================================
+[mysqld]
+user        = mysql
+pid-file    = /var/run/mysqld/mysqld.pid
+socket      = /var/run/mysqld/mysqld.sock
+port        = 3306
+basedir     = /usr
+datadir     = /var/lib/mysql
+tmpdir      = /tmp
+lc-messages-dir = /usr/share/mysql
+skip-external-locking
+=================================================
+
+# 重启mysql数据库
+sudo service mysql restart
+
+# 使用新密码登陆mysql
+mysql -u用户名 -p密码 数据库名
+# 例如： 
+mysql -uroot -p111222333 mysql
+
+#
+# 直接登陆mysql
+mysql -u用户名 -p密码 数据库名
+# 例如： 
+mysql -uroot -p111222333 mysql
+
+# 先登陆后面再输入密码和选择数据库
+mysql -u root -p
+Enter password:  “root用户密码”
+mysql> use mysql # 选择要操作的数据库
+
+# 切换数据库
+use 数据库名;
+
+# 查看所有数据库
+show databases;  
+
+# 查看登陆数据库中所有的表
+show tables;  
+
+# 查看数据表结构
+desc 表名;
+
+# 查看登陆用户名 
+select user();  
+
+# 查看登陆数据库库名
+select database();
+
+# 查看版本
+select version();
+
+# 显示当前时间
+select now();
+
+# 查看所有用户的 用户名、可登陆主机、身份验证插件、密码  
+select user,host,plugin,authentication_string from user;
+
+# 查看当前登录用户权限
+show grants;
+
+# 查看任意用户权限(后面说权限的具体含义)
+show grants for root@localhost;
+
+# 使用root用户登录数据库
+mysql -uroot -p111222333 mysql
+
+# 创建数据库
+create database "数据库名" charset="数据库编码";
+# 例如：
+create database pydb charset=utf8;
+
+# 创建数据库用户
+create user "用户名"@"IP地址" identified by "密码";
+# 例如：
+create user 'test0'@'localhost' identified by 'test0111';
+
+# 删除数据
+drop database [数据库名];
+# 例如：
+drop database pydb;
+
+# 删除数据库用户
+drop user '用户名'@'ip地址';
+# 例如：
+drop user 'test0'@'localhost';
+# 查看用户test0的权限
+show grants for test0@localhost;
+
+显示：[GRANT USAGE ON *.* TO 'test0'@'localhost']
+USAGE: 表示无权限用户。
+
+# 用test0用户登录pydb数据库
+mysql -utest0 -ptest0111 pydb
+
+报错提示无权操作：[ERROR 1044 (42000): Access denied for user 'test0'@'localhost' to database 'pydb']
+
+# 使用root用户给test0用户赋权
+grant all privileges on '数据库名'.'表名' to '用户名'@'IP地址' identified by "密码" with grant option;
+
+# 例如设置本地客户端访问此用户：
+mysql> grant all privileges on pydb.* to 'test0'@'localhost' identified by 'test0111' with grant option;
+
+# 设置远程任意客户端访问此用户：
+mysql> grant all privileges on pydb.* to 'test0'@'%' with grant option;
+
+# 刷新权限
+mysql> flush privileges;
+
+# 查看本地权限
+show grants for 'test0'@'localhost';
+回显：[GRANT ALL PRIVILEGES ON `pydb`.* TO 'test0'@'localhost' WITH GRANT OPTION]
+
+# 查看远程权限
+show grants for 'test0'@'%';
+回显：[GRANT ALL PRIVILEGES ON `pydb`.* TO 'test0'@'%' WITH GRANT OPTION]
+权限都添加成功了，现在本地客户端和远程客户端都拥有了登陆test0用户操作pydb数据库下的所有表的权限了。
+
+# 赋权命令解释
+grant： 赋权关键字
+all privileges： 赋权类型，all privileges表示所有权限。也可以赋值具体的权限如：select、update、create、drop等。
+on： 表示权限要赋给哪个数据库的哪个表，*.* 表示所有数据库的所有表。
+to:  表示权限要赋给哪个用户，格式：”用户名”@”登录IP或域名”。localhost表示本机客户端可登录此用户， %表示任何主机客户端都可以登录此用户，如果配的是具体ip例如'用户名'@'192.168.113'，表示只允许192.168.113这个主机客户端登录此用户。 也可以配置IP段例如'用户名'@'192.168.%'
+identified by： 设置此用户的登录密码，也可以不设置。
+with grant option： 表示允许此用户将自己的权限授权给其它用户。
+注意： grant添加的权限是自动叠加的，比如第一次添加了select权限后面再添加insert权限，那么此用户就拥有select和insert权限。如果此用户已经拥有所有权限，再添加select权限则此用户还是拥有all privileges所有权限。
+
+# 移除权限
+revoke insert on '数据库名'.'表名' from '用户名'@'IP地址';
+# 例如移除insert权限：
+revoke insert on pydb.* from 'test0'@'localhost';
+
+# 例如所有权限：
+revoke all on pydb.* from 'test0'@'localhost';
+
+# 刷新权限
+mysql> flush privileges;
+
+# 备份所有数据库：
+mysqldump -uroot -p --all-databases > all.db
+
+# 备份指定数据库：
+mysqldump -uroot -p pydb > test1.db
+
+# 备份指定数据库的某些表
+mysqldump -uroot -p pydb 表名1 表名2 表名n > test2.db
+
+# 备份指定数据库排除某些表(排除表1 和 表2)
+mysqldump -uroot -p pydb --ignore-table=pydb.表1 --ignore-table=pydb.表2 > test3.db
+
+# 创建test数据库
+create database test charset=utf8; 
+
+# 恢复备份数据，导入的数据库必须存在
+mysql -u root -p test < test1.db
+
+# 查看监听
+netstat -an |grep 3306
+# 前监听的是本地回环地址：tcp 0 0 127.0.0.1:3306  0.0.0.0:* LISTEN 
+# 远程客户端无法访问
+
+# 修改MySQL的本地监听地址
+sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+
+修改bind-address 的值为 bind-address = 0.0.0.0保存退出。
+也可以修改为本机ip，例如：bind-address = 192.168.111.10
+
+# 重启mysql数据库
+sudo service mysql restart
+
+# 在远程客户端机器上测试下网络，telnet成功说明网络没问题
+telnet 192.168.111.10 3306
+
+# 注意：阿里云服务器有端口限制，需要去配置下端口访问规则开放3306端口
+网址：[https://homenew.console.aliyun.com/]
+
+如果连接失败则进行以下测试：
+[192.168.111.10]是你的mysql服务器ip地址
+1.测试网络和端口
+telnet 192.168.111.10 3306
+
+2.查看服务器监听地址
+sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+bind-address = 0.0.0.0
+
+3.查看用户是否有远程访问权限及密码验证插件
+select user,host,plugin from user;
+登陆用户host的值： % 或 远程客户端ip
+登陆用户plugin的值： mysql_native_password   
+mysql5.7版本的密码验证插件是 mysql_native_password 
+
+# 添加用户访问权限及设定密码验证插件
+grant all privileges on pydb.* to 'test0'@'%' identified with mysql_native_password by 'test0111';
+
+# 如果用户远程访问权限存在，密码验证插件不对，可只修改密码验证插件
+alter user 'test0'@'%' identified with mysql_native_password by '111222333';
+
+# 刷新权限
+mysql> flush privileges;
+
+# 卸载mysql：
+1.sudo apt-get autoremove mysql* --purge
+2.sudo apt-get remove mysql-server
+3.sudo apt-get remove mysql-common
+
+# 清理残留数据 
+sudo dpkg -l |grep mysql|awk '{print $2}' |sudo xargs dpkg -P 
+sudo rm -rf /etc/mysql/ 
+sudo rm -rf /var/lib/mysql
+
+# 检查是否删除完毕
+whereis mysql
+sudo find / -name mysql
+
+
