@@ -1,0 +1,28 @@
+1.首先在/lib/systemd/system/目录下，创建服务脚本：nginx-1.13.0.service
+[Unit]
+Description=nginx-1.13.0
+After=syslog.target network.target remote-fs.target nss-lookup.target
+ 
+[Service]
+Type=forking
+ExecStart=/usr/local/nginx-1.13.0/sbin/nginx -c /usr/local/nginx-1.13.0/conf/nginx.conf
+ExecStop=/usr/local/nginx-1.13.0/sbin/nginx -s stop
+PrivateTmp=true
+ 
+[Install]
+WantedBy=multi-user.target
+
+2.执行 systemctl daemon-reload
+3.设置让脚本开机自动启动systemctl enable nginx-1.13.0.service
+
+4.常用命令
+重新加载service文件：systemctl daemon-reload
+启动一个服务：systemctl start nginx-1.13.0.service
+关闭一个服务：systemctl stop nginx-1.13.0.service
+重启一个服务：systemctl restart nginx-1.13.0.service
+显示一个服务的状态：systemctl status nginx-1.13.0.service
+在开机时启用一个服务：systemctl enable nginx-1.13.0.service
+在开机时禁用一个服务：systemctl disable nginx-1.13.0.service
+查看服务是否开机启动：systemctl is-enabled nginx-1.13.0.service
+查看已启动的服务列表：systemctl list-unit-files|grep enabled
+查看启动失败的服务列表：systemctl --failed
