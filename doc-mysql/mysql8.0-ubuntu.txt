@@ -15,12 +15,11 @@ mysql -h 127.0.0.1 -u root -p
 #
 skip-grant-tables
 
-
 #
 GRANT ALL PRIVILEGES ON TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
 
-
 #
-
 apt-get autoremove --purge mysql-server-8.0
 apt-get remove mysql-common
+#
+/etc/mysql/mysql.conf.d/mysqld.cnf
