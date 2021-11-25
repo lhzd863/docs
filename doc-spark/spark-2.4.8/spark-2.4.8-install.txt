@@ -9,3 +9,7 @@ cp slaves.template  slaves
 #salves
 127.0.0.1
 
+#.profile
+export SPARK_HOME=
+export PATH=$SPARK_HOME/bin:$PATH
+
