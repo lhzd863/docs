@@ -1,4 +1,4 @@
-create user 'xst_hive' identified by 'xst_hive';
-grant all on *.* TO 'xst_hive'@'%' with grant option;
-create database xst_hive;
+create user 'hive' identified by 'hive';
+grant all on *.* TO 'hive'@'%' with grant option;
+create database hive;
 
