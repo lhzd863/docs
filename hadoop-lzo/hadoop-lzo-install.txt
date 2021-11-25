@@ -36,7 +36,7 @@ cd target/native/Linux-amd64-64
 # 会在~目录下生成几个文件
 tar -cBf - -C lib . | tar -xBvf - -C ~
 
-cp ~/libgplcompression* $HADOOP_HOME/lib/native/
+cp ~/libgplcompression* $HADOOP_HOME/lib/native/hadoop-lzo
 
 # 需要把hadoop-lzo-0.4.21-SNAPSHOT.jar 复制到hadoop中
 cp target/hadoop-lzo-0.4.21-SNAPSHOT.jar $HADOOP_HOME/share/hadoop/common/
@@ -49,8 +49,8 @@ cp target/hadoop-lzo-0.4.21-SNAPSHOT.jar $HADOOP_HOME/share/hadoop/mapreduce/lib
  
  
 #$HADOOP_HOME/etc/hadoop/hadoop-env.sh 
-export LD_LIBRARY_PATH=/usr/local/lib
-export JAVA_LIBRARY_PATH=${JAVA_LIBRARY_PATH}:${HADOOP_HOME}/lib/native
+export LD_LIBRARY_PATH=/usr/local/hadoop/lzo/lib
+export JAVA_LIBRARY_PATH=${JAVA_LIBRARY_PATH}:${HADOOP_HOME}/lib/native:${HADOOP_HOME}/lib/native/hadoop-lzo
 
 #$HADOOP_HOME/etc/hadoop/core-site.xml
 <property>
@@ -97,4 +97,4 @@ export JAVA_LIBRARY_PATH=${JAVA_LIBRARY_PATH}:${HADOOP_HOME}/lib/native
 
 #spark-env.sh
 export SPARK_LIBRARY_PATH=$SPARK_LIBRARY_PATH:/usr/local/hadoop/lzo/lib
-export SPARK_CLASSPATH=$SPARK_CLASSPATH:/path/to/your/hadoop-lzo/java/libs
+
