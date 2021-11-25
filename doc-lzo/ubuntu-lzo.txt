@@ -1,2 +1,9 @@
 #
 apt-get install liblzo2-dev
+#wget http://www.oberhumer.com/opensource/lzo/download/lzo-2.06.tar.gz
+export CFLAGS=-m64
+./configure -enable-shared
+make
+make install
+
+/usr/local/lib
