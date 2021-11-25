@@ -1,0 +1,9 @@
+export JAVA_HOME=/home/coder/jdk/jdk1.8.0_311
+export HADOOP_HOME=/home/coder/hadoop/hadoop-2.8.5
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export SPARK_HOME=/home/coder/hadoop/spark-2.4.8
+export SPARK_MASTER_HOST=127.0.0.1
+export LD_LIBRARY_PATH=/usr/local/lib
+export JAVA_LIBRAY_PATH=${JAVA_LIBRARY_PATH}:${HADOOP_HOME}/lib/native:${HADOOP_HOME}/lib/native/hadoop-lzo
+export SPARK_DIST_CLASSPATH=$(/home/coder/hadoop/hadoop-2.8.5/bin/hadoop classpath)
+export SPARK_LIBRARY_PATH=$SPARK_LIBRARY_PATH:/usr/local/lib
