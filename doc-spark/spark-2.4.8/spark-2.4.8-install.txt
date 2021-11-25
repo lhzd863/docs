@@ -1,0 +1,11 @@
+#wget https://dlcdn.apache.org/spark/spark-2.4.8/spark-2.4.8-bin-hadoop2.7.tgz
+tar -zxvf spark-2.4.8-bin-hadoop2.7.tgz
+#spark-2.4.8/conf
+cp spark-env.sh.template spark-env.sh
+cp spark-defaults.conf.template spark-default.conf
+cp $HIVE_HOME/conf/hive-site.xml  ./
+cp slaves.template  slaves
+
+#salves
+127.0.0.1
+
