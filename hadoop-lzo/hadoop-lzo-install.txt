@@ -20,9 +20,9 @@ make && sudo make install
 # 下载
 wget https://github.com/twitter/hadoop-lzo/archive/refs/tags/release-0.4.20.tar.gz
 # 解压后的文件夹名为hadoop-lzo-master
-unzip master.zip
+tar -zxvf release-0.4.20.tar.gz
 # 然后进入hadoop-lzo-master目录，依次执行下面的命令
-cd hadoop-lzo-master
+cd release-0.4.20
 
 export CFLAGS=-m64
 export CXXFLAGS=-m64
@@ -43,14 +43,13 @@ cp target/hadoop-lzo-0.4.21-SNAPSHOT.jar $HADOOP_HOME/share/hadoop/common/
 cp target/hadoop-lzo-0.4.21-SNAPSHOT.jar $HADOOP_HOME/share/hadoop/mapreduce/lib
 
 # 最后别忘记将下面三个地址的文件复制到其他节点
- $HADOOP_HOME/lib/native/libgplcompression*
- $HADOOP_HOME/share/hadoop/mapreduce/lib/hadoop-lzo-0.4.21-SNAPSHOT.jar
- $HADOOP_HOME/share/hadoop/common/hadoop-lzo-0.4.21-SNAPSHOT.jar
+ $HADOOP_HOME/lib/native/hadoop-lzo/libgplcompression*
+ $HADOOP_HOME/share/hadoop/mapreduce/lib/hadoop-lzo-0.4.20.jar
+ $HADOOP_HOME/share/hadoop/common/hadoop-lzo-0.4.20.jar
  
  
- #$HADOOP_HOME/etc/hadoop/hadoop-env.sh 
- export LD_LIBRARY_PATH=/usr/local/hadoop/lzo/lib
-export HADOOP_CLASSPATH="<extra_entries>:$HADOOP_CLASSPATH:${HADOOP_HOME}/share/hadoop/common"
+#$HADOOP_HOME/etc/hadoop/hadoop-env.sh 
+export LD_LIBRARY_PATH=/usr/local/lib
 export JAVA_LIBRARY_PATH=${JAVA_LIBRARY_PATH}:${HADOOP_HOME}/lib/native
 
 #$HADOOP_HOME/etc/hadoop/core-site.xml
