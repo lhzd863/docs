@@ -14,3 +14,6 @@ mysql+pymysql://test:***@127.0.0.1:3306/airflow_test
 #
 airflow db init
 
+#
+show global variables like '%timestamp%';
+set global explicit_defaults_for_timestamp =1;
