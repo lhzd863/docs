@@ -32,3 +32,8 @@ session.commit()
 session.close()
 exit()
 
+
+#
+airflow scheduler -D
+
+
