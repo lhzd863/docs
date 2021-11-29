@@ -17,3 +17,17 @@ airflow db init
 #
 show global variables like '%timestamp%';
 set global explicit_defaults_for_timestamp =1;
+
+#
+import airflow
+from airflow import models, settings
+from airflow.contrib.auth.backends.password_auth import PasswordUser
+user = PasswordUser(models.User())
+user.username = 'YOUR_WEB_USER_NAME'
+user.password = 'YOUR_WEB_USER_PWD'
+session = settings.Session()
+session.add(user)
+session.commit()
+session.close()
+exit()
+
