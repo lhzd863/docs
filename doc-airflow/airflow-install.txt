@@ -1,3 +1,4 @@
 #
-
+pip install apache-airflow
+pip install 'apache-airflow[async]'
 pip install 'apache-airflow[celery]'
