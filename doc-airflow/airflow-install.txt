@@ -32,7 +32,8 @@ session.commit()
 session.close()
 exit()
 
-
+#
+airflow webserver --port 12315 > run-webserver.log 2
 #
 airflow scheduler -D
 #
