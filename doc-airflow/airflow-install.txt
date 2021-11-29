@@ -7,4 +7,10 @@ pip install pymysql # 报错的话 需apt-get install libmysqlclient-dev
 pip install mysqlclient
 pip install flask_bcrypt # 安这个是因为后面initdb时报缺少包的错误
 #
+#生成配置文件
+airflow
+#配置文件
 mysql+pymysql://test:***@127.0.0.1:3306/airflow_test
+#
+airflow db init
+
