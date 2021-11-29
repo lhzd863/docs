@@ -35,5 +35,6 @@ exit()
 
 #
 airflow scheduler -D
-
+#
+airflow celery worker -D
 
