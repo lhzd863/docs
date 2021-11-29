@@ -2,3 +2,12 @@
 apt-get -y install redis
 #
 /etc/redis/redis.conf
+
+#
+#requirepass foobared
+requirepass airflow
+#開啟redis服務
+systemctl start redis
+或
+service redis start
+
