@@ -3,6 +3,7 @@ pip install apache-airflow
 pip install 'apache-airflow[async]'
 pip install 'apache-airflow[celery]'
 pip install 'apache-airflow[redis]'
+pip install "airflow[password]"
 pip install pymysql # 报错的话 需apt-get install libmysqlclient-dev
 pip install mysqlclient
 pip install flask_bcrypt # 安这个是因为后面initdb时报缺少包的错误
