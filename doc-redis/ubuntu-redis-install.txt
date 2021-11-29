@@ -1,2 +1,4 @@
 #
 apt-get -y install redis
+#
+/etc/redis/redis.conf
