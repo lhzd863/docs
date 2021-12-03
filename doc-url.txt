@@ -296,4 +296,6 @@ https://github.com/minio/minio
 
 #
 https://github.com/mingrammer/diagrams
+#
+https://github.com/d2l-ai/d2l-zh
 
