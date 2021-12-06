@@ -12,6 +12,9 @@ dpkg -l |grep mysql|awk '{print $2}' |sudo xargs dpkg -P
 # 停止mysql服务
 sudo service mysql stop
 
+#
+apt-get install psmisc
+
 # 修改MySQL的登录设置，暂时不校验登陆密码
 sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
 
