@@ -1,1 +1,16 @@
-#
+#hdfs-site.xml
+    <property>
+        <name>dfs.webhdfs.enabled</name>
+        <value>true</value>
+    </property>
+#core-site.xml
+    <property>
+        <name>hadoop.proxyuser.coder.hosts</name>
+        <value>*</value>
+    </property>
+    <property>
+        <name>hadoop.proxyuser.coder.groups</name>
+        <value>*</value>
+    </property>
+    
+ 
