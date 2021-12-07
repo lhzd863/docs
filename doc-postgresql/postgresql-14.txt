@@ -1,3 +1,10 @@
+#/etc/postgresql/14/main/pg_hba.conf
+local   all             postgres                                peer
+local   all             all                                      trust
+host    all             all             0.0.0.0/0                md5
+#/etc/postgresql/14/main/postgresql.conf
+listen_addresses = '*'
+
 #创建用户
 #创建普通用户
 create user test encrypted password 'test';
