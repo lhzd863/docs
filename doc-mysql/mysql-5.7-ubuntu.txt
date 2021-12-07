@@ -112,6 +112,7 @@ create database pydb charset=utf8;
 create user "用户名"@"IP地址" identified by "密码";
 # 例如：
 create user 'test0'@'localhost' identified by 'test0111';
+create user "test0"@"%" identified by "xxx";
 
 # 删除数据
 drop database [数据库名];
