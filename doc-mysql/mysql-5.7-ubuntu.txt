@@ -51,27 +51,6 @@ update mysql.user set authentication_string=password('111222333') where user='ro
 # 刷新生效
 flush privileges;
 
-# 还原MySQL的登录设置
-# 将[mysqld]下添加的“skip-grant-tables” 删除
-# 将“skip-external-locking”的注释放开然后保存退出
-sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
-例如：
-================================================
-[mysqld]
-user        = mysql
-pid-file    = /var/run/mysqld/mysqld.pid
-socket      = /var/run/mysqld/mysqld.sock
-port        = 3306
-basedir     = /usr
-datadir     = /var/lib/mysql
-tmpdir      = /tmp
-lc-messages-dir = /usr/share/mysql
-skip-external-locking
-=================================================
-
-# 重启mysql数据库
-sudo service mysql restart
-
 # 使用新密码登陆mysql
 mysql -u用户名 -p密码 数据库名
 # 例如： 
