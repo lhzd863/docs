@@ -1,3 +1,6 @@
+#
+apt-get install -y autoconf automake libtool make cmake gcc g++
+
 #modify autogen.sh
 echo "Google Test not present.  Fetching gtest-1.5.0 from the web..."
   #curl http://googletest.googlecode.com/files/gtest-1.5.0.tar.bz2 | tar jx
