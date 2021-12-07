@@ -19,13 +19,13 @@ sudo service mysql stop
 /etc/mysql/mysql.cnf
 /etc/mysql/conf.d/mysql.cnf
 /etc/mysql/mysql.conf.d/mysqld.cnf
+#
 
+#密码登录
+mysql -u root -p
 
-# 修改MySQL的登录设置，暂时不校验登陆密码
-sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
-
-# 将[mysqld]下的“skip-external-locking”注释掉
-# 添加 “skip-grant-tables” 然后保存退出
+# 修改MySQL的登录设置，
+#/etc/mysql/mysql.conf.d/mysqld.cnf
 例如：
 ================================================
 [mysqld]
@@ -37,8 +37,6 @@ basedir     = /usr
 datadir     = /var/lib/mysql
 tmpdir      = /tmp
 lc-messages-dir = /usr/share/mysql
-#skip-external-locking
-skip-grant-tables
 =================================================
 
 # 重启mysql数据库
