@@ -23,6 +23,7 @@ sudo service mysql stop
 
 #root免密码登录
 /etc/mysql/mysql.conf.d/mysqld.cnf 文件添加 skip-grant-tables重启mysql服务mysql -u root mysql 登录
+SET PASSWORD = PASSWORD('123456'); //123456 是重置的新密码
 
 #密码登录
 mysql -u root -p
