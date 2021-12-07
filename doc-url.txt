@@ -300,5 +300,9 @@ https://github.com/mingrammer/diagrams
 https://github.com/d2l-ai/d2l-zh
 #
 https://github.com/OpenIMSDK/Open-IM-Server
+#
+https://github.com/ohmyzsh/ohmyzsh
+#
+https://github.com/aristocratos/btop
 
 
