@@ -11,3 +11,5 @@ s3fs -o passwd_file=/etc/.passwd-s3fs -o url=http://119.3.82.174:9000 -o allow_o
 s3fs -o passwd_file=/etc/.passwd-s3fs -o url=http://119.3.82.174:9000 -o allow_other -o nonempty -o no_check_certificate -o use_path_request_style -o umask=000 data /mnt/minio -d -d -f -o f2 -o curldbg
 
 
+#s3fs: unable to access MOUNTPOINT /mnt/minio: Transport endpoint is not connected
+fusermount -u /mnt/minio
