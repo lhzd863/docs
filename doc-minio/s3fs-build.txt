@@ -1,2 +1,4 @@
 #
 apt-get install -y autoconf automake libtool make cmake gcc g++
+#
+apt install s3fs
