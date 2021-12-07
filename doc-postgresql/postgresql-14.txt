@@ -1,1 +1,64 @@
+#创建用户
+#创建普通用户
+create user test encrypted password 'test';
+#创建超级用户
+create user test2 superuser;
+#创建一个普通用户，并且赋予相关权限
+create user test createdb createrole inherit password 'test';
+#将超级用户修改为普通用户
+alter user test nosuperuser;
+#修改用户为超级用户
+alter user test superuser;
+#修改用户密码
+alter user test2 password 'test';
+#修改用户名
+alter user test2 rename to test3;
+#锁定/解锁用户,不允许/允许其登录
+alter user test nologin;
+#授予用户数据库权限
+alter user test login;
+#
+alter user test password 'xxx';
+#设置用户的连接数,其中0表示不允许登录,-1表示无限制
+alter user test connection limit 10;
+
+#授予用户数据库权限
 GRANT ALL PRIVILEGES ON DATABASE edw to test;
+
+#授予用户查看刚授权的数据库的里面的表的权限
+GRANT ALL PRIVILEGES ON TABLE 表名 TO 用户名;
+
+#修改的表的类型
+alter table 表名 alter 字段名 type 类型;
+#增加表新的字段
+alter table 表名 add column 字段名 text（字段类型）;
+#设置主键自增
+CREATE SEQUENCE user_id_seq
+START WITH 1
+INCREMENT BY 1
+NO MINVALUE 
+NO MAXVALUE
+CACHE 1;
+alter table sys_user alter COLUMN id set DEFAULT nextval('user_id_seq');
+
+#postgres创建B-Tree索引
+-- create index '索引名' on '表名' ('需要索引的字段')
+CREATE INDEX ip_store_inde on ip_store (ip_network);
+#添加主键
+alter table goods add primary key(sid);
+#添加外键
+alter table orders add foreign key(goods_id) references goods(sid) on update cascade on delete cascade;
+#删除外键
+alter table orders drop constraint orders_goods_id_fkey;
+#添加唯一约束
+alter table goods add constraint unique_goods_sid unique(sid);
+#删除默认值
+alter table goods alter column sid drop default;
+#修改字段的数据类型
+alter table goods alter column sid type character varying;
+#重命名字段
+alter table goods rename column sid to ssid;
+#创建唯一键约束
+constraint user_info_unique_userid unique(userid)
+
+
