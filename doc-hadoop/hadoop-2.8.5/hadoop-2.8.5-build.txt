@@ -1,0 +1,9 @@
+#JDK 1.7+
+#Maven 3.0 or later
+#ProtocolBuffer 2.5.0
+#Native libraries
+apt-get -y install build-essential autoconf automake libtool cmake zlib1g-dev pkg-config libssl-dev
+#安装ant
+
+mvn package -Pdist,native,docs,src -DskipTests -Dtar -Drequire.snappy
+
