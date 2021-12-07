@@ -1,19 +1,21 @@
 #
-apt --fix-broken install libaio1 libnuma1 libtinfo5 libmecab2
-#
 wget https://downloads.mysql.com/archives/get/p/23/file/mysql-server_5.7.35-1ubuntu18.04_amd64.deb-bundle.tar
 #
+apt-get -y remove mysql-common
+apt-get -y autoremove --purge mysql-server-8.0
+dpkg -l |grep mysql|awk '{print $2}' |sudo xargs dpkg -P
+apt --fix-broken install -y libaio1 libnuma1 libtinfo5 libmecab2
+cd /home/coder/mysql/mysql-server_5.7.35
 dpkg -i mysql-*.deb
 #
-apt-get remove mysql-common
-apt-get autoremove --purge mysql-server-8.0
-dpkg -l |grep mysql|awk '{print $2}' |sudo xargs dpkg -P
+apt-get install psmisc
+
 #
 # 停止mysql服务
 sudo service mysql stop
 
 #
-apt-get install psmisc
+
 
 # 修改MySQL的登录设置，暂时不校验登陆密码
 sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
