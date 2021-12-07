@@ -1,5 +1,5 @@
 #
-apt-get install -y autoconf automake libtool make cmake gcc g++
+apt-get install -y autoconf automake libtool make cmake gcc g++ build-essential
 
 #modify autogen.sh
 echo "Google Test not present.  Fetching gtest-1.5.0 from the web..."
