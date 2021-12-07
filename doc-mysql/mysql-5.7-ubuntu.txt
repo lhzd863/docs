@@ -13,8 +13,12 @@ apt-get install psmisc
 #
 # 停止mysql服务
 sudo service mysql stop
+#
 
 #
+/etc/mysql/mysql.cnf
+/etc/mysql/conf.d/mysql.cnf
+/etc/mysql/mysql.conf.d/mysqld.cnf
 
 
 # 修改MySQL的登录设置，暂时不校验登陆密码
