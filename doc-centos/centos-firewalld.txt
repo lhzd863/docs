@@ -1,0 +1,4 @@
+#安装
+yum install firewalld
+#开机禁用
+systemctl disable firewalld
