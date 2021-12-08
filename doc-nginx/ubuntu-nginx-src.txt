@@ -1,2 +1,3 @@
 #
-apt-get install openssl libssl-dev
+apt install openssl libssl-dev libpcre3 libpcre3-dev zlib1g-dev make
+
