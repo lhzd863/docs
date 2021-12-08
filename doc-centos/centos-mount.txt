@@ -1,4 +1,4 @@
-磁盘挂载：
+磁盘挂载：https://www.cnblogs.com/chenjian/p/8862524.html
 
 查看当前未挂载的硬盘
 [root@xxx]# fdisk -l
