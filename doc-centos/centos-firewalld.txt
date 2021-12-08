@@ -14,3 +14,5 @@ systemctl stop firewalld
 systemctl start firewalld
 #添加端口
 firewall-cmd --add-port=8080/tcp --permanent （–permanent永久生效，没有此参数重启后失效）
+#不中断服务的重新加载
+firewall-cmd --reload
