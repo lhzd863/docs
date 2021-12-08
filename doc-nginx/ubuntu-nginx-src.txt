@@ -1,3 +1,39 @@
 #
 apt install openssl libssl-dev libpcre3 libpcre3-dev zlib1g-dev make
 
+#
+./configure --sbin-path=/usr/local/nginx/nginx \
+--conf-path=/usr/local/nginx/nginx.conf \
+--pid-path=/usr/local/nginx/nginx.pid \
+--with-http_ssl_module \
+--http-client-body-temp-path=/usr/local/nginx/temp/client_body_temp   \
+--http-proxy-temp-path=/usr/local/nginx/temp/proxy_temp   \
+--http-fastcgi-temp-path=/usr/local/nginx/temp/fastcgi_temp   \
+--http-uwsgi-temp-path=/usr/local/nginx/temp/uwsgi_temp   \
+--http-scgi-temp-path=/usr/local/nginx/temp/scgi_temp
+
+
+Configuration summary
+  + using system PCRE library
+  + using system OpenSSL library
+  + using system zlib library
+
+  nginx path prefix: "/usr/local/nginx"
+  nginx binary file: "/usr/local/nginx/nginx"
+  nginx modules path: "/usr/local/nginx/modules"
+  nginx configuration prefix: "/usr/local/nginx"
+  nginx configuration file: "/usr/local/nginx/nginx.conf"
+  nginx pid file: "/usr/local/nginx/nginx.pid"
+  nginx error log file: "/usr/local/nginx/logs/error.log"
+  nginx http access log file: "/usr/local/nginx/logs/access.log"
+  nginx http client request body temporary files: "/usr/local/nginx/temp/client_body_temp"
+  nginx http proxy temporary files: "/usr/local/nginx/temp/proxy_temp"
+  nginx http fastcgi temporary files: "/usr/local/nginx/temp/fastcgi_temp"
+  nginx http uwsgi temporary files: "/usr/local/nginx/temp/uwsgi_temp"
+  nginx http scgi temporary files: "/usr/local/nginx/temp/scgi_temp"
+ 
+ 
+ #start
+ /usr/local/nginx/nginx
+ #stop
+ /usr/local/nginx/nginx -s stop
