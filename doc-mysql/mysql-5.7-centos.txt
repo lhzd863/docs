@@ -20,3 +20,11 @@ rpm -ivh mysql-community-server-5.7.35-1.el7.x86_64.rpm
 #/etc/my.cnf
 [mysqld]
 datadir=/mnt/disk/mysql
+#root 密码
+grep 'temporary password' /var/log/mysqld.log
+#启动服务器
+systemctl start mysqld
+#登录
+mysql -u root -p 
+#设置密码
+SET PASSWORD = PASSWORD('xxx');
