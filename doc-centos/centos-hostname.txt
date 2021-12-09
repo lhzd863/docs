@@ -1,0 +1,4 @@
+#查看
+hostname
+#修改
+hostnamectl set-hostname hdp-node00002
