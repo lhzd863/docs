@@ -8,3 +8,5 @@ https://mvnrepository.com/
 #数据建模工具
 https://datamodeling.cn/main/marketlist#/main/marketlist
 
+#apache 组件下载路径
+https://dlcdn.apache.org/
