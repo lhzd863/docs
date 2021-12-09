@@ -1,2 +1,5 @@
 #GitHub中文社区
 https://www.githubs.cn/
+#minio 中文档
+http://docs.minio.org.cn/docs/
+
