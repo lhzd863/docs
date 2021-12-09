@@ -1,1 +1,11 @@
+#下载
+wget http://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz
+#安装依赖
 yum -y install  lzo-devel  zlib-devel  gcc autoconf automake libtool
+#
+tar -zxvf lzo-2.10.tar.gz
+#
+cd lzo-2.10
+#
+./configure
+make && make install
