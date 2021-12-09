@@ -2,4 +2,6 @@
 https://www.githubs.cn/
 #minio 中文档
 http://docs.minio.org.cn/docs/
+#naven 资源库
+https://mvnrepository.com/
 
