@@ -1,0 +1,22 @@
+安装
+删除已安装的MySQL
+#检查MariaDB
+rpm -qa|grep mariadb
+#删除mariadb
+rpm -e --nodeps mariadb-libs-5.5.68-1.el7.x86_64
+#检查MySQL
+rpm -qa|grep mysql
+#安装依赖
+yum install -y cmake make gcc gcc-c++ libaio ncurses ncurses-devel
+
+#安装，如下顺序
+rpm -ivh mysql-community-common-5.7.35-1.el7.x86_64.rpm
+rpm -ivh mysql-community-libs-5.7.35-1.el7.x86_64.rpm
+rpm -ivh mysql-community-libs-compat-5.7.35-1.el7.x86_64.rpm
+rpm -ivh mysql-community-client-5.7.35-1.el7.x86_64.rpm
+rpm -ivh mysql-community-server-5.7.35-1.el7.x86_64.rpm
+
+配置
+#/etc/my.cnf
+[mysqld]
+datadir=/mnt/disk/mysql
