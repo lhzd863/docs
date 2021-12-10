@@ -1,0 +1,30 @@
+#下载https://dlcdn.apache.org/spark/spark-2.4.8/spark-2.4.8-bin-hadoop2.7.tgz
+#配置环境变量
+export SPARK_HOME=/home/hadoop/soft/spark-2.4.8
+export PATH=$SPARK_HOME/bin:$PATH
+#cp hive 配置文件hive-site.xml
+/xxx/spark-2.4.8/conf/hive-site.xml
+#配置文件/xxx/spark-2.4.8/conf/slaves
+hdp-node00001
+hdp-node00002
+hdp-node00003
+#配置文件/xxx/spark-2.4.8/conf/spark-env.sh
+export JAVA_HOME=/home/hadoop/soft/jdk1.8.0_311
+export HADOOP_HOME=/home/hadoop/soft/hadoop-2.8.5
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export SPARK_HOME=/home/hadoop/soft/spark-2.4.8
+export SPARK_MASTER_HOST=hdp-node00001
+export LD_LIBRARY_PATH=/usr/local/lib
+export JAVA_LIBRAY_PATH=${JAVA_LIBRARY_PATH}:${HADOOP_HOME}/lib/native:${HADOOP_HOME}/lib/native/hadoop-lzo
+export SPARK_DIST_CLASSPATH=$(/home/hadoop/soft/hadoop-2.8.5/bin/hadoop classpath)
+export SPARK_LIBRARY_PATH=$SPARK_LIBRARY_PATH:/usr/local/lib
+export SPARK_LOCAL_IP=hdp-node00001
+export SPARK_MASTER_PORT=7077
+export SPARK_WORKER_CORES=6
+export SPARK_WORKER_MEMORY=12g
+#配置文件spark-2.4.8/conf/spark-defaults.conf
+spark.jars                         /xxx/hadoop-2.8.5/share/hadoop/common/hadoop-lzo-0.4.20.jar
+spark.driver.memory                12g
+#cp 安装介质到其他集群
+#启动服务器
+sbin/start-all.sh
