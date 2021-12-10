@@ -51,9 +51,9 @@ xxx.xxx.xxx.2    hdp-node00002
 xxx.xxx.xxx.3    hdp-node00003
 
 #修改配置文件hadoop-2.8.5/etc/hadoop/hadoop-env.sh
-export JAVA_HOME=/home/hadoop/soft/jdk1.8.0_311
+export JAVA_HOME=/xxx/jdk1.8.0_311
 export LD_LIBRARY_PATH=/usr/local/lib
-export HADOOP_HOME=/home/hadoop/soft/hadoop-2.8.5
+export HADOOP_HOME=/xxx/hadoop-2.8.5
 export JAVA_LIBRARY_PATH=${JAVA_LIBRARY_PATH}:${HADOOP_HOME}/lib/native/hadoop-lzo:${HADOOP_HOME}/lib/native
 
 #修改配置文件hadoop-2.8.5/etc/hadoop/capacity-scheduler.xml
@@ -73,7 +73,7 @@ io.compression.codecs
   org.apache.hadoop.io.compress.BZip2Codec
 io.compression.codec.lzo.class  com.hadoop.compression.lzo.LzoCodec
 
-#修改配置文件/home/hadoop/soft/hadoop-2.8.5/etc/hadoop/hdfs-site.xml
+#修改配置文件hadoop-2.8.5/etc/hadoop/hdfs-site.xml
 dfs.webhdfs.enabled  true
 dfs.replication  3
 dfs.namenode.name.dir  file:/xxx/hadoop/namenode1,file:/xxx/hadoop/namenode2,file:/xxx/hadoop/namenode3
