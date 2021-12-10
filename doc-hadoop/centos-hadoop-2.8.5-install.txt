@@ -103,7 +103,7 @@ mapred.child.env  LD_LIBRARY_PATH=/usr/local/lib
 mapreduce.map.env  LD_LIBRARY_PATH=/usr/local/lib
 mapreduce.reduce.env  LD_LIBRARY_PATH=/usr/local/lib
 
-#修改配置文件/home/hadoop/soft/hadoop-2.8.5/etc/hadoop/yarn-site.xml
+#修改配置文件hadoop-2.8.5/etc/hadoop/yarn-site.xml
 yarn.acl.enable  false
 yarn.log-aggregation-enable  true
 yarn.resourcemanager.address  hdp-node00001:8031
