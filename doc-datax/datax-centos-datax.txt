@@ -1,0 +1,2 @@
+#
+wget http://datax-opensource.oss-cn-hangzhou.aliyuncs.com/datax.tar.gz
