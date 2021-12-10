@@ -1,0 +1,50 @@
+#下载
+wget https://dlcdn.apache.org/hive/hive-2.3.9/apache-hive-2.3.9-bin.tar.gz
+#安装mysql 服务器
+#创建mysql用户
+create user 'hive' identified by 'hive';
+grant all on . TO 'hive'@'%' with grant option;
+create database hive;
+flush privileges;
+#配置环境变量/home/hadoop/.bash_profile
+export HIVE_HOME=/home/hadoop/soft/hive-2.3.9
+export PATH=$HIVE_HOME/bin:$PATH
+#在HDFS中创建/tmp和/user/hive/warehouse并设置权限
+hadoop fs -mkdir /tmp
+hadoop fs -mkdir /user/hive/warehouse
+hadoop fs -chmod g+w /tmp
+hadoop fs -chmod g+w /user/hive/warehouse
+#修改配置文件 copy 文件
+cp beeline-log4j.properties.template beeline-log4j.properties
+cp hive-default.xml.template hive-site.xml
+cp hive-env.sh.template hive-env.sh
+cp hive-exec-log4j.properties.template hive-exec-log4j.properties
+cp hive-log4j.properties.template hive-log4j.properties
+#配置相关参数 hive-2.3.9/conf/hive-env.sh
+export HADOOP_HOME=/xx/hadoop-2.8.5
+export HIVE_CONF_DIR=/xxx/hive-2.3.9/conf
+#配置相关参数 hive-2.3.9/conf/hive-log4j2.properties
+property.hive.log.dir = /xxx/hive/logs
+#配置相关参数 hive-2.3.9/conf/hive-site.xml
+hive.exec.scratchdir  /tmp/hive
+javax.jdo.option.ConnectionURL  jdbc:mysql://hdp-node00001:3306/xst_hive?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8
+javax.jdo.option.ConnectionDriverName  com.mysql.jdbc.Driver
+javax.jdo.option.ConnectionUserName  xst_hive
+javax.jdo.option.ConnectionPassword  xxx
+hive.metastore.uris  thrift://hdp-node00001:9083
+hive.metastore.warehouse.dir  /user/hive/warehouse
+hive.querylog.location  /xxx/hive/querylog
+hive.support.concurrency  true
+hive.exec.dynamic.partition.mode  nonstrict
+hive.txn.manager  org.apache.hadoop.hive.ql.lockmgr.DbTxnManager
+hive.compactor.initiator.on  true
+hive.compactor.worker.threads  1
+#下载mysql jdbc jar方到lib
+/xxx/hive-2.3.9/lib/mysql-connector-java-5.1.49.jar
+#介质cp到其他集群上
+#需要hive元数据库初始化，执行
+schematool -dbType mysql -initSchema
+#在使用hive之前需要启动metastore和hiveserver服务，只需要在一台服务器上启动
+nohup hive --service metastore  > hive-metastore.log 2>&1 &
+nohup hive --service hiveserver2 > hive-hiveserver2.log 2>&1 &
+
