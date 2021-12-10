@@ -97,6 +97,28 @@ mapreduce.map.env  LD_LIBRARY_PATH=/usr/local/lib
 mapreduce.reduce.env  LD_LIBRARY_PATH=/usr/local/lib
 
 #修改配置文件/home/hadoop/soft/hadoop-2.8.5/etc/hadoop/yarn-site.xml
+yarn.acl.enable  false
+yarn.log-aggregation-enable  true
+yarn.resourcemanager.address  hdp-node00001:8031
+yarn.resourcemanager.scheduler.address  hdp-node00001:8032
+yarn.resourcemanager.resource-tracker.address  hdp-node00001:8033
+yarn.resourcemanager.admin.address  hdp-node00001:8034
+yarn.resourcemanager.webapp.address  hdp-node00001:8030
+yarn.resourcemanager.hostname  hdp-node00001
+yarn.scheduler.minimum-allocation-mb  1024
+yarn.scheduler.maximum-allocation-mb  12288
+yarn.nodemanager.resource.memory-mb  12288
+yarn.nodemanager.resource.cpu-vcores  6
+yarn.nodemanager.vmem-pmem-ratio  1024
+yarn.nodemanager.local-dirs  /xxx/hadoop/nodemanager1,/xxx/hadoop/nodemanager2,/xxx/hadoop/nodemanager3
+yarn.nodemanager.log-dirs  /xxx/hadoop/nodemanager-log1,/xxx/hadoop/nodemanager-log2,/xxx/hadoop/nodemanager-log3
+yarn.nodemanager.log.retain-seconds  10800
+yarn.nodemanager.remote-app-log-dir  /logs
+yarn.nodemanager.remote-app-log-dir-suffix  logs
+yarn.log-aggregation.retain-seconds  -1
+yarn.log-aggregation.retain-check-interval-seconds  -1
+yarn.nodemanager.aux-services  mapreduce_shuffle
+
 
 
 
