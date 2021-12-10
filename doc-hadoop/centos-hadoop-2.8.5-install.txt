@@ -37,6 +37,13 @@ export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$PATH
   安装
   ./configure
   make && make install
+  
+  #添加lzo 的lib  hadoop-lzo 源码编译获取相关文件， hadoop-2.8.5/lib/native/hadoop-lzo
+  libgplcompression.a
+  libgplcompression.la
+  libgplcompression.so
+  libgplcompression.so.0
+  libgplcompression.so.0.0.0
 
 #配置host  /etc/hosts
 xxx.xxx.xxx.1   hdp-node00001
@@ -119,6 +126,16 @@ yarn.log-aggregation.retain-seconds  -1
 yarn.log-aggregation.retain-check-interval-seconds  -1
 yarn.nodemanager.aux-services  mapreduce_shuffle
 
+#修改配置文件hadoop-2.8.5/etc/hadoop/slaves
+hdp-node00001
+hdp-node00002
+hdp-node00003
+#修改配置文件hadoop-2.8.5/etc/hadoop/yarn-env.sh
+export JAVA_HOME=/xxx/jdk1.8.0_311
+#格式化
+hdfs namenode -format
+#启动集群
+bash start-all.sh
 
 
 
