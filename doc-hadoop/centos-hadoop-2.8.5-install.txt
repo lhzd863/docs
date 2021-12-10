@@ -1,0 +1,102 @@
+#下载
+wget https://archive.apache.org/dist/hadoop/common/hadoop-2.8.5/hadoop-2.8.5.tar.gz
+
+#创建用户hadoop
+groupadd hadoop
+useradd -d /home/hadoop -g hadoop hadoop
+
+#修改密码
+passwd hadoop
+
+#免登陆
+ssh-keygen -t rsa -P ''
+cat id_rsa.pub >> authorized_keys
+chmod 600 authorized_keys
+chmod 700 .ssh
+
+#停掉防火墙
+
+#修改时区
+
+#安装jdk
+
+#配置环境变量
+export JAVA_HOME=/xxx/jdk1.8.0_311
+export JRE_HOME=$JAVA_HOME/jre
+export HADOOP_HOME=/xxx/hadoop-2.8.5
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export HADOOP_LOG_DIR=/xxxp/logs
+export CLASSPATH=$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
+export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$PATH
+
+#安装lzo
+  #下载
+  wget http://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz
+  #安装依赖
+  yum -y install lzo-devel zlib-devel gcc autoconf automake libtool
+  安装
+  ./configure
+  make && make install
+
+#配置host  /etc/hosts
+xxx.xxx.xxx.1   hdp-node00001
+xxx.xxx.xxx.2    hdp-node00002
+xxx.xxx.xxx.3    hdp-node00003
+
+#修改配置文件hadoop-2.8.5/etc/hadoop/hadoop-env.sh
+export JAVA_HOME=/home/hadoop/soft/jdk1.8.0_311
+export LD_LIBRARY_PATH=/usr/local/lib
+export HADOOP_HOME=/home/hadoop/soft/hadoop-2.8.5
+export JAVA_LIBRARY_PATH=${JAVA_LIBRARY_PATH}:${HADOOP_HOME}/lib/native/hadoop-lzo:${HADOOP_HOME}/lib/native
+
+#修改配置文件hadoop-2.8.5/etc/hadoop/capacity-scheduler.xml
+yarn.scheduler.capacity.maximum-am-resource-percent  0.7
+
+#修改配置文件hadoop-2.8.5/etc/hadoop/core-site.xml
+hadoop.proxyuser.hadoop.hosts  *
+hadoop.proxyuser.hadoop.groups  *
+fs.defaultFS  hdfs://hdp-node00001:9000
+hadoop.tmp.dir  file:/xxx/hadoop/tmp
+io.file.buffer.size  131072
+io.compression.codecs
+  org.apache.hadoop.io.compress.GzipCodec,
+  org.apache.hadoop.io.compress.DefaultCodec,
+  com.hadoop.compression.lzo.LzoCodec,
+  com.hadoop.compression.lzo.LzopCodec,
+  org.apache.hadoop.io.compress.BZip2Codec
+io.compression.codec.lzo.class  com.hadoop.compression.lzo.LzoCodec
+
+#修改配置文件/home/hadoop/soft/hadoop-2.8.5/etc/hadoop/hdfs-site.xml
+dfs.webhdfs.enabled  true
+dfs.replication  3
+dfs.namenode.name.dir  file:/xxx/hadoop/namenode1,file:/xxx/hadoop/namenode2,file:/xxx/hadoop/namenode3
+dfs.blocksize  268435456
+dfs.namenode.handler.count  100
+dfs.datanode.data.dir  file:/xxx/hadoop/datanode1,file:/xxx/hadoop/datanode2,file:/xxx/hadoop/datanode3
+dfs.namenode.secondary.http-address  hdp-node00001:50090
+
+#修改配置文件hadoop-2.8.5/etc/hadoop/mapred-site.xml
+mapreduce.framework.name  yarn
+mapreduce.map.memory.mb  1536
+mapreduce.map.java.opts  -Xmx1024M
+mapreduce.reduce.memory.mb  3072
+mapreduce.reduce.java.opts  -Xmx2560M
+mapreduce.task.io.sort.mb  512
+mapreduce.task.io.sort.factor  100
+mapreduce.reduce.shuffle.parallelcopies  100
+mapreduce.jobhistory.address  hdp-node00001:10020
+mapreduce.jobhistory.webapp.address  hdp-node00001:19888
+mapreduce.jobhistory.intermediate-done-dir  /xxx/hadoop/mr-history-tmp
+mapreduce.jobhistory.done-dir  /xxx/hadoop/mr-history-done
+mapreduce.map.output.compress  true
+mapreduce.map.output.compression.codec  com.hadoop.compression.lzo.LzopCodec
+mapreduce.output.fileoutputformat.compress  true
+mapreduce.output.fileoutputformat.compress.codec  com.hadoop.compression.lzo.LzopCodec
+mapred.child.env  LD_LIBRARY_PATH=/usr/local/lib
+mapreduce.map.env  LD_LIBRARY_PATH=/usr/local/lib
+mapreduce.reduce.env  LD_LIBRARY_PATH=/usr/local/lib
+
+#修改配置文件/home/hadoop/soft/hadoop-2.8.5/etc/hadoop/yarn-site.xml
+
+
+
