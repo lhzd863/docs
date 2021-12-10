@@ -1,6 +1,13 @@
+#ssh 链接时常比较短设置
 #/etc/ssh/ssh_config
 Host *
     ServerAliveInterval 30
 #/etc/ssh/sshd_config   
 ClientAliveInterval 30
 ClientAliveCountMax 999
+
+#ssh登录和su用户缓慢
+#/etc/ssh/sshd_config
+UseDNS no
+#/etc/ssh/ssh_config
+GSSAPIAuthentication no
