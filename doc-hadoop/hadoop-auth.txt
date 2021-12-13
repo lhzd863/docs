@@ -1,0 +1,14 @@
+echo \"hadoop\">  hadoop-2.8.5/etc/hadoop/hadoop-http-auth-signature-secret
+
+#配置hadoop-2.8.5/etc/hadoop/core-site.xml
+
+hadoop.http.filter.initializers  org.apache.hadoop.security.AuthenticationFilterInitializer
+hadoop.http.authentication.type  simple
+hadoop.http.authentication.token.validity  3600
+hadoop.http.authentication.signature.secret.file  hadoop-2.8.5/etc/hadoop/hadoop-http-auth-signature-secret
+hadoop.http.authentication.cookie.domain
+hadoop.http.authentication.simple.anonymous.allowed  false
+
+管理页面:
+
+http://xxx.xxx.xxx.xxx:50070/?user.name=hadoop
