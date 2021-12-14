@@ -1,0 +1,5 @@
+#适合场景hive ddl中存储使用stored as TEXTFILE
+sqoop export --connect  $mysql_url_dev --username $mysql_username_dev --password $mysql_password_dev --table $tartb --export-dir /xxx/srcpath --input-fields-terminated-by '\001'
+
+#
+sqoop export --connect $mysql_url_dev --username $mysql_username_dev --password $mysql_password_dev --table $tartb --hcatalog-database $srcdb --hcatalog-table $srctb --num-mappers 1
