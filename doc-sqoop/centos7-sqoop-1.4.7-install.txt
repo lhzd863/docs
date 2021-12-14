@@ -1,0 +1,18 @@
+#下载
+wget https://archive.apache.org/dist/sqoop/1.4.7/sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz
+
+#配置环境变量
+export SQOOP_HOME=/xxx/sqoop-1.4.7
+export HCAT_HOME=$HIVE_HOME/hcatalog
+export CLASSPATH=$SQOOP_HOME/lib:$CLASSPATH
+export PATH=$HCAT_HOME/bin:$SQOOP_HOME/bin:$PATH
+
+#配置sqoop-1.4.7/conf/sqoop-env.sh
+export HADOOP_COMMON_HOME=/xxx/hadoop-2.8.5
+export HADOOP_MAPRED_HOME=/xxx/hadoop-2.8.5
+export HIVE_HOME=/xxx/hive-2.3.9
+export ZOOCFGDIR=/xxx/zookeeper-3.7.0/conf
+export HADOOP_CLASSPATH=$(hcat -classpath)
+
+#connect url 
+jdbc:mysql://xxx.xxx.xxx.xxx:3306/galaxy_platform?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
