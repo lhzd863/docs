@@ -1,0 +1,1 @@
+sqoop import  --connect "$mysql_url_dev"  --username "$mysql_username_dev"  --password "$mysql_password_dev"  --query "$sql_txt_str and \$CONDITIONS "  $sql_run_para  --hive-import  --hive-database $tar_db  --hive-table  $tar_tb --hive-overwrite --delete-target-dir  --target-dir '/xxx/$tar_tb'  --fields-terminated-by '\001'   --null-string '\\N'  --null-non-string '\\N'  -m 1
