@@ -4,5 +4,6 @@ docker run -itd -p 9000:9000 --name minio -e MINIO_ACCESS_KEY=xxx -e MINIO_SECRE
 #客户端-Minio设置永久下载链接
 docker pull minio/mc
 docker run -itd --entrypoint=/bin/sh minio/mc
+#--address 9000
 mc config host add minio http://106.75.249.244:9000 lhzd8630 lhzd8630 --api s3v4
 mc policy set public minio/my-app
