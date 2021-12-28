@@ -1,0 +1,65 @@
+#下载
+wget https://repo1.maven.org/maven2/com/facebook/presto/presto-server/0.266.1/presto-server-0.266.1.tar.gz
+ 
+#配置环境变量
+export PRESTO_HOME=presto-server-0.266.1
+export PATH=$PRESTO_HOME/bin:$PATH
+ 
+
+#配置文件presto-server-0.266.1/etc/node.properties
+node.environment=st
+node.id=ffffffff-ffff-ffff-ffff-ffffffffffff
+node.data-dir=presto/data
+ 
+
+#配置文件presto-server-0.266.1/etc/log.properties
+com.facebook.presto=INFO
+ 
+
+#配置文件presto-server-0.266.1/etc/config.properties
+coordinator=true
+node-scheduler.include-coordinator=true
+http-server.http.port=8090
+query.max-memory=5GB
+query.max-memory-per-node=1GB
+query.max-total-memory-per-node=2GB
+discovery-server.enabled=true
+discovery.uri=http://xxx.xxx.xxx.xxx:8090
+ 
+
+#woker 配置文件presto-server-0.266.1/etc/config.properties
+coordinator=false
+http-server.http.port=8090
+query.max-memory=5GB
+query.max-memory-per-node=1GB
+query.max-total-memory-per-node=2GB
+discovery.uri=http://xxx.xxx.xxx.xxx:8090
+#配置文件presto-server-0.266.1/etc/jvm.config
+-server
+-Xmx16G
+-XX:+UseG1GC
+-XX:G1HeapRegionSize=32M
+-XX:+UseGCOverheadLimit
+-XX:+ExplicitGCInvokesConcurrent
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:+ExitOnOutOfMemoryError
+
+#配置链接S3  presto-server-0.266.1/etc/catalog/hive.properties
+connector.name=hive-hadoop2
+hive.metastore.uri=thrift://xxx.xxx.xxx.xxx:9083
+hive.non-managed-table-writes-enabled=true
+hive.s3select-pushdown.enabled=true
+hive.s3.aws-access-key=xx
+hive.s3.aws-secret-key=xxx
+hive.s3.endpoint=http://xxx.xxx.xxx.xxx:20001
+hive.s3.ssl.enabled=false
+hive.s3.path-style-access=true
+ 
+#操作命令
+bin/launcher start    #开始
+bin/launcher stop     #停止
+bin/launcher status   #状态
+
+#集群访问路径
+http://xxx.xxx.xxx.xxx:8090/ui/
+
