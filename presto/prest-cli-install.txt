@@ -1,0 +1,5 @@
+#下载
+wget https://repo1.maven.org/maven2/com/facebook/presto/presto-cli/0.266.1/presto-cli-0.266.1-executable.jar
+
+#cmd
+presto-cli/presto --server xxx.xxx.xxx.xxx:8090 --catalog hive --schema default
