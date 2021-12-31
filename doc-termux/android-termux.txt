@@ -30,6 +30,10 @@ $ passwd
 # 启动sshd服务
 $ sshd
 
+#
+ssh xxx.xxx.xxx.xxx -p 8022
+
+
 #安装 Ubuntu
 apt-get update && apt-get upgrade -y
 # proot包的作用是允许未root的手机模拟管理员用户
@@ -41,3 +45,5 @@ chmod +x ubuntu.sh
 ./ubuntu.sh
 cp ~/ubuntu-in-termux/resolv.conf ~/ubuntu-in-termux/ubuntu-fs/etc/
 ./start.sh
+
+
