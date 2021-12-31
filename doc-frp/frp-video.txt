@@ -1,0 +1,25 @@
+#client
+# frpc.ini
+[common]
+server_addr = xxx.xxx.xxx.xxx
+server_port = xxx
+
+
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 8022
+remote_port = xxx
+
+
+[video]
+type = tcp
+local_ip = xxx.xxx.xxx.xxx
+local_port = 80
+remote_port = xxx
+
+[video1]
+type = tcp
+local_ip = xxx.xxx.xxx.xxx
+local_port = 7681
+remote_port = xxx
