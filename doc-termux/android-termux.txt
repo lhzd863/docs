@@ -18,3 +18,6 @@ apt install vim
 #修改安装源
 vi  $PREFIX/etc/apt/sources.list
 deb https://mirrors.tuna.tsinghua.edu.cn/termux stable main
+
+# 访问本机存储
+termux-setup-storage
