@@ -47,4 +47,6 @@ chmod +x ubuntu.sh
 cp ~/ubuntu-in-termux/resolv.conf ~/ubuntu-in-termux/ubuntu-fs/etc/
 ./start.sh
 
-
+#模拟一个root的环境
+pkg install proot -y
+termux-chroot
