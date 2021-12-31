@@ -1,2 +1,3 @@
 #
 https://f-droid.org/repo/com.termux_117.apk
+apt-get update
