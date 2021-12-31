@@ -12,3 +12,8 @@ pkg list-all                    列出可供安装的所有包
 pkg list-installed              列出已经安装的包
 pkg shoe <package>              显示某个包的详细信息
 pkg files <package>             显示某个包的相关文件夹路径
+
+#安装vi
+apt install vim
+#
+vi  $PREFIX/etc/apt/sources.list
