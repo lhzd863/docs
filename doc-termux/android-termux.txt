@@ -15,5 +15,6 @@ pkg files <package>             显示某个包的相关文件夹路径
 
 #安装vi
 apt install vim
-#
+#修改安装源
 vi  $PREFIX/etc/apt/sources.list
+deb https://mirrors.tuna.tsinghua.edu.cn/termux stable main
