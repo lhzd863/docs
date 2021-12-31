@@ -1,6 +1,7 @@
 #https://www.sqlsec.com/2018/05/termux.html
 #https://f-droid.org/packages/com.termux/
-https://f-droid.org/repo/com.termux_117.apk
+#https://mirrors.tuna.tsinghua.edu.cn/help/termux/
+wget https://f-droid.org/repo/com.termux_117.apk
 apt-get update
 
 pkg search <query>              搜索包
