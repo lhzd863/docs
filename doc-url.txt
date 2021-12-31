@@ -306,4 +306,7 @@ https://github.com/ohmyzsh/ohmyzsh
 https://github.com/aristocratos/btop
 #
 https://github.com/open-mmlab
+#
+https://github.com/sunym1993/flash-linux0.11-talk
+https://github.com/zavg/linux-0.01
 
