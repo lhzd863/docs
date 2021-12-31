@@ -50,3 +50,17 @@ cp ~/ubuntu-in-termux/resolv.conf ~/ubuntu-in-termux/ubuntu-fs/etc/
 #模拟一个root的环境
 pkg install proot -y
 termux-chroot
+
+#
+电池信息
+termux-battery-status
+相机信息
+termux-camera-info
+查看剪切板
+termux-clipboard-get
+查看通讯录
+termux-contact-list
+打电话
+termux-telephony-call
+查看wifi信息
+termux-wifi-connectioninfo
