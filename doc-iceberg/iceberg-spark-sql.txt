@@ -7,5 +7,10 @@ spark-sql  --master yarn \
     --conf spark.sql.catalog.hadoop_prod.warehouse=s3a://oss/tmp/warehouse \
     -e "$sql" --name "test" -v --num-executors 2 --executor-memory 4G --driver-memory 4G
     
-    
+#ddl
+CREATE TABLE hadoop_prod.db.t1(
+  id int COMMENT 'ID',
+  name string COMMENT '名称')
+USING iceberg;
+
     
