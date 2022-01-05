@@ -9,3 +9,8 @@ htpasswd -cb /usr/local/nginx/.ngpasswd xxx xxxx
 -b 命令行中一并输入用户名和密码而不是根据提示输入密码，可以看见明文，不需要交互
 -D 删除指定的用户
 
+       location /xxx {
+            auth_basic           "xxx xxxx";
+            auth_basic_user_file /usr/local/nginx/.ngpasswd;
+            proxy_pass http://xxx:xxx;
+        }
