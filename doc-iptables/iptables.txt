@@ -9,4 +9,7 @@ service iptables save
 #重启防火墙
 service iptables restart
 
-
+#查询规则编号
+iptables --line -nvL INPUT
+#删除指定规则编号的规则
+iptables -D INPUT 1
