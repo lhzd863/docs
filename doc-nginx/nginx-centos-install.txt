@@ -2,3 +2,8 @@ yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel
 #
 wget https://nchc.dl.sourceforge.net/project/pcre/pcre/8.45/pcre-8.45.tar.gz
 #
+cd pcre-8.45
+./configure
+make && make install
+#
+
