@@ -6,4 +6,10 @@ cd pcre-8.45
 ./configure
 make && make install
 #
+wget https://nginx.org/download/nginx-1.21.5.tar.gz
+#
+cd nginx-1.21.5
+./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module
+make && make install
+
 
