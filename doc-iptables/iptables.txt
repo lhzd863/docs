@@ -1,0 +1,12 @@
+#在tcp协议中，禁止所有的ip访问本机的1521端口
+iptables -I INPUT -p tcp --dport 1521 -j DROP
+#允许192.168.1.123访问本机的1521端口
+iptables -I INPUT -s 192.168.1.123 -p tcp --dport 1521 -j ACCEPT
+#允许192.168.1.124访问本机的1521端口
+iptables -I INPUT -s 192.168.1.124 -p tcp --dport 1521 -j ACCEPT
+#然后保存iptables
+service iptables save
+#重启防火墙
+service iptables restart
+
+
