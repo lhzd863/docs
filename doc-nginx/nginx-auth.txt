@@ -1,2 +1,11 @@
 yum install httpd-tools -y
 htpasswd -cb /usr/local/nginx/.ngpasswd xxx xxxx
+-c 创建passwdfile.如果passwdfile 已经存在,那么它会重新写入并删去原有内容.
+-n 不更新passwordfile，只将加密后的用户名密码显示在屏幕上；
+-m 默认采用MD5算法对密码进行加密
+-d 采用CRYPT算法对密码进行加密
+-p 不对密码进行进行加密，即使用普通文本格式的密码
+-s 采用SHA算法对密码进行加密
+-b 命令行中一并输入用户名和密码而不是根据提示输入密码，可以看见明文，不需要交互
+-D 删除指定的用户
+
