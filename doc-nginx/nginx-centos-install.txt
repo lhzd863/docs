@@ -16,3 +16,5 @@ make && make install
 ./nginx -s stop
 ./nginx -s reload
 ./nginx -s reopen
+./nginx -t
+
