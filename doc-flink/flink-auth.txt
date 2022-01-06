@@ -1,0 +1,17 @@
+location / {
+        auth_basic           "xxx xxx";
+        auth_basic_user_file /usr/local/nginx/.ngpasswd;
+        proxy_pass http://xxx:8081;
+    }
+    
+或者
+
+    upstream flink_server {
+        server xxx:8081;
+    }
+    
+    location ^~/flink/ {
+        auth_basic           "xx xxx";
+        auth_basic_user_file /usr/local/nginx/.ngpasswd;
+        proxy_pass http://flink_server/;
+    }
