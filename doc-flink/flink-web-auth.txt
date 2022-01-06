@@ -1,3 +1,7 @@
+#
+yum install httpd-tools -y
+htpasswd -cb /usr/local/nginx/.ngpasswd xxx xxx
+#
 location / {
         auth_basic           "xxx xxx";
         auth_basic_user_file /usr/local/nginx/.ngpasswd;
