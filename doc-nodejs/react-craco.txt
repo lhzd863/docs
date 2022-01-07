@@ -1,4 +1,6 @@
 #
+create-react-app my-app
+#
 yarn add @craco/craco craco-less @babel/plugin-proposal-decorators babel-plugin-import
 #
 "scripts": {
