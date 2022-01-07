@@ -40,3 +40,5 @@ module.exports = {
 yarn add react-router-dom  react-dom
 #
 yarn add @mui/material @emotion/react @emotion/styled
+#
+yarn add redux react-redux
