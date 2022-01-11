@@ -1,16 +1,18 @@
+CREATE TABLE hadoop_prod.db.tb (
+  id INT COMMENT 'ID',
+  name STRING COMMENT '名称')
+USING iceberg
+COMMENT '维度'
+LOCATION 's3a://warehouse/hadoop_prod/db/tb'
+TBLPROPERTIES(
+  'current-snapshot-id' = 'none',
+  'format' = 'iceberg/parquet')
+"
 spark-sql  --master yarn \
     --packages org.apache.iceberg:iceberg-spark3-runtime:0.12.1\
     --conf spark.sql.extensions=org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions \
     --conf spark.sql.catalog.hadoop_prod=org.apache.iceberg.spark.SparkCatalog \
     --conf spark.sql.catalog.hadoop_prod.type=hadoop \
-    --conf spark.sql.catalog.hadoop_prod.hadoop.fs.s3a.endpoint=http://xxxx:20001 \
-    --conf spark.sql.catalog.hadoop_prod.warehouse=s3a://oss/tmp/warehouse \
+    --conf spark.sql.catalog.hadoop_prod.hadoop.fs.s3a.endpoint=http://xxx:20001 \
+    --conf spark.sql.catalog.hadoop_prod.warehouse=s3a://warehouse/tmp/warehouse \
     -e "$sql" --name "test" -v --num-executors 2 --executor-memory 4G --driver-memory 4G
-    
-#ddl
-CREATE TABLE hadoop_prod.db.t1(
-  id int COMMENT 'ID',
-  name string COMMENT '名称')
-USING iceberg;
-
-    
