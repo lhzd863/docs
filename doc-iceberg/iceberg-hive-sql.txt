@@ -1,0 +1,12 @@
+
+add jar /xxx/iceberg-hive-runtime-0.12.1.jar;
+SET engine.hive.enabled=true;
+SET iceberg.engine.hive.enabled=true;
+set iceberg.mr.catalog=hive;
+SET iceberg.catalog.hadoop_prod.type=hadoop;
+SET iceberg.catalog.hadoop_prod.hadoop.fs.s3a.endpoint=http://xxx:20001;
+SET iceberg.catalog.hadoop_prod.warehouse=s3a://warehouse/hadoop_prod;
+CREATE EXTERNAL TABLE db.tb
+STORED BY 'org.apache.iceberg.mr.hive.HiveIcebergStorageHandler'
+LOCATION 's3a://warehouse/hadoop_prod/db/tb'
+TBLPROPERTIES ('iceberg.catalog'='hadoop_prod');
