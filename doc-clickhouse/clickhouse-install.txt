@@ -23,3 +23,6 @@ Poco::Exception. Code: 1000, e.code() = 13, e.displayText() = Access to file den
         chown -R clickhouse /var/log/clickhouse-server
 #数据存储路径
 /var/lib/clickhouse/data
+# Application: DB::ErrnoException: Could not calculate available disk space (statvfs), errno: 13, strerror: Permission denied
+#添加clickhouse用户到root用户组重新启动即可
+usermod -a -G root clickhouse
