@@ -1,0 +1,8 @@
+#==============================================================================
+## S3 CONFIG
+##==============================================================================
+s3a.access-key: xxx
+s3a.secret-key: xxx
+fs.s3a.endpoint: http://xxx:20001
+s3a.path.style.access: true
+classloader.check-leaked-classloader: false
