@@ -50,7 +50,7 @@ For i = FirstLine To UBound(arr)
    Enable = Trim(arr(i, Firstcol + 4))
    
    '写入配置信息'
-   Print #1, Job & TxtDel & Db & Tb & Job & Description & Enable
+   Print #1, Job & TxtDel & Db & TxtDel & Tb & TxtDel & Description & TxtDel & Enable
  
 Next i
  
