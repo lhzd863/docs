@@ -19,9 +19,9 @@ Sub hiveExternal()
 
 '#####################默认值#####################'
  
- Description = ''               '描述'
+ Description = ""               '描述'
  Enable = 1                     '是否有效'
- TxtDel = '|'                   '分隔符'
+ TxtDel = "|"                   '分隔符'
 
  
  TableNm = "INSERT INTO test.job_dependency_conf(Sys,Job,Dependency_Sys,Dependency_Job,Description,Enable) VALUES("
