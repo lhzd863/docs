@@ -1,0 +1,61 @@
+Sub hiveExternal()
+'功能:根据提供的配置信息生成hive external 表'
+'DATE:2022-01-18  '
+'配置表:test.job_dependency_conf'
+'#####################常量定义区#####################'
+
+ FirstLine = 2               '配置信息起始行'
+ Firstcol = 1                '配置信息起始列'
+ TOTCOLS = 5                 '配置总该列数'
+ 
+ '--------------------------------------------------'
+ '作业名'
+ '库名'
+ '表名'
+ '表中文名'
+ 'Enable'
+ 
+'####################################################'
+
+'#####################默认值#####################'
+ 
+ Description = ''               '描述'
+ Enable = 1                     '是否有效'
+ TxtDel = '|'                   '分隔符'
+
+ 
+ TableNm = "INSERT INTO test.job_dependency_conf(Sys,Job,Dependency_Sys,Dependency_Job,Description,Enable) VALUES("
+ 
+'####################################################'
+
+If ActiveSheet.Name <> "hive-EXTERNAL" Then
+  MsgBox "此宏在“SHEET hive-EXTERNAL生成页”执行", vbInformation, "提示"
+  Exit Sub
+End If
+
+Open ThisWorkbook.Path & "\" & "hive-EXTERNAL.txt" For Output As #1                       '投产SQL'
+
+arr = Range("A1:N" & Range("A65535").End(xlUp).Row)
+
+introw = UBound(arr)
+
+MsgBox introw, vbInformation, "提示"
+
+For i = FirstLine To UBound(arr)
+
+   Job = UCase(Trim(arr(i, Firstcol)))
+   Db = LCase(Trim(arr(i, Firstcol + 1)))
+   Tb = LCase(Trim(arr(i, Firstcol + 2)))
+   Description = Trim(arr(i, Firstcol + 3))
+   Enable = Trim(arr(i, Firstcol + 4))
+   
+   '写入配置信息'
+   Print #1, Job & TxtDel & Db & Tb & Job & Description & Enable
+ 
+Next i
+ 
+Close #1
+
+
+
+End Sub
