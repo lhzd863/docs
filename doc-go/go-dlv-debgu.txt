@@ -5,3 +5,6 @@ go install github.com/go-delve/delve/cmd/dlv
 
 #
 dlv debug --headless --listen=:12326 --log --api-version=2
+
+#cmd
+dlv run|debug：run命令已被debug命令取代，运行dlv debug test.go会先编译go源文件，同时执行attach命令进入调试模式，该命令会在当前目录下生成一个名为debug的可执行二进制文件，退出调试模式会自动被删除
