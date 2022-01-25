@@ -13,3 +13,7 @@ make check
 sudo make install
 sudo ldconfig # refresh shared library cache.
 
+#
+cargo install protobuf 默认安装到~/.cargo/bin目录中
+cargo install grpc-compiler   #默认安装到~/.cargo/bin目录中
+
