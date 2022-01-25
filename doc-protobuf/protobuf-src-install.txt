@@ -6,4 +6,10 @@ cd protobuf
 git submodule update --init --recursive
 ./autogen.sh
 
+#
+./configure  #By default, the package will be installed to /usr/local
+make
+make check
+sudo make install
+sudo ldconfig # refresh shared library cache.
 
