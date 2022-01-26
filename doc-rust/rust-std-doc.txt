@@ -3,3 +3,10 @@ cargo new greeting
 cd ./greeting 
 cargo build 
 cargo run 
+
+#rustfmt 统一代码风格 安装
+rustup component add rustfmt-preview
+#update
+rustup update
+#
+cargo fmt
