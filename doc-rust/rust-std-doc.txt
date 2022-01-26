@@ -10,3 +10,5 @@ rustup component add rustfmt-preview
 rustup update
 #
 cargo fmt
+#
+cargo run --bin helloworld-client
