@@ -322,4 +322,7 @@ https://github.com/go-delve/delve
 https://github.com/uilibrary/matx-react
 #
 https://github.com/hyperledger/fabric
+#
+https://github.com/andygrove/sqlparser-rs
+
 
