@@ -1,0 +1,2 @@
+#源码编译
+mvn -U clean package -Prelease -Dmaven.test.skip=true
