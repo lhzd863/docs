@@ -4,3 +4,5 @@ https://github.com/xwb1989/sqlparser
 https://github.com/sqlparser-rs/sqlparser-rs
 #python
 https://github.com/andialbrecht/sqlparse
+#go csv
+https://github.com/marianogappa/sqlparser
