@@ -7,3 +7,7 @@ chmod 755 /home/xxx
 
 #log
 tail -f /var/log/auth.log
+
+
+#配置 sudo 免密
+hadoop       ALL=(ALL)       NOPASSWD: ALL
