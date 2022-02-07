@@ -7,3 +7,8 @@ user namespaces are not enabled in /proc/sys/user/max_user_namespaces
 echo 10000 > /proc/sys/user/max_user_namespaces
 grubby --args="user_namespace.enable=1" --update-kernel="$(grubby --default-kernel)"
 echo "user.max_user_namespaces=10000" >> /etc/sysctl.conf
+
+#修改镜像拉取地址顺序
+vi /etc/containers/registries.conf
+# 把docker.io 放到最前面
+unqualified-search-registries = ["docker.io", "registry.fedoraproject.org", "registry.access.redhat.com", "registry.centos.org"]
