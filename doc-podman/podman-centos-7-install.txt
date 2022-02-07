@@ -1,2 +1,9 @@
 #
 yum -y install podman
+#
+user namespaces are not enabled in /proc/sys/user/max_user_namespaces
+解决方法:
+# centos 7默认关闭了 user namespace，需要手动打开
+echo 10000 > /proc/sys/user/max_user_namespaces
+grubby --args="user_namespace.enable=1" --update-kernel="$(grubby --default-kernel)"
+echo "user.max_user_namespaces=10000" >> /etc/sysctl.conf
