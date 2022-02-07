@@ -1,0 +1,5 @@
+#ubuntu 20.04
+apt update
+apt upgrade
+apt install podman
+
