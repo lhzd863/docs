@@ -1,0 +1,6 @@
+apt update
+apt -y  install software-properties-common
+add-apt-repository -y ppa:projectatomic/ppa
+apt -y install podman
+#
+podman  info
