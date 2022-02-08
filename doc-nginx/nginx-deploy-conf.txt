@@ -1,0 +1,146 @@
+#user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+#pid /run/nginx.pid;
+
+#user  nobody;
+#worker_processes  1;
+
+#error_log  logs/error.log;
+#error_log  logs/error.log  notice;
+#error_log  logs/error.log  info;
+
+#pid        logs/nginx.pid;
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+    
+    log_format log_json '{"@timestamp": "$time_local", '
+                        '"remote_addr": "$remote_addr", '
+                        '"referer": "$http_referer", '
+                        '"request": "$request", '
+                        '"status": $status, '
+                        '"bytes": $body_bytes_sent, '
+                        '"agent": "$http_user_agent", '
+                        '"x_forwarded": "$http_x_forwarded_for", '
+                        '"up_addr": "$upstream_addr",'
+                        '"up_host": "$upstream_http_host",'
+                        '"up_resp_time": "$upstream_response_time",'
+                        '"request_time": "$request_time"'
+                        ' }';
+
+    #access_log  logs/access.log  main;
+    access_log  /home/aya/nginx/access.log  log_json;
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    
+
+    #keepalive_timeout  0;
+    keepalive_timeout  65;
+    types_hash_max_size 2048;
+
+    #gzip  on;
+
+    upstream apinstance {
+        server 127.0.0.1:9903 max_fails=3 fail_timeout=15s;
+    }
+
+    upstream minio {
+       server 127.0.0.1:12317 weight=20 max_fails=2 fail_timeout=30s;
+    }
+
+    server {
+        #listen       80 default_server;
+        #listen       [::]:80 default_server;
+        listen        443 ssl;
+        server_name   gaoyuanzi.com;
+        #root          /home/aya/nginx/my-app;
+        #index index.html index.htm;
+ 
+        #ssl                        on;
+        ssl_certificate            cert/server.crt;
+        ssl_certificate_key        cert/server.key;
+        ssl_session_timeout        5m;
+        ssl_protocols              TLSv1 TLSv1.1 TLSv1.2;
+        ssl_ciphers                ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
+        ssl_prefer_server_ciphers  on;
+        
+        gzip on;
+        gzip_min_length 1k;
+        gzip_comp_level 9;
+        gzip_types text/plain application/javascript application/x-javascript text/css application/xml text/javascript application
+/x-httpd-php image/jpeg image/jpg image/gif image/png font/ttf font/otf image/svg+xml;
+        gzip_vary on;
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+        #
+        location / {
+            root          /home/aya/nginx/my-app;
+            index index.html index.htm;
+            try_files $uri $uri/ /index.html;
+        }
+
+        location ^~/mui/ {
+            alias /home/aya/nginx/my-app;
+            autoindex on;
+            autoindex_exact_size off;
+            autoindex_localtime on;
+            proxy_set_header X-Forwarded-Host $http_host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            client_max_body_size 20m;
+            try_files $uri $uri/ /index.html;
+        }
+
+        location /api {
+            expires -1;
+            rewrite ^/api/(.*) /api/$1 break;
+            proxy_pass http://apinstance;
+            access_log /home/aya/nginx/logs/access_api_my_server-.log main;
+            error_log /home/aya/nginx/logs/error_api_my_server.log;
+        }
+
+        location /my-app {
+            # proxy_set_header X-Forwarded-For $remote_addr;
+            proxy_set_header Host $http_host;
+            client_body_buffer_size 10M;
+            client_max_body_size 10G;
+            proxy_buffers 1024 4k;
+            proxy_read_timeout 300;
+            proxy_next_upstream error timeout http_404;
+            proxy_pass http://minio;
+        }
+
+        location /wiki {
+            alias /home/aya/nginx/wiki;
+            autoindex on;
+            index index.html index.htm;
+            try_files $uri $uri/ /index.html;
+            add_header Cache-Control "no-cache, no-store";
+        }
+        #error_page  404              /404.html;
+
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+
+    }
+
+}
