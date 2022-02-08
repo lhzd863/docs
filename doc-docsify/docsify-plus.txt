@@ -100,3 +100,17 @@ digraph g{
     OS->Devices->OS
 }
 ```
+
+```flow
+st=>start: 开始
+e=>end: 结束
+e1=>end: 结束
+op1=>operation: OAuth2LoginController
+op3=>operation: /api/login/{sys} 重定向第三方登陆页面
+op2=>operation: Stuff
+
+op2->e
+op3->e1
+```
+
+
