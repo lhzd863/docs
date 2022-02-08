@@ -4,3 +4,6 @@ npm i docsify-cli -g
 docsify init ./docs
 #预览网站
 docsify serve docs
+
+#start
+docsify serve wiki --port 12333
