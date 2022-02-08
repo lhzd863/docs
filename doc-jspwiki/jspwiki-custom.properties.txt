@@ -1,4 +1,5 @@
-#webapps/wiki/WEB-INF/classes
+#File location defined by the jspwiki.custom.config <context-param> on the web.xml file.
+#路径webapps/wiki/WEB-INF/classes
 #jspwiki.policy.file=/home/k8s/tomcat/wiki/jspwiki-custom.policy
 #jspwiki.filterConfig = /home/k8s/tomcat/wiki/filters.xml
 jspwiki.xmlGroupDatabaseFile=/home/k8s/tomcat/wiki/groupdatabase.xml
