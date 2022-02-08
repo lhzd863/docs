@@ -1,1 +1,6 @@
 #
+window.$docsify = {
+      loadSidebar: true,                             //侧边栏
+      coverpage: false,                              //激活封面功能。如果为true，则会从中加载_coverpage.md
+      name: '文档'
+    }
