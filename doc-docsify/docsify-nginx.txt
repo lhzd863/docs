@@ -1,1 +1,10 @@
 #
+        location /wiki {
+            alias /home/aya/nginx/wiki;
+            autoindex on;
+            index index.html index.htm;
+            try_files $uri $uri/ /index.html;
+            add_header Cache-Control "no-cache, no-store";
+        }
+        
+        
