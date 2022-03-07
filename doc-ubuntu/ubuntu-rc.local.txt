@@ -1,0 +1,4 @@
+#
+vi /etc/rc.local
+#
+/bin/su - xxx -c "cd /home/xx &&  bash start.sh "
