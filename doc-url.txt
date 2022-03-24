@@ -328,4 +328,6 @@ https://github.com/andygrove/sqlparser-rs
 https://github.com/sqlparser-rs/sqlparser-rs
 #
 https://github.com/gluesql/gluesql
+#
+https://github.com/qax-os/excelize
 
