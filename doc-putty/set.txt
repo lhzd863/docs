@@ -1,0 +1,8 @@
+Category: Window > Appearance
+Font: Fixedsys is more readable than Lucida
+Category: Window > Colours
+Default Foreground: 85 85 85
+Default Bold Foreground: 0 0 0
+Default Background: 242 242 242
+Default Bold Background: 255 255 255
+Cursor Text: 85 85 85
