@@ -13,3 +13,49 @@ git config --global user.name lhzd863
 git remote add origin git@github.com:lhzd863/my-app-server.git
 
 
+
+#
+git多账号配置，各自提交互不影响
+
+1、cd ~/.ssh
+
+2、ssh-keygen -t rsa -C "email"
+
+3、ssh-add ~/.ssh/id_rsa_test
+
+4、vi config
+
+Host github-test
+        HostName github.com
+        User git
+        IdentityFile ~/.ssh/id_rsa_test
+5、ssh-add -l
+
+6、git config --global --unset user.name
+
+      git config --global --unset user.email
+
+      git config user.name "test"
+
+      git config user.email "xxx.com"
+7、cd /project
+
+git remote -v
+
+https -> ssh
+
+ git remote set-url origin git@test:xxxx.git
+
+8、github add ssh key 添加到全局ssh key
+
+     设置只读权限deploy key：
+
+     ssh-keygen -t rsa -b 4096 -C "deploy"
+
+     添加到项目的deploy key
+
+9、git clone git@github-test:aaa/xxxx.git
+
+修改ssh密码
+
+ssh-keygen -f id_rsa_test -p
