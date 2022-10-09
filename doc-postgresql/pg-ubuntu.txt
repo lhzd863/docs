@@ -14,7 +14,7 @@ sudo apt-get -y install postgresql
 #
 vi /etc/postgresql/14/main/pg_hba.conf
 host    all             all             0.0.0.0/0               trust
-
+local   all             all                                      trust
 #
 systemctl status postgresql
 systemctl start postgresql
