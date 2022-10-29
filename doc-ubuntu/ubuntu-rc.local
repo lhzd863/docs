@@ -26,6 +26,9 @@ exit 0
 chmod +x /etc/rc.local
 
 #
+su - aya -c 'bash /home/aya/frp/frp_0.37.1/frp-start.sh'
+
+#
 reboot
 
 #no must
