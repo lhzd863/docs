@@ -30,3 +30,15 @@ cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local ..
 make -j4
 #
 make install
+
+
+
+
+#config
+# /etc/ld.so.conf
+/usr/local/lib
+#
+ldconfig
+#/etc/profile
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconifg
+
