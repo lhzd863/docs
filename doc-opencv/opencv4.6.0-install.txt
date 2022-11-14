@@ -1,0 +1,30 @@
+#
+#cmake
+apt-get install cmake
+apt-get install libavformat-dev
+apt-get install libavcodec-dev
+apt-get install libgtk2.0-dev
+apt-get install build-essential
+apt-get install libjpeg.dev
+apt-get install libtiff.dev
+apt-get install libswscale-dev
+apt-get install  pkg-config
+
+#python
+apt-get install  python-dev
+apt-get install python-numpy
+apt-get install libtbb2
+apt-get install libtbb-dev
+apt-get install libpng-dev
+apt-get install libdc1394-22-dev
+
+#
+cd opencv-4.6.0
+mkdir build
+cd build
+
+#
+cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local ..
+
+#
+make -j4
