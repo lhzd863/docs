@@ -43,4 +43,18 @@ ldconfig
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
 #
 pkg-config opencv --modversion
+#/usr/local/lib/pkgconfig/opencv.pc
+prefix=/usr/local
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${prefix}/lib
+
+Name: opencv
+Description: The opencv library
+Version: 4.6.0
+cflags: -I${includedir}/opencv4
+Libs: -L${libdir} -lopencv_shape -lopencv_stitching -lopencv_objdetect -lopencv_superres -lopencv_videostab -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_imgcodecs -lopencv_video -lopencv_photo -lopencv_ml -lopencv_imgproc -lopencv_flann -lopencv_core
+
+
+
 
