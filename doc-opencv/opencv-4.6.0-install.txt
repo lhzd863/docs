@@ -40,5 +40,7 @@ make install
 #
 ldconfig
 #/etc/profile
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconifg
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
+#
+pkg-config opencv --modversion
 
