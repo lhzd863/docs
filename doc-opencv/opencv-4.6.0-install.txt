@@ -62,5 +62,6 @@ Libs: -L${libdir} -lopencv_shape -lopencv_stitching -lopencv_objdetect -lopencv_
 
 
 #
-pip install --upgrade opencv-python==4.6.0.66
+pip install --upgrade opencv-python==4.5.5.64
+
 
