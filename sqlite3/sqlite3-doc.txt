@@ -1,0 +1,4 @@
+#查看版本信息
+sqlite3 -version
+#sqlite3终端进入命令
+sqlite3
