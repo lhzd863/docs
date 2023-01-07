@@ -1,0 +1,3 @@
+/home/aya/pgweb/pgweb_linux_amd64 --host 127.0.0.1 --user test --db edw --pass
+ xxx --listen 12338 --bind 0.0.0.0
+ 
