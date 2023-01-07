@@ -1,4 +1,8 @@
+#centos
 yum install httpd-tools -y
+#ubuntu
+apt install apache2-utils
+#
 htpasswd -cb /usr/local/nginx/.ngpasswd xxx xxxx
 -c 创建passwdfile.如果passwdfile 已经存在,那么它会重新写入并删去原有内容.
 -n 不更新passwordfile，只将加密后的用户名密码显示在屏幕上；
