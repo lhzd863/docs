@@ -1,5 +1,6 @@
 http://192.168.1.186:8090/control/get?room=test
 https://cloud.tencent.com/developer/article/2065186
 https://blog.csdn.net/qq_37103755/article/details/102870307
+https://www.bilibili.com/read/cv16823600
 #install
 ./livego --flv_dir=./data --level=debug
