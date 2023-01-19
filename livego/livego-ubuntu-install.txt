@@ -5,3 +5,7 @@ https://www.bilibili.com/read/cv16823600
 https://cloud.tencent.com/developer/article/1711227
 #install
 ./livego --flv_dir=./data --level=debug
+#
+curl -X get http://192.168.1.186:8090/control/get?room=test
+ffmpeg -i 1b4a1a87ee5f45a7047d6f9369c9e02e.mp4 -ar 44100 -c:v libx264 -crf 24 d.flv
+ffmpeg -re -i d.flv -c copy -f flv -flvflags no_duration_filesize rtmp://192.168.1.186:1935/live/rfBd56ti2SMtYvSgD5xAV0YU99zampta7Z7S575KLkIZ9PYk
