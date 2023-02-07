@@ -1,0 +1,4 @@
+#Failed to execute goal org.apache.maven.plugins:maven-checkstyle-plugin:2.17:check (validate) on project flink-connector-jdbc_2.11: You have 1 Checkstyle violation.
+ mvn spotless:apply
+ #
+ mvn clean package -DskipTests
