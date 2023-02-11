@@ -21,3 +21,11 @@ export PATH=$MAVEN_HOME/bin:$PATH
 		<maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
 	  </properties>
     </profile>
+    
+    
+    <mirror>
+	  <id>alimaven</id>
+	  <mirrorOf>central</mirrorOf>
+	  <name>aliyun maven</name>
+	  <url> http://maven.aliyun.com/nexus/content/groups/public</url>
+    </mirror>
