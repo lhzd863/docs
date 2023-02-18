@@ -14,8 +14,8 @@ show users;
 db.dropUser('admindb');
 #修改用户密码
 db.updateUser('admin',{pwd:'xxx'});
-#
-
+#指定端口登录
+mongo --port 28017
 #服务安装包
 dpkg -i mongodb-org-server_6.0.4_amd64.deb
 #客户端安装
