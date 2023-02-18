@@ -7,7 +7,7 @@ dpkg -i mongodb-org-server_6.0.4_amd64.deb
 #创建用户
 db.createUser({user:'admin',pwd:'xxx',roles:[{role:'root',db:'admin'}]});
 #认证
-db.auth('admin','admin@123456');
+db.auth('admin','xxx');
 #
 
 #服务安装包
