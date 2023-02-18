@@ -10,6 +10,11 @@ db.createUser({user:'admin',pwd:'xxx',roles:[{role:'root',db:'admin'}]});
 db.auth('admin','xxx');
 #
 show users;
+#删除用户
+db.dropUser('admindb');
+#修改用户密码
+db.updateUser('admin',{pwd:'xxx'});
+#
 
 #服务安装包
 dpkg -i mongodb-org-server_6.0.4_amd64.deb
