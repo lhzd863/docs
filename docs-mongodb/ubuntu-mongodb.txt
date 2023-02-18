@@ -13,7 +13,7 @@ db.auth('admin','admin@123456');
 #服务安装包
 dpkg -i mongodb-org-server_6.0.4_amd64.deb
 #客户端安装
-mongodb-mongosh_1.7.1_amd64.deb
+dpkg -i mongodb-mongosh_1.7.1_amd64.deb
 
 #https://www.mongodb.com/try/download/shell
 #
