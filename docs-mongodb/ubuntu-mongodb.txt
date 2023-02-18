@@ -4,6 +4,8 @@ service mongod status
 service mongod stop
 #
 dpkg -i mongodb-org-server_6.0.4_amd64.deb
+#创建用户
+db.createUser({user:'admin',pwd:'xxx',roles:[{role:'root',db:'admin'}]});
 
 #https://www.mongodb.com/try/download/shell
 #
