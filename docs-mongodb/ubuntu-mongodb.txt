@@ -1,0 +1,9 @@
+#
+service mongod start
+service mongod status
+service mongod stop
+#
+dpkg -i mongodb-org-server_6.0.4_amd64.deb
+
+
+
