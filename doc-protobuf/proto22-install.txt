@@ -1,0 +1,16 @@
+#
+wget https://github.com/protocolbuffers/protobuf/releases/download/v22.2/protoc-22.2-linux-x86_64.zip
+#
+cp -r protoc-22.2-linux-x86_64/include /usr/local/include/
+#
+cp protoc-22.2-linux-x86_64/bin/protoc /usr/local/bin/
+#
+go get -u google.golang.org/protobuf/cmd/protoc-gen-go
+go install google.golang.org/protobuf/cmd/protoc-gen-go
+
+go get -u google.golang.org/grpc/cmd/protoc-gen-go-grpc
+go install google.golang.org/grpc/cmd/protoc-gen-go-grpc
+
+#
+protoc --proto_path=./ ./*.proto --go-grpc_out=./
+
