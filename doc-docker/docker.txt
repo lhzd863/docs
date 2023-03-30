@@ -173,4 +173,5 @@ docker load -i kubernetes-dashboard-amd64_v1.8.3.tar
 
 #
 curl -o /etc/yum.repos.d/docker-ce.repo https://download.docker.com/linux/centos/docker-ce.repo
-
+#
+yum install --downloadonly --downloaddir=/home/tmp/docker docker-ce
