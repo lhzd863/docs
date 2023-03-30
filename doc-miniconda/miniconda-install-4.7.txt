@@ -39,3 +39,7 @@ conda activate py3.9
 
 #-bash: /home/miniconda3/envs/py3.6/bin/python: Invalid argument
 conda update -n base -c defaults conda
+
+#下载不安装
+yum install --downloadonly --downloaddir=/home/tmp/podman podman
+
