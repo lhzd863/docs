@@ -170,3 +170,7 @@ docker load -i k8s-dns-kube-dns-amd64_1.14.7.tar
 docker load -i k8s-dns-sidecar-amd64_1.14.7.tar
 docker load -i kubernetes-dashboard-amd64_v1.8.3.tar
 
+
+#
+curl -o /etc/yum.repos.d/docker-ce.repo https://download.docker.com/linux/centos/docker-ce.repo
+
