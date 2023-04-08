@@ -1,0 +1,28 @@
+#offline
+https://www.cnblogs.com/linagcheng/p/16434756.html
+#
+#查看当前conda配置
+conda config --show channels
+
+# 添加清华镜像channel
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud//pytorch/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+ 
+#设置搜索是显示通道地址
+conda config --set show_channel_urls yes
+
+#
+conda install pymysql --download-only
+#查看conda中包缓存的路径,中提示的package和build去找出对应的包
+conda info
+#打包
+tar -czvf pymysql.tar.gz cryxxxxx cryxxxx.conda pymysqlxxxx pymysqlxxxx.conda
+# 查看 package cache
+conda info  
+tar -zxvf pymysq.tar.gz ./pkgs
+rm -rf ./pkgs/cache ./pkgs/urls  ./pkgs/urls.txt
+mv ./pkgs/*  /path/miniconda/pkgs/
+# 不联网安装
+conda install pymysql --offline   
