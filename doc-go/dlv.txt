@@ -1,0 +1,19 @@
+#
+dlv debug
+#设置断点
+b main.main
+#查看已经设置的所有断点
+bp
+#查看全局变量
+vars main
+#运行到下一个断点处
+c
+#单步运行
+n
+#查看局部变量
+locals
+(no locals) #这里没有初始化
+#组合break 和 condition 命令设置条件断点
+b main.go:10
+#
+
