@@ -1,0 +1,3 @@
+#
+#查看当前conda配置
+conda config --show channels
