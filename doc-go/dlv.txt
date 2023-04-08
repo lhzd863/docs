@@ -15,5 +15,12 @@ locals
 (no locals) #这里没有初始化
 #组合break 和 condition 命令设置条件断点
 b main.go:10
-#
+#这里设置条件断点i等于3
+cond 2 i==3
+#继续continue执行到刚设置的条件断点，输出局部变量
+c
+#查看栈帧信息
+stack
+#退出
+q
 
