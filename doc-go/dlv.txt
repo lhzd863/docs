@@ -24,4 +24,10 @@ stack
 #退出
 q
 
+#dlv attach
+go build -gcflags="all=-N -l" main.go 生成 main.exe，**注意：这里一定要加上 -gcflags="all=-N -l" 不然有可能代码被编译器优化，断点打不上。
 #
+执行 main.exe，得到程序的 PID
+#
+dlv attach PID 进入调试
+
