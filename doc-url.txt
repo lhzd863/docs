@@ -333,3 +333,6 @@ https://github.com/qax-os/excelize
 #
 https://github.com/BurntSushi/ripgrep
 
+#
+https://github.com/dominikbraun/graph
+https://github.com/mjl-/mox
