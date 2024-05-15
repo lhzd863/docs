@@ -1,0 +1,10 @@
+https://repo.anaconda.com/pkgs/main/linux-64/   下载安装包
+#conda install
+bash Miniconda3-4.7.12.1-Linux-x86_64.sh
+# 离线安装其他环境
+conda create --name py39 --offline
+conda activate py39
+conda install python-3.9.19-h955ad1f_1.tar.bz2
+conda install pip-23.3.1-py39h06a4308_0.tar.bz2
+
+
