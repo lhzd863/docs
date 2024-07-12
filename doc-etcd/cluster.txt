@@ -1,9 +1,19 @@
 # 启动命令
 nohup /home/bgd/bgd-data/etcd/etcd-v3.5.9-linux-amd64/etcd  --config-file=/home/bgd/bgd-data/etcd/etcd-v3.5.9-linux-amd64/etcd.yaml > run.log 2>&1 &
-# etcd.yaml
+# etcd.yaml  单机版
 name: "etcd-node"
 data-dir: "/home/bgd/bgd-data/etcd/data"
 listen-peer-urls: "http://0.0.0.0:2380"
 listen-client-urls: "http://0.0.0.0:2379"
 advertise-client-urls: "http://0.0.0.0:2379"
 
+# etcd.yaml 集群版
+name: "en-47"
+initial-advertise-peer-urls: "http://xxx:2380"
+data-dir: "/home/bgd/bgd-data/etcd/data"
+listen-peer-urls: "http://0.0.0.0:2380"
+listen-client-urls: "http://0.0.0.0:2379"
+advertise-client-urls: "http://0.0.0.0:2379"
+initial-cluster-token: "etcd-cluster-10"
+initial-cluster: "en-47=http://xxx:2380,en-48=http://xxx:2380,en-49=http://xxx:2380"
+initial-cluster-state: "new"
