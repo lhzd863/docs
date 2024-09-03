@@ -1,0 +1,12 @@
+export PHOTOPRISM_DEFAULTS_YAML=./options.yml
+export PHOTOPRISM_ORIGINALS_PATH=/home/aya/photoprism/storage
+export PHOTOPRISM_IMPORT_PATH=/home/aya/photoprism/import
+./photoprism start
+
+
+# 
+Debug: false
+AdminUser: "admin"
+AdminPassword: "admin"
+HttpPort: 2342
+SiteUrl: "http://192.168.1.186:2342/"
