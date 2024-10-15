@@ -1,1 +1,18 @@
+#  kfw-4.1-amd64.msi 下载
+https://web.mit.edu/kerberos/dist/
+# 安装
+# 配置环境变量
+KRB5_CONFIG = D:\kerberos\krb5.ini
+KRB5CCNAME = %USERPROFILE%\krb5cache
+# path添加 顺序在jdk之前
+C:\Program Files\MIT\Kerberos\bin
+#
+
+# host 添加服务器ip
+# 查看ketab
+klist -ket query.keytab
+# 认证
+kinit -kt query.keytab query@SFZQBIGDATA.COM
+# 列表
+klist
 
