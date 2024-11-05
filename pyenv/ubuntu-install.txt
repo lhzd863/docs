@@ -1,0 +1,11 @@
+# 安装
+curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+# 更新
+pyenv update
+# 
+export PATH="~/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+#
+
+pyenv install 3.12
