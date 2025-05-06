@@ -34,3 +34,10 @@ reboot
 #no must
 ln -s /lib/systemd/system/rc.local.service /etc/systemd/system/
 
+
+# eg
+
+#!/bin/sh -e
+su - aya -s /bin/bash -c 'cd /home/aya/frp/frp_0.37.1 && bash start.sh'
+
+
