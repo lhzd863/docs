@@ -1,0 +1,8 @@
+create user bgd with superuser password 'cda1234567a';
+create database bgd owner bgd;
+
+create schema ckc authorization bgd;
+
+grant usage on schema ckc to bgd;
+grant select on all tables in schema  ckc to bgd;
+alter default privileges in schema ckc grant all on tables to bgd ;
