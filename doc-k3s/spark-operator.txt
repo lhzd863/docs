@@ -1,0 +1,23 @@
+kubectl edit deployment spark-operator-controller -n spark-operator
+kubectl edit deployment spark-operator-webhook -n spark-operator
+#
+kubectl edit mutatingwebhookconfiguration spark-operator-webhook
+#
+kubectl rollout restart deployment spark-operator-controller -n spark-operator
+kubectl rollout restart deployment spark-operator-webhook -n spark-operator
+
+kubectl delete namespace spark-operator
+helm install spark-operator ./spark-operator-2.4.0.tgz \
+      --namespace spark-operator \
+      --create-namespace \
+      --set sparkJobNamespace=spark-operator \
+      --set operatorNamespace=spark-operator \
+      --set webhook.enable=true
+      
+# /etc/systemd/system/k3s.service
+'--kubelet-arg=container-log-max-size=10Mi' \
+'--kubelet-arg=container-log-max-files=2' \
+systemctl daemon-reload
+systemctl restart k3s
+
+cp /etc/rancher/k3s/k3s.yaml /root/.kube/config
