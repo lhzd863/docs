@@ -8,3 +8,7 @@ pnpm build
 pnpm link --global
 #
 openclaw onboard --install-daemon
+#
+openclaw doctor         # 检查配置问题
+openclaw status         # Gateway 网关状态
+openclaw dashboard      # 打开浏览器 UI
