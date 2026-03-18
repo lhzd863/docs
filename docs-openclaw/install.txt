@@ -3,3 +3,6 @@ cd openclaw
 pnpm install
 pnpm ui:build
 pnpm build
+
+#
+pnpm link --global
