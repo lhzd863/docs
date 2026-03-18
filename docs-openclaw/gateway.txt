@@ -1,0 +1,5 @@
+openclaw gateway status	Show gateway status
+openclaw gateway install	Install/start gateway service
+openclaw gateway stop	Stop gateway service
+openclaw gateway restart	Restart gateway service
+openclaw logs --follow	Tail gateway logs
