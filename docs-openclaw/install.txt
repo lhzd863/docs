@@ -6,3 +6,5 @@ pnpm build
 
 #
 pnpm link --global
+#
+openclaw onboard --install-daemon
