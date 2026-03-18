@@ -1,0 +1,12 @@
+# 启用飞书频道并填入你的 App ID 和 App Secret
+openclaw config set channels.feishu.enabled true
+openclaw config set channels.feishu.appId "cli_xxx"
+openclaw config set channels.feishu.appSecret "xxbpHsLS"
+
+# （推荐）使用 WebSocket 长连接模式
+openclaw config set channels.feishu.connectionMode websocket
+
+# （可选）配置一些基本规则，比如私聊需要配对，群聊需要@等
+openclaw config set channels.feishu.dmPolicy pairing
+openclaw config set channels.feishu.groupPolicy allowlist
+openclaw config set channels.feishu.requireMention true
