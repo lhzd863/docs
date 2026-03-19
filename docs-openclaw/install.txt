@@ -12,3 +12,14 @@ openclaw onboard --install-daemon
 openclaw doctor         # 检查配置问题
 openclaw status         # Gateway 网关状态
 openclaw dashboard      # 打开浏览器 UI
+
+# 开启浏览器
+# 1. 先设置 profile 的基本配置（只保留有效字段）
+openclaw config set browser.profiles.openclaw '{
+  "cdpPort": 18800,
+  "color": "#FF4500"
+}'
+
+# 2. 设置全局 browser 配置
+openclaw config set browser.headless true
+openclaw config set browser.noSandbox true
