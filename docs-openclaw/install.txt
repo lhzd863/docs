@@ -14,6 +14,10 @@ openclaw status         # Gateway 网关状态
 openclaw dashboard      # 打开浏览器 UI
 
 # 开启浏览器
+# 重启浏览器
+openclaw browser --browser-profile openclaw stop
+openclaw browser --browser-profile openclaw start
+openclaw browser --browser-profile openclaw status
 # 1. 先设置 profile 的基本配置（只保留有效字段）
 openclaw config set browser.profiles.openclaw '{
   "cdpPort": 18800,
