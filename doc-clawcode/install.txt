@@ -1,0 +1,6 @@
+export CLAW_PERMISSION_MODE="danger-full-access"
+export RUST_LOG=debug
+export RUST_BACKTRACE=1
+export ANTHROPIC_API_KEY="sk-xx"  
+export ANTHROPIC_BASE_URL="https://api.deepseek.com/anthropic"
+export ANTHROPIC_MODEL=deepseek-chat
