@@ -1,0 +1,4 @@
+# centos
+yum install certbot python3-certbot-nginx
+# 
+certbot --nginx -d gaoyuanzi.com -d www.gaoyuanzi.com
