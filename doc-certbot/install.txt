@@ -8,3 +8,5 @@ ssl_certificate /etc/letsencrypt/live/gaoyuanzi.com/fullchain.pem; # managed by 
         # 指定私钥文档，请将 /etc/nginx/cert/ssl.key 替换为您实际使用的私钥文件的绝对路径
     ssl_certificate_key /etc/letsencrypt/live/gaoyuanzi.com/privkey.pem; # managed by Certbot
 
+# 更新
+certbot renew
