@@ -1,1 +1,17 @@
+## docker-compose.yml
+```
+version: "3.8"
 
+services:
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    container_name: my-homeassistant
+    privileged: true
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./config:/config
+      - ./dbus:/run/dbus:ro
+    network_mode: host
+```
